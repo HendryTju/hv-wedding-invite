@@ -3,6 +3,14 @@ import Layout from '../layouts/Layout.astro';
 import { Image } from 'astro:assets';
 import bgImage from '../assets/images/TLP_5041.JPEG';
 import coupleImage from '../assets/images/PHOTO-2026-08-29-11-00-30.jpg';
+
+const imageModules = import.meta.glob<{ default: ImageMetadata }>('../assets/images/*.{jpeg,jpg,png,JPEG,JPG}');
+const allPhotos = await Promise.all(
+  Object.keys(imageModules).map(async (key) => {
+    const mod = await imageModules[key]();
+    return mod.default;
+  })
+);
 ---
 
 <Layout title="The Wedding of Hendry & Valensia">
@@ -11,6 +19,11 @@ import coupleImage from '../assets/images/PHOTO-2026-08-29-11-00-30.jpg';
     <a href="#hero">
       <button class="rounded-full inline-flex items-center justify-center text-xs lg:text-sm uppercase tracking-widest text-primary font-black hover:bg-primary hover:text-secondary h-8 px-4 lg:h-10 lg:px-6 transition-all duration-300">
         Hero
+      </button>
+    </a>
+    <a href="#gallery">
+      <button class="rounded-full inline-flex items-center justify-center text-xs lg:text-sm uppercase tracking-widest text-primary font-black hover:bg-primary hover:text-secondary h-8 px-4 lg:h-10 lg:px-6 transition-all duration-300">
+        Gallery
       </button>
     </a>
     <a href="#details">
@@ -85,6 +98,26 @@ import coupleImage from '../assets/images/PHOTO-2026-08-29-11-00-30.jpg';
           </p>
         </div>
 
+      </div>
+    </section>
+
+    <!-- GALLERY SECTION -->
+    <section id="gallery" class="relative w-full bg-light text-dark flex flex-col items-center justify-center pt-20 pb-10 px-4 md:px-8 overflow-hidden">
+      <div class="z-10 flex flex-col items-center text-center max-w-7xl mx-auto w-full">
+        <h2 class="text-4xl md:text-6xl font-black uppercase tracking-[5px] mb-12">Our Moments</h2>
+        <div class="columns-2 md:columns-3 lg:columns-4 gap-4 w-full">
+          {allPhotos.map((photo, i) => (
+            <div class="mb-4 break-inside-avoid overflow-hidden rounded-2xl shadow-md">
+              <Image 
+                src={photo} 
+                alt={`Prewedding photo ${i + 1}`} 
+                class="w-full h-auto object-cover hover:scale-105 transition-transform duration-500" 
+                widths={[400, 800]} 
+                sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+              />
+            </div>
+          ))}
+        </div>
       </div>
     </section>
 
