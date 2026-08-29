@@ -1,5 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import bgImage from '../assets/images/TLP_5041.JPEG';
+import coupleImage from '../assets/images/PHOTO-2026-08-29-11-00-30.jpg';
 ---
 
 <Layout title="The Wedding of Hendry & Valensia">
@@ -27,7 +30,7 @@ import Layout from '../layouts/Layout.astro';
     <!-- HERO SECTION -->
     <section id="hero" class="relative min-h-screen w-full bg-dark flex flex-col items-center justify-center p-8 lg:p-20 overflow-hidden">
       <!-- Full Background Image Placeholder -->
-      <img src="https://picsum.photos/1920/1080?grayscale&blur=2" class="absolute inset-0 w-full h-full object-cover opacity-50 mix-blend-overlay" alt="Background Placeholder">
+      <Image src={bgImage} class="absolute inset-0 w-full h-full object-cover opacity-50 mix-blend-overlay grayscale blur-[2px]" alt="Background" />
       
       <div class="z-10 flex flex-col items-center text-center max-w-5xl mx-auto space-y-12">
         <p class="text-xs md:text-lg font-bold uppercase tracking-[5px] text-primary/80">The Wedding Of</p>
@@ -176,7 +179,7 @@ import Layout from '../layouts/Layout.astro';
         
         <!-- The Image and Overlay -->
         <div class="relative w-full h-full rounded-t-[4rem] rounded-b-[4rem] overflow-hidden bg-dark shadow-2xl">
-          <img src="https://picsum.photos/800/1200?grayscale" class="absolute inset-0 w-full h-full object-cover opacity-60 mix-blend-multiply" alt="Couple">
+          <Image src={coupleImage} class="absolute inset-0 w-full h-full object-cover opacity-60 mix-blend-multiply grayscale" alt="Couple" />
           
           <div class="absolute inset-0 flex items-center justify-center p-8 text-center">
             <h2 class="font-serif italic text-4xl md:text-5xl lg:text-6xl text-[#fff9e6] font-bold leading-tight" style="text-shadow: 2px 2px 8px rgba(0,0,0,0.5);">
