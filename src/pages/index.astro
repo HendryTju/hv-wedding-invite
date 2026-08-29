@@ -1,7 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import { Image } from 'astro:assets';
-import bgImage from '../assets/images/TLP_5041.JPEG';
+import bgImage from '../assets/images/hero-couple.png';
 import coupleImage from '../assets/images/PHOTO-2026-08-29-11-00-30.jpg';
 
 const imageModules = import.meta.glob<{ default: ImageMetadata }>('../assets/images/*.{jpeg,jpg,png,JPEG,JPG}');
@@ -42,8 +42,8 @@ const allPhotos = await Promise.all(
     
     <!-- HERO SECTION -->
     <section id="hero" class="relative min-h-screen w-full bg-dark flex flex-col items-center justify-center p-8 lg:p-20 overflow-hidden">
-      <!-- Full Background Image Placeholder -->
-      <Image src={bgImage} class="absolute inset-0 w-full h-full object-cover opacity-50 mix-blend-overlay grayscale blur-[2px]" alt="Background" />
+      <!-- Full Background Image -->
+      <Image src={bgImage} class="absolute inset-0 w-full h-full object-cover object-top opacity-60 mix-blend-lighten md:mix-blend-normal" alt="Background" />
       
       <div class="z-10 flex flex-col items-center text-center max-w-5xl mx-auto space-y-12">
         <p class="text-xs md:text-lg font-bold uppercase tracking-[5px] text-primary/80">The Wedding Of</p>
