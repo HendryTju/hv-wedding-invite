@@ -1,0 +1,357 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="The Wedding of Hendry & Valensia">
+  <!-- Floating Navigation -->
+  <div class="fixed top-6 right-6 lg:top-12 lg:right-12 z-50 mix-blend-difference flex gap-2">
+    <a href="#hero">
+      <button class="rounded-full inline-flex items-center justify-center text-xs lg:text-sm uppercase tracking-widest text-primary font-black hover:bg-primary hover:text-secondary h-8 px-4 lg:h-10 lg:px-6 transition-all duration-300">
+        Hero
+      </button>
+    </a>
+    <a href="#details">
+      <button class="rounded-full inline-flex items-center justify-center text-xs lg:text-sm uppercase tracking-widest text-primary font-black hover:bg-primary hover:text-secondary h-8 px-4 lg:h-10 lg:px-6 transition-all duration-300">
+        Details
+      </button>
+    </a>
+    <a href="#gift">
+      <button class="rounded-full inline-flex items-center justify-center text-xs lg:text-sm uppercase tracking-widest text-primary font-black hover:bg-primary hover:text-secondary h-8 px-4 lg:h-10 lg:px-6 transition-all duration-300">
+        Gift
+      </button>
+    </a>
+  </div>
+
+  <main class="w-full flex flex-col font-sans text-center md:text-start">
+    
+    <!-- HERO SECTION -->
+    <section id="hero" class="relative min-h-screen w-full bg-dark flex flex-col items-center justify-center p-8 lg:p-20 overflow-hidden">
+      <!-- Full Background Image Placeholder -->
+      <img src="https://picsum.photos/1920/1080?grayscale&blur=2" class="absolute inset-0 w-full h-full object-cover opacity-50 mix-blend-overlay" alt="Background Placeholder">
+      
+      <div class="z-10 flex flex-col items-center text-center max-w-5xl mx-auto space-y-12">
+        <p class="text-xs md:text-lg font-bold uppercase tracking-[5px] text-primary/80">The Wedding Of</p>
+        
+        <h1 class="text-6xl md:text-8xl lg:text-[10rem] font-black uppercase tracking-widest text-primary leading-none mix-blend-difference">
+          H &amp; V
+        </h1>
+        
+        <p class="text-lg md:text-3xl font-bold uppercase tracking-[4px] text-primary mt-4 mix-blend-difference">
+          Hendry &amp; Valensia
+        </p>
+
+        <div class="mt-16 w-full max-w-3xl border-t-2 border-primary/20 pt-16 flex flex-col md:flex-row items-center justify-center md:justify-between gap-8 text-primary">
+          <div class="flex flex-col items-center text-center">
+            <h2 class="font-serif text-2xl md:text-4xl italic font-bold">Hendry</h2>
+            <p class="text-[10px] md:text-xs font-semibold uppercase tracking-[3px] mt-4 opacity-70">Son of Mr. Tju Sjin Tjhong &amp; Mrs. Susana</p>
+          </div>
+          <div class="text-3xl font-serif italic opacity-50">&amp;</div>
+          <div class="flex flex-col items-center text-center">
+            <h2 class="font-serif text-2xl md:text-4xl italic font-bold">Valensia</h2>
+            <p class="text-[10px] md:text-xs font-semibold uppercase tracking-[3px] mt-4 opacity-70">Daughter of Mr. Bong Ket Hau &amp; Mrs. Liauw Su San</p>
+          </div>
+        </div>
+      </div>
+      
+      <a class="absolute bottom-10 animate-bounce" href="#details">
+        <div class="w-8 h-12 border-2 border-primary rounded-full flex justify-center p-2 mix-blend-difference">
+          <div class="w-1 h-2 bg-primary rounded-full"></div>
+        </div>
+      </a>
+    </section>
+
+    <!-- STORY SECTION -->
+    <section id="story" class="relative min-h-screen w-full bg-[#314a31] text-[#fbf4e6] flex flex-col items-center justify-center p-8 lg:p-20 overflow-hidden text-center">
+      <div class="z-10 flex flex-col items-center max-w-3xl mx-auto space-y-16">
+        
+        <p class="text-sm md:text-base lg:text-lg font-medium leading-[2.5] md:leading-[2.5] tracking-widest">
+          <span class="font-black text-white text-base md:text-xl">M</span>et in August 2021, during COVID.<br>
+          <span class="font-black text-white text-base md:text-xl">A</span> dating app brought us together.<br>
+          <span class="font-black text-white text-base md:text-xl">R</span>ight away, it felt easy.<br>
+          <span class="font-black text-white text-base md:text-xl">R</span>ealised we had something worth keeping.<br>
+          <span class="font-black text-white text-base md:text-xl">Y</span>ears later, we're still choosing each other.<br>
+          <br>
+          <span class="font-black text-white text-base md:text-xl">M</span>ade it official in June 2024, at Bukit Timah.<br>
+          <span class="font-black text-white text-base md:text-xl">E</span>verything since has led us here.
+        </p>
+
+        <div class="flex flex-col items-center gap-6">
+          <h2 class="font-serif italic text-5xl md:text-6xl text-[#f9d7d9] font-bold">You're Invited!</h2>
+          <p class="text-base md:text-2xl font-black uppercase tracking-[5px] text-[#f9d7d9] leading-relaxed">
+            To Celebrate<br>Our Big Day
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- DETAILS SECTION -->
+    <section id="details" class="relative min-h-screen w-full bg-light text-dark flex flex-col items-center justify-center p-8 lg:p-20 py-32 overflow-hidden">
+      <div class="z-10 flex flex-col items-center text-center max-w-5xl mx-auto w-full">
+        <h2 class="text-4xl md:text-6xl lg:text-7xl font-black uppercase tracking-[5px] mb-16">The Celebration</h2>
+        
+        <div class="flex flex-col w-full items-center gap-6">
+          
+          <!-- Accordion: Holy Matrimony -->
+          <details class="group w-full max-w-3xl border-[1.5px] border-dark rounded-[40px] overflow-hidden bg-light transition-all open:bg-secondary">
+            <summary class="flex justify-between items-center cursor-pointer p-8 md:p-10 outline-none select-none">
+              <h3 class="text-xl md:text-3xl font-black uppercase tracking-[3px]">Holy Matrimony</h3>
+              <span class="text-3xl font-light transition-transform group-open:rotate-45">+</span>
+            </summary>
+            <div class="p-8 md:p-10 pt-0 text-left border-t-[1.5px] border-dark/10">
+              <div class="text-base md:text-xl font-medium tracking-widest space-y-4 uppercase">
+                <p class="opacity-70">13.00 - 14.30 WIB</p>
+                <p class="font-black text-2xl">Gereja Santo Thomas Rasul</p>
+                <p class="text-sm font-bold opacity-60">Jalan Bojong Raya, Jakarta Barat</p>
+              </div>
+            </div>
+          </details>
+
+          <!-- Accordion: Reception -->
+          <details class="group w-full max-w-3xl border-[1.5px] border-dark rounded-[40px] overflow-hidden bg-light transition-all open:bg-primary">
+            <summary class="flex justify-between items-center cursor-pointer p-8 md:p-10 outline-none select-none">
+              <h3 class="text-xl md:text-3xl font-black uppercase tracking-[3px]">Reception</h3>
+              <span class="text-3xl font-light transition-transform group-open:rotate-45">+</span>
+            </summary>
+            <div class="p-8 md:p-10 pt-0 text-left border-t-[1.5px] border-dark/10">
+              <div class="text-base md:text-xl font-medium tracking-widest space-y-4 uppercase">
+                <p class="opacity-70">18.30 WIB till Done</p>
+                <p class="font-black text-2xl">HARRIS Suites Puri Mansion</p>
+                <p class="text-sm font-bold opacity-60">CBD Puri Kembangan, Jakarta Barat</p>
+              </div>
+            </div>
+          </details>
+
+          <!-- Card: What to Wear -->
+          <div class="w-full max-w-3xl border-[1.5px] border-[#2c402c] rounded-[40px] overflow-hidden bg-[#fbf4e6] p-8 md:p-10 text-left text-[#2c402c]">
+            <div class="flex items-center gap-4 mb-6">
+              <!-- Simple Suit & Dress icon SVG -->
+              <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21v-8m0 0V5a2 2 0 012-2h-2m0 0a2 2 0 00-2 2v8m0 0H8m4 0h4m-4 8H8m4 0h4m-8-8v8m12-8v8"></path></svg>
+              <h3 class="text-xl md:text-2xl font-bold uppercase tracking-[3px]">What To Wear</h3>
+            </div>
+            
+            <div class="space-y-4 font-medium text-sm md:text-base">
+              <p class="font-bold text-lg">Semi-Formal</p>
+              <p><span class="font-bold">Recommended:</span> Linen suits, relaxed button-ups, batik shirts, flowy dresses, Kebaya (warmly welcomed)</p>
+              <p><span class="font-bold">Please Avoid:</span> Shorts, Bermudas, Sandals, Swimwear, Crop tops, White</p>
+              
+              <p class="pt-4">You may want to take note of our wedding colour palette:</p>
+              
+              <div class="flex flex-wrap gap-2 pt-2 text-[10px] md:text-xs font-bold tracking-widest uppercase text-white text-center">
+                <div class="bg-[#785333] rounded-xl w-24 h-24 md:w-28 md:h-28 flex items-center justify-center p-2 shadow-sm">WOOD /<br>RATTAN</div>
+                <div class="bg-[#314a31] rounded-xl w-24 h-24 md:w-28 md:h-28 flex items-center justify-center p-2 shadow-sm">FOREST</div>
+                <div class="bg-[#f3a6a1] rounded-xl w-24 h-24 md:w-28 md:h-28 flex items-center justify-center p-2 shadow-sm text-[#2c402c]">PASTEL<br>PINK</div>
+                <div class="bg-[#9ec576] rounded-xl w-24 h-24 md:w-28 md:h-28 flex items-center justify-center p-2 shadow-sm text-[#2c402c]">PASTEL<br>GREEN</div>
+                <div class="bg-[#ef7e32] rounded-xl w-24 h-24 md:w-28 md:h-28 flex items-center justify-center p-2 shadow-sm">SUNSET</div>
+                <div class="bg-[#f4c859] rounded-xl w-24 h-24 md:w-28 md:h-28 flex items-center justify-center p-2 shadow-sm text-[#2c402c]">SUNRISE</div>
+                <div class="bg-[#f5dab8] rounded-xl w-24 h-24 md:w-28 md:h-28 flex items-center justify-center p-2 shadow-sm text-[#2c402c]">SAND</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card: Tea Ceremony -->
+          <div class="w-full max-w-3xl border-[1.5px] border-[#2c402c] rounded-[40px] overflow-hidden bg-[#fbf4e6] p-8 md:p-10 text-left text-[#2c402c]">
+            <div class="flex items-center gap-4 mb-4">
+              <span class="text-4xl font-serif leading-none">囍</span>
+              <h3 class="text-xl md:text-2xl font-bold uppercase tracking-[3px]">Tea Ceremony</h3>
+            </div>
+            <p class="font-medium text-sm md:text-base md:pl-12">
+              Family members are cordially invited to the tea ceremony (3:00 PM) @ <span class="italic">Purnama Garden</span>
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- GIFT SECTION -->
+    <section id="gift" class="relative min-h-screen w-full bg-[#f9d7d9] text-[#2c402c] flex flex-col items-center justify-center p-4 lg:p-20 overflow-hidden">
+      
+      <!-- The Ornate Frame Container -->
+      <div class="relative w-full max-w-sm aspect-[2/3] md:max-w-md flex items-center justify-center p-2 mb-8">
+        <!-- Outer Border -->
+        <div class="absolute inset-0 border-2 border-[#fff0b3] rounded-t-[5rem] rounded-b-[5rem] opacity-60"></div>
+        <!-- Inner Border -->
+        <div class="absolute inset-2 border-2 border-[#fff0b3] rounded-t-[4.5rem] rounded-b-[4.5rem] opacity-80"></div>
+        
+        <!-- The Image and Overlay -->
+        <div class="relative w-full h-full rounded-t-[4rem] rounded-b-[4rem] overflow-hidden bg-dark shadow-2xl">
+          <img src="https://picsum.photos/800/1200?grayscale" class="absolute inset-0 w-full h-full object-cover opacity-60 mix-blend-multiply" alt="Couple">
+          
+          <div class="absolute inset-0 flex items-center justify-center p-8 text-center">
+            <h2 class="font-serif italic text-4xl md:text-5xl lg:text-6xl text-[#fff9e6] font-bold leading-tight" style="text-shadow: 2px 2px 8px rgba(0,0,0,0.5);">
+              Your<br>presence<br>is our<br>greatest<br>gift!
+            </h2>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Text -->
+      <div class="text-center space-y-2 mt-8 z-10">
+        <p class="text-xs md:text-sm font-black uppercase tracking-[3px] text-[#2c402c]">
+          If you wish to give,
+        </p>
+        <p class="text-xs md:text-sm font-black uppercase tracking-[3px] text-[#2c402c]">
+          your gesture is warmly appreciated
+        </p>
+      </div>
+
+      <!-- Bank Details (Hidden by default, shown cleanly below if needed, or keeping it minimal) -->
+      <div class="mt-12 flex flex-col items-center gap-2 opacity-80">
+        <span class="text-lg md:text-xl font-bold uppercase tracking-widest text-[#2c402c]">BCA • 1234567890</span>
+        <span class="text-xs md:text-sm font-bold uppercase tracking-[3px] text-[#2c402c]">A.N. Hendry</span>
+      </div>
+
+    </section>
+
+    <!-- RSVP SECTION -->
+    <section id="rsvp" class="relative min-h-screen w-full bg-[#314a31] text-[#fbf4e6] flex flex-col items-center justify-center p-8 lg:p-20 overflow-hidden font-sans">
+      <div class="z-10 flex flex-col items-center max-w-2xl mx-auto w-full">
+        <h2 class="text-5xl md:text-6xl lg:text-7xl font-medium tracking-widest mb-6 uppercase">RSVP</h2>
+        <p class="text-xs md:text-sm font-bold uppercase tracking-[4px] mb-12 opacity-90 text-center">
+          We would love for you to join us
+        </p>
+
+        <!-- Form State -->
+        <form id="rsvp-form" class="w-full flex flex-col gap-8 text-[#2c402c]">
+          <!-- Name -->
+          <div class="flex flex-col gap-2 text-left">
+            <label class="text-xs font-bold uppercase tracking-widest text-[#fbf4e6]" for="guest-name">Full Name</label>
+            <input type="text" id="guest-name" name="name" required class="w-full p-4 rounded-xl bg-[#fbf4e6] border-none outline-none focus:ring-2 ring-[#f9d7d9] text-base placeholder-[#2c402c]/50 font-medium" placeholder="Your Name">
+          </div>
+
+          <!-- Email -->
+          <div class="flex flex-col gap-2 text-left">
+            <label class="text-xs font-bold uppercase tracking-widest text-[#fbf4e6]" for="guest-email">Email Address</label>
+            <input type="email" id="guest-email" name="email" required class="w-full p-4 rounded-xl bg-[#fbf4e6] border-none outline-none focus:ring-2 ring-[#f9d7d9] text-base placeholder-[#2c402c]/50 font-medium" placeholder="hello@example.com">
+          </div>
+
+          <!-- Phone -->
+          <div class="flex flex-col gap-2 text-left">
+            <label class="text-xs font-bold uppercase tracking-widest text-[#fbf4e6]" for="guest-phone">Phone Number</label>
+            <input type="tel" id="guest-phone" name="phone" required class="w-full p-4 rounded-xl bg-[#fbf4e6] border-none outline-none focus:ring-2 ring-[#f9d7d9] text-base placeholder-[#2c402c]/50 font-medium" placeholder="+62 812 3456 7890">
+          </div>
+
+          <!-- Pax -->
+          <div class="flex flex-col gap-2 text-left">
+            <label class="text-xs font-bold uppercase tracking-widest text-[#fbf4e6]" for="guest-pax">Number of Guests</label>
+            <select id="guest-pax" name="pax" required class="w-full p-4 rounded-xl bg-[#fbf4e6] border-none outline-none focus:ring-2 ring-[#f9d7d9] text-base font-medium appearance-none" style="background-image: url('data:image/svg+xml;utf8,<svg fill=\'%232c402c\' height=\'24\' viewBox=\'0 0 24 24\' width=\'24\' xmlns=\'http://www.w3.org/2000/svg\'><path d=\'M7 10l5 5 5-5z\'/></svg>'); background-repeat: no-repeat; background-position-x: 98%; background-position-y: 50%;">
+              <option value="1">1 Person</option>
+              <option value="2">2 Persons</option>
+              <option value="3">3 Persons</option>
+              <option value="4">4 Persons</option>
+            </select>
+          </div>
+
+          <!-- Events -->
+          <div class="flex flex-col gap-3 text-left">
+            <label class="text-xs font-bold uppercase tracking-widest text-[#fbf4e6]">Events to Attend</label>
+            <div class="flex flex-col gap-3">
+              <label class="flex items-center gap-4 bg-[#fbf4e6] p-4 rounded-xl cursor-pointer hover:bg-[#fff0b3] transition-colors">
+                <input type="radio" name="events" value="Holy Matrimony" required class="w-4 h-4 text-[#2c402c] focus:ring-[#2c402c]">
+                <span class="font-medium text-base">Holy Matrimony Only</span>
+              </label>
+              <label class="flex items-center gap-4 bg-[#fbf4e6] p-4 rounded-xl cursor-pointer hover:bg-[#fff0b3] transition-colors">
+                <input type="radio" name="events" value="Reception" required class="w-4 h-4 text-[#2c402c] focus:ring-[#2c402c]">
+                <span class="font-medium text-base">Reception Only</span>
+              </label>
+              <label class="flex items-center gap-4 bg-[#fbf4e6] p-4 rounded-xl cursor-pointer hover:bg-[#fff0b3] transition-colors">
+                <input type="radio" name="events" value="Both" required class="w-4 h-4 text-[#2c402c] focus:ring-[#2c402c]">
+                <span class="font-medium text-base">Both Events</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Wishes -->
+          <div class="flex flex-col gap-2 text-left">
+            <label class="text-xs font-bold uppercase tracking-widest text-[#fbf4e6]" for="guest-wishes">Warm Wishes for the Couple</label>
+            <textarea id="guest-wishes" name="wishes" rows="4" class="w-full p-4 rounded-xl bg-[#fbf4e6] border-none outline-none focus:ring-2 ring-[#f9d7d9] text-base placeholder-[#2c402c]/50 font-medium resize-y" placeholder="Leave a message..."></textarea>
+          </div>
+
+          <button type="submit" id="rsvp-submit-btn" class="mt-4 bg-[#f9d7d9] text-[#2c402c] font-bold uppercase tracking-[4px] py-5 px-8 rounded-full hover:bg-[#f3a6a1] transition-colors w-full text-sm">
+            Submit RSVP
+          </button>
+        </form>
+
+        <!-- Success State -->
+        <div id="rsvp-success" class="hidden w-full flex-col items-center gap-8 text-center mt-8">
+          <h3 class="font-serif italic text-4xl md:text-6xl text-[#f9d7d9] font-bold">Thank You!</h3>
+          <p class="text-lg md:text-xl font-medium tracking-widest leading-loose">
+            Your RSVP has been saved.<br>We can't wait to celebrate with you!
+          </p>
+
+          <div class="w-full max-w-md h-[1px] bg-[#fbf4e6]/30 my-4"></div>
+
+          <p class="text-sm font-bold uppercase tracking-widest mb-2 text-[#fbf4e6]">Save the Date</p>
+          <div id="calendar-links" class="flex flex-col gap-4 w-full max-w-sm mx-auto">
+            <!-- Buttons injected here by JS -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- JS to handle submission -->
+    <script type="module">
+      import { submitRsvp } from '/rsvp.js';
+
+      const form = document.getElementById('rsvp-form');
+      const successDiv = document.getElementById('rsvp-success');
+      const calendarLinksDiv = document.getElementById('calendar-links');
+      const submitBtn = document.getElementById('rsvp-submit-btn');
+
+      if(form) {
+        form.addEventListener('submit', async (e) => {
+          e.preventDefault();
+          submitBtn.textContent = "Saving...";
+          submitBtn.disabled = true;
+
+          const formData = new FormData(form);
+          const data = {
+            name: formData.get('name'),
+            email: formData.get('email'),
+            phone: formData.get('phone'),
+            pax: parseInt(formData.get('pax')),
+            events: formData.get('events'),
+            wishes: formData.get('wishes')
+          };
+
+          try {
+            await submitRsvp(data);
+            form.classList.add('hidden');
+            successDiv.classList.remove('hidden');
+            successDiv.classList.add('flex');
+
+            // Generate Calendar Links
+            calendarLinksDiv.innerHTML = '';
+            
+            const createBtn = (text, href) => {
+              const a = document.createElement('a');
+              a.href = href;
+              a.target = "_blank";
+              a.className = "bg-[#fbf4e6] text-[#2c402c] font-bold uppercase tracking-[2px] p-4 rounded-xl hover:bg-[#fff0b3] transition-colors w-full shadow-lg";
+              a.textContent = text;
+              return a;
+            };
+
+            const matrimonyUrl = "https://www.google.com/calendar/render?action=TEMPLATE&text=Hendry+%26+Valensia+-+Holy+Matrimony&dates=20261129T060000Z/20261129T073000Z&details=Join+us+for+our+Holy+Matrimony!&location=Gereja+Santuario";
+            const receptionUrl = "https://www.google.com/calendar/render?action=TEMPLATE&text=Hendry+%26+Valensia+-+Wedding+Reception&dates=20261129T113000Z/20261129T143000Z&details=Join+us+for+our+Wedding+Reception!&location=HARRIS+Suites+Puri+Mansion";
+
+            if (data.events === "Holy Matrimony" || data.events === "Both") {
+              calendarLinksDiv.appendChild(createBtn("Add Matrimony to Calendar", matrimonyUrl));
+            }
+            if (data.events === "Reception" || data.events === "Both") {
+              calendarLinksDiv.appendChild(createBtn("Add Reception to Calendar", receptionUrl));
+            }
+
+          } catch (err) {
+            console.error(err);
+            alert("Failed to submit RSVP. Please try again.");
+            submitBtn.textContent = "Submit RSVP";
+            submitBtn.disabled = false;
+          }
+        });
+      }
+    </script>
+
+  </main>
+</Layout>

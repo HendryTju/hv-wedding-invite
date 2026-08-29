@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>The Wedding of Hendry & Valensia</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@200;300;400&display=swap" rel="stylesheet">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="invitation.css?v=8">
+  <div class="brochure-container">
+    
+    <!-- PAGE 1: THE VIEW (DIORAMA) -->
+    <section class="brochure-panel">
+      <div class="clean-panel-container">
+        
+        <!-- Yellow Floral Accents -->
+        <img src="floral-branch.png" class="floral-accent top-right" alt="">
+        <img src="floral-branch.png" class="floral-accent bottom-left" alt="">
+
+        <div class="clean-panel-content">
+          
+          <img src="line-couple.png" class="line-art-hero" alt="Couple Line Art">
+
+          <div class="hero-block text-center" style="margin-bottom: 20px;">
+            <p class="clean-subtitle">THE WEDDING OF</p>
+            <h1 class="clean-names">H&amp;V</h1>
+            <p class="clean-subnames">HENDRY &amp; VALENSIA</p>
+          </div>
+
+          <div class="clean-divider" style="margin: 10px 0;"></div>
+
+          <div class="union-block text-center" style="width: 100%;">
+            <div class="parents-block">
+              <h2 class="clean-name-serif">Hendry, S.Si., M.T.I</h2>
+              <p class="clean-parents-name">Son of Mr. Tju Sjin Tjhong &amp; Mrs. Susana</p>
+            </div>
+            <div class="clean-ampersand">&amp;</div>
+            <div class="parents-block">
+              <h2 class="clean-name-serif">Valensia Huang, S.Si., M.M.</h2>
+              <p class="clean-parents-name">Daughter of Mr. Bong Ket Hau &amp; Mrs. Liauw Su San</p>
+            </div>
+          </div>
+          
+          <!-- SWIPE INDICATOR -->
+          <div class="swipe-indicator" id="swipe-indicator">
+            <span class="swipe-text">Swipe to Open</span>
+            <span class="swipe-arrow">→</span>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- PAGE 2: DETAILS (CLEAN + LINE ART + YELLOW FLOWERS) -->
+    <section class="brochure-panel">
+      <div class="clean-panel-container">
+        
+        <!-- Yellow Floral Accents -->
+        <img src="floral-branch.png" class="floral-accent top-left" alt="">
+        <img src="floral-branch.png" class="floral-accent bottom-right" alt="">
+
+        <div class="clean-panel-content">
+          
+          <h2 class="clean-title">THE CELEBRATION</h2>
+          
+          <div class="event-row">
+            <img src="line-church.png" class="line-art-icon" alt="Church">
+            <div class="event-details">
+              <h3 class="clean-event-type">HOLY MATRIMONY</h3>
+              <p class="clean-time">13.00 - 14.30 WIB</p>
+              <p class="clean-location">Gereja Santo Thomas Rasul</p>
+            </div>
+          </div>
+
+          <div class="event-row">
+            <img src="line-dance.png" class="line-art-icon" alt="Reception">
+            <div class="event-details">
+              <h3 class="clean-event-type">RECEPTION</h3>
+              <p class="clean-time">18.30 WIB till Done</p>
+              <p class="clean-location">HARRIS Suites Puri Mansion</p>
+            </div>
+          </div>
+
+          <div class="clean-divider"></div>
+          
+          <h2 class="clean-title">WEDDING GIFT</h2>
+          <p class="clean-address">Your presence is our greatest gift.<br>If you wish to bless us:</p>
+          <p class="clean-time" style="margin-top: 5px;">BCA: 1234567890<br>a.n. Hendry</p>
+          
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <script>
+    const container = document.querySelector('.brochure-container');
+    const indicator = document.getElementById('swipe-indicator');
+    let isScrolling = false;
+
+    // Convert vertical mouse scroll into horizontal scroll, accounting for CSS scroll-snap
+    container.addEventListener('wheel', (evt) => {
+      // Only act if there's a vertical scroll and we aren't scrolling sideways on a trackpad
+      if (Math.abs(evt.deltaY) > Math.abs(evt.deltaX)) {
+        evt.preventDefault();
+        
+        if (isScrolling) return;
+
+        // Ignore tiny accidental trackpad movements
+        if (Math.abs(evt.deltaY) > 20) {
+          isScrolling = true;
+          
+          if (evt.deltaY > 0) {
+            // Scroll down -> go right (next panel)
+            container.scrollBy({ left: window.innerWidth * 0.6, behavior: 'smooth' });
+          } else {
+            // Scroll up -> go left (previous panel)
+            container.scrollBy({ left: -window.innerWidth * 0.6, behavior: 'smooth' });
+          }
+
+          // Lock scroll for 600ms to allow smooth scroll & snap to finish
+          setTimeout(() => { isScrolling = false; }, 600);
+        }
+      }
+    }, { passive: false });
+
+    // Hide indicator when scrolled
+    container.addEventListener('scroll', () => {
+      if (container.scrollLeft > 20 && indicator) {
+        indicator.style.opacity = '0';
+      }
+    });
+  </script>
+</body>
+</html>
