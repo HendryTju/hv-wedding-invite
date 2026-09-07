@@ -77,122 +77,42 @@ const allPhotos = await Promise.all(
     </section>
 
     <!-- STORY SECTION -->
-    <section id="story" class="relative min-h-screen w-full bg-[#314a31] text-[#fbf4e6] flex flex-col items-center justify-center p-8 lg:p-20 overflow-hidden text-center">
-      <div class="z-10 flex flex-col items-center max-w-3xl mx-auto space-y-16">
+    <!-- STORY SECTION -->
+    <section id="story" class="relative min-h-screen w-full bg-gradient-to-b from-dark to-[#314a31] text-[#fbf4e6] flex flex-col items-center justify-center py-24 px-6 lg:px-20 overflow-hidden">
+      
+      <div class="z-10 flex flex-col lg:flex-row items-center max-w-7xl mx-auto gap-16 lg:gap-24 w-full">
         
-        <p class="text-sm md:text-base lg:text-lg font-medium leading-[2.5] md:leading-[2.5] tracking-widest">
-          <span class="font-black text-white text-base md:text-xl">M</span>et in August 2021, during COVID.<br>
-          <span class="font-black text-white text-base md:text-xl">A</span> dating app brought us together.<br>
-          <span class="font-black text-white text-base md:text-xl">R</span>ight away, it felt easy.<br>
-          <span class="font-black text-white text-base md:text-xl">R</span>ealised we had something worth keeping.<br>
-          <span class="font-black text-white text-base md:text-xl">Y</span>ears later, we're still choosing each other.<br>
-          <br>
-          <span class="font-black text-white text-base md:text-xl">M</span>ade it official in June 2024, at Bukit Timah.<br>
-          <span class="font-black text-white text-base md:text-xl">E</span>verything since has led us here.
-        </p>
-
-        <div class="flex flex-col items-center gap-6">
-          <h2 class="font-serif italic text-5xl md:text-6xl text-[#f9d7d9] font-bold">You're Invited!</h2>
-          <p class="text-base md:text-2xl font-black uppercase tracking-[5px] text-[#f9d7d9] leading-relaxed">
-            To Celebrate<br>Our Big Day
-          </p>
+        <!-- Left Side: Photos -->
+        <div class="flex-1 flex items-center justify-center gap-4 md:gap-6 w-full max-w-2xl mx-auto">
+          <!-- Photo 1 -->
+          <div class="w-1/2 aspect-[2/3] overflow-hidden rounded-[100px] rounded-bl-xl shadow-2xl translate-y-8">
+            {allPhotos[12] && <Image src={allPhotos[12]} alt="Groom" class="w-full h-full object-cover object-[center_20%] custom-monochrome hover:scale-105 transition-transform duration-700" widths={[600]} sizes="(max-width: 1024px) 50vw, 33vw" />}
+          </div>
+          <!-- Photo 2 -->
+          <div class="w-1/2 aspect-[2/3] overflow-hidden rounded-[100px] rounded-tr-xl shadow-2xl -translate-y-8">
+            {allPhotos[13] && <Image src={allPhotos[13]} alt="Bride" class="w-full h-full object-cover object-[center_20%] custom-monochrome hover:scale-105 transition-transform duration-700" widths={[600]} sizes="(max-width: 1024px) 50vw, 33vw" />}
+          </div>
         </div>
 
-      </div>
-    </section>
-
-    <!-- GALLERY SECTION -->
-    <section id="gallery" class="relative w-full bg-light text-dark flex flex-col items-center justify-center pt-20 pb-10 px-4 md:px-8 overflow-hidden">
-      <div class="z-10 flex flex-col items-center text-center max-w-7xl mx-auto w-full">
-        <h2 class="text-4xl md:text-6xl font-black uppercase tracking-[5px] mb-12">Our Moments</h2>
-        <div class="columns-2 md:columns-3 lg:columns-4 gap-4 w-full">
-          {allPhotos.map((photo, i) => (
-            <div class="mb-4 break-inside-avoid overflow-hidden rounded-2xl shadow-md">
-              <Image 
-                src={photo} 
-                alt={`Prewedding photo ${i + 1}`} 
-                class="w-full h-auto object-cover hover:scale-105 transition-transform duration-500" 
-                widths={[400, 800]} 
-                sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
-              />
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-
-    <!-- DETAILS SECTION -->
-    <section id="details" class="relative min-h-screen w-full bg-light text-dark flex flex-col items-center justify-center p-8 lg:p-20 py-32 overflow-hidden">
-      <div class="z-10 flex flex-col items-center text-center max-w-5xl mx-auto w-full">
-        <h2 class="text-4xl md:text-6xl lg:text-7xl font-black uppercase tracking-[5px] mb-16">The Celebration</h2>
-        
-        <div class="flex flex-col w-full items-center gap-6">
+        <!-- Right Side: Text -->
+        <div class="flex-1 flex flex-col items-center lg:items-start text-center lg:text-left space-y-12">
           
-          <!-- Accordion: Holy Matrimony -->
-          <details class="group w-full max-w-3xl border-[1.5px] border-dark rounded-[40px] overflow-hidden bg-light transition-all open:bg-secondary">
-            <summary class="flex justify-between items-center cursor-pointer p-8 md:p-10 outline-none select-none">
-              <h3 class="text-xl md:text-3xl font-black uppercase tracking-[3px]">Holy Matrimony</h3>
-              <span class="text-3xl font-light transition-transform group-open:rotate-45">+</span>
-            </summary>
-            <div class="p-8 md:p-10 pt-0 text-left border-t-[1.5px] border-dark/10">
-              <div class="text-base md:text-xl font-medium tracking-widest space-y-4 uppercase">
-                <p class="opacity-70">13.00 - 14.30 WIB</p>
-                <p class="font-black text-2xl">Gereja Santo Thomas Rasul</p>
-                <p class="text-sm font-bold opacity-60">Jalan Bojong Raya, Jakarta Barat</p>
-              </div>
-            </div>
-          </details>
-
-          <!-- Accordion: Reception -->
-          <details class="group w-full max-w-3xl border-[1.5px] border-dark rounded-[40px] overflow-hidden bg-light transition-all open:bg-primary">
-            <summary class="flex justify-between items-center cursor-pointer p-8 md:p-10 outline-none select-none">
-              <h3 class="text-xl md:text-3xl font-black uppercase tracking-[3px]">Reception</h3>
-              <span class="text-3xl font-light transition-transform group-open:rotate-45">+</span>
-            </summary>
-            <div class="p-8 md:p-10 pt-0 text-left border-t-[1.5px] border-dark/10">
-              <div class="text-base md:text-xl font-medium tracking-widest space-y-4 uppercase">
-                <p class="opacity-70">18.30 WIB till Done</p>
-                <p class="font-black text-2xl">HARRIS Suites Puri Mansion</p>
-                <p class="text-sm font-bold opacity-60">CBD Puri Kembangan, Jakarta Barat</p>
-              </div>
-            </div>
-          </details>
-
-          <!-- Card: What to Wear -->
-          <div class="w-full max-w-3xl border-[1.5px] border-[#2c402c] rounded-[40px] overflow-hidden bg-[#fbf4e6] p-8 md:p-10 text-left text-[#2c402c]">
-            <div class="flex items-center gap-4 mb-6">
-              <!-- Simple Suit & Dress icon SVG -->
-              <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21v-8m0 0V5a2 2 0 012-2h-2m0 0a2 2 0 00-2 2v8m0 0H8m4 0h4m-4 8H8m4 0h4m-8-8v8m12-8v8"></path></svg>
-              <h3 class="text-xl md:text-2xl font-bold uppercase tracking-[3px]">What To Wear</h3>
-            </div>
-            
-            <div class="space-y-4 font-medium text-sm md:text-base">
-              <p class="font-bold text-lg">Semi-Formal</p>
-              <p><span class="font-bold">Recommended:</span> Linen suits, relaxed button-ups, batik shirts, flowy dresses, Kebaya (warmly welcomed)</p>
-              <p><span class="font-bold">Please Avoid:</span> Shorts, Bermudas, Sandals, Swimwear, Crop tops, White</p>
-              
-              <p class="pt-4">You may want to take note of our wedding colour palette:</p>
-              
-              <div class="flex flex-wrap gap-2 pt-2 text-[10px] md:text-xs font-bold tracking-widest uppercase text-white text-center">
-                <div class="bg-[#785333] rounded-xl w-24 h-24 md:w-28 md:h-28 flex items-center justify-center p-2 shadow-sm">WOOD /<br>RATTAN</div>
-                <div class="bg-[#314a31] rounded-xl w-24 h-24 md:w-28 md:h-28 flex items-center justify-center p-2 shadow-sm">FOREST</div>
-                <div class="bg-[#f3a6a1] rounded-xl w-24 h-24 md:w-28 md:h-28 flex items-center justify-center p-2 shadow-sm text-[#2c402c]">PASTEL<br>PINK</div>
-                <div class="bg-[#9ec576] rounded-xl w-24 h-24 md:w-28 md:h-28 flex items-center justify-center p-2 shadow-sm text-[#2c402c]">PASTEL<br>GREEN</div>
-                <div class="bg-[#ef7e32] rounded-xl w-24 h-24 md:w-28 md:h-28 flex items-center justify-center p-2 shadow-sm">SUNSET</div>
-                <div class="bg-[#f4c859] rounded-xl w-24 h-24 md:w-28 md:h-28 flex items-center justify-center p-2 shadow-sm text-[#2c402c]">SUNRISE</div>
-                <div class="bg-[#f5dab8] rounded-xl w-24 h-24 md:w-28 md:h-28 flex items-center justify-center p-2 shadow-sm text-[#2c402c]">SAND</div>
-              </div>
-            </div>
+          <div class="space-y-4">
+            <h2 class="font-serif italic text-4xl md:text-5xl text-primary font-bold">Our Story</h2>
+            <div class="w-12 h-1 bg-primary mx-auto lg:mx-0 rounded-full"></div>
           </div>
 
-          <!-- Card: Tea Ceremony -->
-          <div class="w-full max-w-3xl border-[1.5px] border-[#2c402c] rounded-[40px] overflow-hidden bg-[#fbf4e6] p-8 md:p-10 text-left text-[#2c402c]">
-            <div class="flex items-center gap-4 mb-4">
-              <span class="text-4xl font-serif leading-none">囍</span>
-              <h3 class="text-xl md:text-2xl font-bold uppercase tracking-[3px]">Tea Ceremony</h3>
-            </div>
-            <p class="font-medium text-sm md:text-base md:pl-12">
-              Family members are cordially invited to the tea ceremony (3:00 PM) @ <span class="italic">Purnama Garden</span>
+          <p class="text-sm md:text-base lg:text-lg font-medium leading-[2.5] tracking-widest text-[#fbf4e6]/90">
+            We started as strangers,<br>
+            But guided by God's perfect timing, we found each other.<br>
+            Soon, we join our lives as one.<br>
+            To infinity and beyond.
+          </p>
+
+          <div class="flex flex-col items-center lg:items-start gap-4 pt-4">
+            <h3 class="font-serif italic text-4xl md:text-5xl text-primary font-bold">You're Invited!</h3>
+            <p class="text-sm md:text-xl font-black uppercase tracking-[5px] text-[#fbf4e6] leading-relaxed">
+              To Celebrate<br>Our Big Day
             </p>
           </div>
 
@@ -200,51 +120,230 @@ const allPhotos = await Promise.all(
       </div>
     </section>
 
-    <!-- GIFT SECTION -->
-    <section id="gift" class="relative min-h-screen w-full bg-[#f9d7d9] text-[#2c402c] flex flex-col items-center justify-center p-4 lg:p-20 overflow-hidden">
-      
-      <!-- The Ornate Frame Container -->
-      <div class="relative w-full max-w-sm aspect-[2/3] md:max-w-md flex items-center justify-center p-2 mb-8">
-        <!-- Outer Border -->
-        <div class="absolute inset-0 border-2 border-[#fff0b3] rounded-t-[5rem] rounded-b-[5rem] opacity-60"></div>
-        <!-- Inner Border -->
-        <div class="absolute inset-2 border-2 border-[#fff0b3] rounded-t-[4.5rem] rounded-b-[4.5rem] opacity-80"></div>
+    <!-- GALLERY SECTION -->
+    <section id="gallery" class="relative w-full bg-[#314a31] text-[#fbf4e6] py-24 px-4 md:px-8 overflow-hidden">
+      <div class="z-10 flex flex-col items-center text-center max-w-5xl mx-auto w-full">
         
-        <!-- The Image and Overlay -->
-        <div class="relative w-full h-full rounded-t-[4rem] rounded-b-[4rem] overflow-hidden bg-dark shadow-2xl">
-          <Image src={coupleImage} class="absolute inset-0 w-full h-full object-cover opacity-60 mix-blend-multiply grayscale" alt="Couple" />
+        <div class="space-y-4 mb-16">
+          <h2 class="font-serif italic text-4xl md:text-5xl text-primary font-bold">Our Moments</h2>
+          <div class="w-12 h-1 bg-primary mx-auto rounded-full"></div>
+        </div>
+
+        <!-- Scrapbook Collage Layout -->
+        <div class="w-full bg-[#fbf4e6] p-2 md:p-4 shadow-2xl flex flex-col gap-2 md:gap-4 rounded-xl">
           
-          <div class="absolute inset-0 flex items-center justify-center p-8 text-center">
-            <h2 class="font-serif italic text-4xl md:text-5xl lg:text-6xl text-[#fff9e6] font-bold leading-tight" style="text-shadow: 2px 2px 8px rgba(0,0,0,0.5);">
-              Your<br>presence<br>is our<br>greatest<br>gift!
+          <!-- Top Row -->
+          <div class="grid grid-cols-3 gap-2 md:gap-4">
+            <div class="col-span-1 relative overflow-hidden rounded-lg" style="aspect-ratio: 3/4;">
+              {allPhotos[0] && <Image src={allPhotos[0]} alt="Photo 1" class="w-full h-full object-cover custom-monochrome hover:scale-105 transition-transform duration-700" widths={[400]} sizes="33vw" />}
+            </div>
+            <div class="col-span-1 relative overflow-hidden rounded-lg" style="aspect-ratio: 3/4;">
+              {allPhotos[1] && <Image src={allPhotos[1]} alt="Photo 2" class="w-full h-full object-cover custom-monochrome hover:scale-105 transition-transform duration-700" widths={[400]} sizes="33vw" />}
+            </div>
+            <div class="col-span-1 relative overflow-hidden rounded-lg" style="aspect-ratio: 3/4;">
+              {allPhotos[2] && <Image src={allPhotos[2]} alt="Photo 3" class="w-full h-full object-cover custom-monochrome hover:scale-105 transition-transform duration-700" widths={[400]} sizes="33vw" />}
+            </div>
+          </div>
+
+          <!-- Middle Row -->
+          <div class="w-full aspect-[4/3] md:aspect-[21/9] relative overflow-hidden flex items-center justify-center group bg-[#314a31]/20 rounded-xl">
+            {allPhotos[3] && <Image src={allPhotos[3]} alt="Background" class="absolute inset-0 w-full h-full object-cover object-[center_20%] custom-monochrome opacity-80 group-hover:scale-105 transition-transform duration-1000" widths={[1200]} sizes="100vw" />}
+            
+            <!-- Brush Overlays using CSS Blob -->
+            <div class="absolute top-[-10%] left-[2%] w-[45%] md:w-[30%] aspect-[4/3] overflow-hidden z-10 custom-blob-1 shadow-2xl">
+              {(allPhotos[4] || allPhotos[0]) && <Image src={allPhotos[4] || allPhotos[0]} alt="Overlay 1" class="w-full h-full object-cover object-[center_20%] custom-monochrome hover:scale-110 transition-transform duration-700" widths={[400]} sizes="33vw" />}
+            </div>
+            
+            <div class="absolute bottom-[-10%] right-[2%] w-[45%] md:w-[30%] aspect-square overflow-hidden z-10 custom-blob-2 shadow-2xl">
+              {(allPhotos[5] || allPhotos[1]) && <Image src={allPhotos[5] || allPhotos[1]} alt="Overlay 2" class="w-full h-full object-cover object-[center_20%] custom-monochrome hover:scale-110 transition-transform duration-700" widths={[400]} sizes="33vw" />}
+            </div>
+
+            <!-- Hand-drawn Hearts SVG -->
+            <div class="absolute top-[10%] right-[10%] z-20 text-[#fbf4e6] drop-shadow-md animate-pulse">
+              <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="rotate-12">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+              </svg>
+            </div>
+            
+            <div class="absolute bottom-[20%] left-[10%] z-20 text-[#fbf4e6]/80 drop-shadow-md animate-pulse hidden md:block">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="-rotate-12">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+              </svg>
+            </div>
+
+            <!-- Center Text -->
+            <h2 class="relative z-20 font-serif italic text-4xl md:text-7xl lg:text-[6rem] text-white drop-shadow-lg text-center leading-tight tracking-wide">
+              Our love story
             </h2>
           </div>
+
+          <!-- Bottom Row -->
+          <div class="grid grid-cols-3 gap-2 md:gap-4">
+            <div class="col-span-1 relative overflow-hidden rounded-lg" style="aspect-ratio: 3/4;">
+              {allPhotos[6] && <Image src={allPhotos[6]} alt="Photo 5" class="w-full h-full object-cover custom-monochrome hover:scale-105 transition-transform duration-700" widths={[400]} sizes="33vw" />}
+            </div>
+            <div class="col-span-1 relative overflow-hidden rounded-lg" style="aspect-ratio: 3/4;">
+              {allPhotos[7] && <Image src={allPhotos[7]} alt="Photo 6" class="w-full h-full object-cover custom-monochrome hover:scale-105 transition-transform duration-700" widths={[400]} sizes="33vw" />}
+            </div>
+            <div class="col-span-1 relative overflow-hidden rounded-lg" style="aspect-ratio: 3/4;">
+              {allPhotos[8] && <Image src={allPhotos[8]} alt="Photo 7" class="w-full h-full object-cover custom-monochrome hover:scale-105 transition-transform duration-700" widths={[400]} sizes="33vw" />}
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <style is:global>
+      .custom-monochrome {
+        filter: grayscale(100%) sepia(20%) contrast(1.15) brightness(0.95);
+      }
+      .custom-blob-1 {
+        border-radius: 65% 35% 25% 75% / 55% 60% 40% 45%;
+      }
+      .custom-blob-2 {
+        border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+      }
+    </style>
+
+    <!-- DETAILS SECTION -->
+    <section id="details" class="relative min-h-screen w-full bg-[#314a31] text-[#fbf4e6] flex flex-col items-center justify-center p-8 lg:p-20 py-32 overflow-hidden">
+      <div class="z-10 flex flex-col items-center text-center max-w-5xl mx-auto w-full">
+        <h2 class="text-4xl md:text-6xl lg:text-7xl font-black uppercase tracking-[5px] mb-16 text-primary">The Celebration</h2>
+        
+        <div class="flex flex-col w-full items-center gap-6">
+          
+          <!-- Accordion: Holy Matrimony -->
+          <details class="group w-full max-w-3xl border-[1.5px] border-white/20 rounded-[40px] overflow-hidden bg-[#fbf4e6] transition-all open:bg-white text-[#2c402c]">
+            <summary class="flex justify-between items-center cursor-pointer p-8 md:p-10 outline-none select-none">
+              <h3 class="text-xl md:text-3xl font-black uppercase tracking-[3px] text-[#314a31]">Holy Matrimony</h3>
+              <span class="text-3xl font-light transition-transform group-open:rotate-45 text-[#314a31]">+</span>
+            </summary>
+            <div class="p-8 md:p-10 pt-0 text-left border-t-[1.5px] border-[#314a31]/10">
+              <div class="text-base md:text-xl font-medium tracking-widest space-y-4 uppercase">
+                <p class="opacity-70">13.00 - 14.30 WIB</p>
+                <p class="font-black text-2xl text-[#314a31]">Gereja Santo Thomas Rasul</p>
+                <p class="text-sm font-bold opacity-60">Jalan Bojong Raya, Jakarta Barat</p>
+                
+                <a href="https://www.google.com/maps/search/?api=1&query=Gereja+Santo+Thomas+Rasul+Jakarta" target="_blank" class="inline-flex items-center gap-2 mt-4 text-xs font-bold uppercase tracking-[2px] text-[#fbf4e6] bg-[#314a31] py-3 px-6 rounded-full hover:bg-[#253825] transition-colors">
+                  <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z"/></svg>
+                  View on Maps
+                </a>
+              </div>
+            </div>
+          </details>
+
+          <!-- Accordion: Reception -->
+          <details class="group w-full max-w-3xl border-[1.5px] border-white/20 rounded-[40px] overflow-hidden bg-[#fbf4e6] transition-all open:bg-white text-[#2c402c]">
+            <summary class="flex justify-between items-center cursor-pointer p-8 md:p-10 outline-none select-none">
+              <h3 class="text-xl md:text-3xl font-black uppercase tracking-[3px] text-[#314a31]">Reception</h3>
+              <span class="text-3xl font-light transition-transform group-open:rotate-45 text-[#314a31]">+</span>
+            </summary>
+            <div class="p-8 md:p-10 pt-0 text-left border-t-[1.5px] border-[#314a31]/10">
+              <div class="text-base md:text-xl font-medium tracking-widest space-y-4 uppercase">
+                <p class="opacity-70">18.30 WIB till Done</p>
+                <p class="font-black text-2xl text-[#314a31]">HARRIS Suites Puri Mansion</p>
+                <p class="text-sm font-bold opacity-60">CBD Puri Kembangan, Jakarta Barat</p>
+
+                <a href="https://www.google.com/maps/search/?api=1&query=HARRIS+Suites+Puri+Mansion+Jakarta" target="_blank" class="inline-flex items-center gap-2 mt-4 text-xs font-bold uppercase tracking-[2px] text-[#fbf4e6] bg-[#314a31] py-3 px-6 rounded-full hover:bg-[#253825] transition-colors">
+                  <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z"/></svg>
+                  View on Maps
+                </a>
+              </div>
+            </div>
+          </details>
+
+          <!-- Card: What to Wear -->
+          <div class="w-full max-w-3xl border-[1.5px] border-white/20 rounded-[40px] overflow-hidden bg-[#fbf4e6] p-8 md:p-10 text-left text-[#2c402c]">
+            <div class="flex items-center gap-4 mb-6">
+              <!-- Elegant Sparkles Icon -->
+              <svg class="w-8 h-8 text-[#314a31]" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.259 8.715L18 9.75l-.259-1.035a3.375 3.375 0 00-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 002.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 002.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 00-2.456 2.456zM16.894 20.567L16.5 21.75l-.394-1.183a2.25 2.25 0 00-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 001.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 001.423 1.423l1.183.394-1.183.394a2.25 2.25 0 00-1.423 1.423z"></path>
+              </svg>
+              <h3 class="text-xl md:text-2xl font-bold uppercase tracking-[3px] text-[#314a31]">What To Wear</h3>
+            </div>
+            
+            <div class="space-y-4 font-medium text-sm md:text-base opacity-90">
+              <p class="font-bold text-lg text-[#314a31]">Semi-Formal</p>
+              <p><span class="font-bold text-[#314a31]">Recommended:</span> Linen suits, relaxed button-ups, batik shirts, flowy dresses, Kebaya (warmly welcomed)</p>
+              <p><span class="font-bold text-[#314a31]">Please Avoid:</span> All Black / White</p>
+            </div>
+          </div>
+
+          <!-- Card: Tea Ceremony -->
+          <div class="w-full max-w-3xl border-[1.5px] border-white/20 rounded-[40px] overflow-hidden bg-[#fbf4e6] p-8 md:p-10 text-left text-[#2c402c]">
+            <div class="flex items-center gap-4 mb-4">
+              <span class="text-4xl font-serif leading-none text-[#314a31]">囍</span>
+              <h3 class="text-xl md:text-2xl font-bold uppercase tracking-[3px] text-[#314a31]">Tea Ceremony</h3>
+            </div>
+            <p class="font-medium text-sm md:text-base md:pl-12 opacity-90">
+              Family members are cordially invited to the tea ceremony (16.00 WIB) @ <span class="italic">Purnama Garden</span>
+            </p>
+          </div>
+
         </div>
       </div>
+    </section>
 
-      <!-- Footer Text -->
-      <div class="text-center space-y-2 mt-8 z-10">
-        <p class="text-xs md:text-sm font-black uppercase tracking-[3px] text-[#2c402c]">
-          If you wish to give,
-        </p>
-        <p class="text-xs md:text-sm font-black uppercase tracking-[3px] text-[#2c402c]">
-          your gesture is warmly appreciated
-        </p>
+
+    <!-- GIFT SECTION -->
+    <section id="gift" class="relative min-h-screen w-full bg-[#314a31] text-[#fbf4e6] flex flex-col items-center justify-center p-6 lg:p-20 overflow-hidden">
+      
+      <div class="z-10 flex flex-col lg:flex-row items-center justify-center max-w-6xl mx-auto gap-12 lg:gap-24 w-full">
+        
+        <!-- Left Side: Ornate Frame Container -->
+        <div class="relative w-full max-w-sm aspect-[2/3] md:max-w-md flex items-center justify-center p-2 flex-shrink-0">
+          <!-- Outer Border -->
+          <div class="absolute inset-0 border-2 border-primary rounded-t-[5rem] rounded-b-[5rem] opacity-60"></div>
+          <!-- Inner Border -->
+          <div class="absolute inset-2 border-2 border-primary rounded-t-[4.5rem] rounded-b-[4.5rem] opacity-80"></div>
+          
+          <!-- The Image -->
+          <div class="relative w-full h-full rounded-t-[4rem] rounded-b-[4rem] overflow-hidden bg-[#253825] shadow-2xl">
+            <Image src={coupleImage} class="absolute inset-0 w-full h-full object-cover opacity-60 mix-blend-multiply grayscale hover:scale-105 transition-transform duration-1000" alt="Couple" />
+          </div>
+        </div>
+
+        <!-- Right Side: Text and Bank Details -->
+        <div class="flex flex-col items-center lg:items-start text-center lg:text-left space-y-10 lg:space-y-12">
+          
+          <h2 class="font-serif italic text-5xl md:text-6xl lg:text-7xl text-primary font-bold leading-[1.1] drop-shadow-lg">
+            Your<br>presence<br>is our<br>greatest<br>gift!
+          </h2>
+
+          <div class="space-y-2 opacity-90">
+            <p class="text-xs md:text-sm font-black uppercase tracking-[3px] text-[#fbf4e6]">
+              If you wish to give,
+            </p>
+            <p class="text-xs md:text-sm font-black uppercase tracking-[3px] text-[#fbf4e6]">
+              your gesture is warmly appreciated
+            </p>
+          </div>
+
+          <!-- Bank Details -->
+          <div class="flex flex-col items-center lg:items-start gap-4 pt-4">
+            <div class="flex flex-col gap-2 items-center lg:items-start">
+              <span class="text-sm md:text-base font-bold uppercase tracking-[4px]">BCA</span>
+              <span class="text-2xl md:text-3xl font-black tracking-widest text-primary">1234567890</span>
+              <span class="text-xs md:text-sm font-bold uppercase tracking-[2px] opacity-80">A.N. Hendry</span>
+            </div>
+            
+            <button type="button" onclick="navigator.clipboard.writeText('1234567890'); const original = this.innerHTML; this.innerHTML='COPIED!'; setTimeout(() => this.innerHTML=original, 2000)" class="mt-4 text-xs font-bold uppercase tracking-[2px] text-[#fbf4e6] bg-[#253825] py-4 px-8 rounded-full hover:bg-black/30 transition-colors border-[1.5px] border-white/20 inline-flex items-center justify-center gap-3">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+              <span>COPY NUMBER</span>
+            </button>
+          </div>
+
+        </div>
+
       </div>
-
-      <!-- Bank Details (Hidden by default, shown cleanly below if needed, or keeping it minimal) -->
-      <div class="mt-12 flex flex-col items-center gap-2 opacity-80">
-        <span class="text-lg md:text-xl font-bold uppercase tracking-widest text-[#2c402c]">BCA • 1234567890</span>
-        <span class="text-xs md:text-sm font-bold uppercase tracking-[3px] text-[#2c402c]">A.N. Hendry</span>
-      </div>
-
     </section>
 
     <!-- RSVP SECTION -->
     <section id="rsvp" class="relative min-h-screen w-full bg-[#314a31] text-[#fbf4e6] flex flex-col items-center justify-center p-8 lg:p-20 overflow-hidden font-sans">
       <div class="z-10 flex flex-col items-center max-w-2xl mx-auto w-full">
-        <h2 class="text-5xl md:text-6xl lg:text-7xl font-medium tracking-widest mb-6 uppercase">RSVP</h2>
-        <p class="text-xs md:text-sm font-bold uppercase tracking-[4px] mb-12 opacity-90 text-center">
+        <h2 class="text-5xl md:text-6xl lg:text-7xl font-medium tracking-widest mb-6 uppercase text-primary">RSVP</h2>
+        <p class="text-xs md:text-sm font-bold uppercase tracking-[4px] mb-12 opacity-90 text-center text-[#fbf4e6]">
           We would love for you to join us
         </p>
 
@@ -253,25 +352,25 @@ const allPhotos = await Promise.all(
           <!-- Name -->
           <div class="flex flex-col gap-2 text-left">
             <label class="text-xs font-bold uppercase tracking-widest text-[#fbf4e6]" for="guest-name">Full Name</label>
-            <input type="text" id="guest-name" name="name" required class="w-full p-4 rounded-xl bg-[#fbf4e6] border-none outline-none focus:ring-2 ring-[#f9d7d9] text-base placeholder-[#2c402c]/50 font-medium" placeholder="Your Name">
+            <input type="text" id="guest-name" name="name" required class="w-full p-4 rounded-xl bg-[#fbf4e6] border-none outline-none focus:ring-2 ring-primary text-base placeholder-[#2c402c]/50 font-medium" placeholder="Your Name">
           </div>
 
           <!-- Email -->
           <div class="flex flex-col gap-2 text-left">
             <label class="text-xs font-bold uppercase tracking-widest text-[#fbf4e6]" for="guest-email">Email Address</label>
-            <input type="email" id="guest-email" name="email" required class="w-full p-4 rounded-xl bg-[#fbf4e6] border-none outline-none focus:ring-2 ring-[#f9d7d9] text-base placeholder-[#2c402c]/50 font-medium" placeholder="hello@example.com">
+            <input type="email" id="guest-email" name="email" required class="w-full p-4 rounded-xl bg-[#fbf4e6] border-none outline-none focus:ring-2 ring-primary text-base placeholder-[#2c402c]/50 font-medium" placeholder="hello@example.com">
           </div>
 
           <!-- Phone -->
           <div class="flex flex-col gap-2 text-left">
             <label class="text-xs font-bold uppercase tracking-widest text-[#fbf4e6]" for="guest-phone">Phone Number</label>
-            <input type="tel" id="guest-phone" name="phone" required class="w-full p-4 rounded-xl bg-[#fbf4e6] border-none outline-none focus:ring-2 ring-[#f9d7d9] text-base placeholder-[#2c402c]/50 font-medium" placeholder="+62 812 3456 7890">
+            <input type="tel" id="guest-phone" name="phone" required class="w-full p-4 rounded-xl bg-[#fbf4e6] border-none outline-none focus:ring-2 ring-primary text-base placeholder-[#2c402c]/50 font-medium" placeholder="+62 812 3456 7890">
           </div>
 
           <!-- Pax -->
           <div class="flex flex-col gap-2 text-left">
             <label class="text-xs font-bold uppercase tracking-widest text-[#fbf4e6]" for="guest-pax">Number of Guests</label>
-            <select id="guest-pax" name="pax" required class="w-full p-4 rounded-xl bg-[#fbf4e6] border-none outline-none focus:ring-2 ring-[#f9d7d9] text-base font-medium appearance-none" style="background-image: url('data:image/svg+xml;utf8,<svg fill=\'%232c402c\' height=\'24\' viewBox=\'0 0 24 24\' width=\'24\' xmlns=\'http://www.w3.org/2000/svg\'><path d=\'M7 10l5 5 5-5z\'/></svg>'); background-repeat: no-repeat; background-position-x: 98%; background-position-y: 50%;">
+            <select id="guest-pax" name="pax" required class="w-full p-4 rounded-xl bg-[#fbf4e6] border-none outline-none focus:ring-2 ring-primary text-base font-medium appearance-none" style="background-image: url('data:image/svg+xml;utf8,<svg fill=\'%232c402c\' height=\'24\' viewBox=\'0 0 24 24\' width=\'24\' xmlns=\'http://www.w3.org/2000/svg\'><path d=\'M7 10l5 5 5-5z\'/></svg>'); background-repeat: no-repeat; background-position-x: 98%; background-position-y: 50%;">
               <option value="1">1 Person</option>
               <option value="2">2 Persons</option>
               <option value="3">3 Persons</option>
@@ -284,16 +383,16 @@ const allPhotos = await Promise.all(
             <label class="text-xs font-bold uppercase tracking-widest text-[#fbf4e6]">Events to Attend</label>
             <div class="flex flex-col gap-3">
               <label class="flex items-center gap-4 bg-[#fbf4e6] p-4 rounded-xl cursor-pointer hover:bg-[#fff0b3] transition-colors">
-                <input type="radio" name="events" value="Holy Matrimony" required class="w-4 h-4 text-[#2c402c] focus:ring-[#2c402c]">
-                <span class="font-medium text-base">Holy Matrimony Only</span>
+                <input type="radio" name="events" value="Holy Matrimony" required class="w-4 h-4 text-[#2c402c] focus:ring-primary accent-[#2c402c]">
+                <span class="font-medium text-base text-[#2c402c]">Holy Matrimony Only</span>
               </label>
               <label class="flex items-center gap-4 bg-[#fbf4e6] p-4 rounded-xl cursor-pointer hover:bg-[#fff0b3] transition-colors">
-                <input type="radio" name="events" value="Reception" required class="w-4 h-4 text-[#2c402c] focus:ring-[#2c402c]">
-                <span class="font-medium text-base">Reception Only</span>
+                <input type="radio" name="events" value="Reception" required class="w-4 h-4 text-[#2c402c] focus:ring-primary accent-[#2c402c]">
+                <span class="font-medium text-base text-[#2c402c]">Reception Only</span>
               </label>
               <label class="flex items-center gap-4 bg-[#fbf4e6] p-4 rounded-xl cursor-pointer hover:bg-[#fff0b3] transition-colors">
-                <input type="radio" name="events" value="Both" required class="w-4 h-4 text-[#2c402c] focus:ring-[#2c402c]">
-                <span class="font-medium text-base">Both Events</span>
+                <input type="radio" name="events" value="Both" required class="w-4 h-4 text-[#2c402c] focus:ring-primary accent-[#2c402c]">
+                <span class="font-medium text-base text-[#2c402c]">Both Events</span>
               </label>
             </div>
           </div>
@@ -301,24 +400,24 @@ const allPhotos = await Promise.all(
           <!-- Wishes -->
           <div class="flex flex-col gap-2 text-left">
             <label class="text-xs font-bold uppercase tracking-widest text-[#fbf4e6]" for="guest-wishes">Warm Wishes for the Couple</label>
-            <textarea id="guest-wishes" name="wishes" rows="4" class="w-full p-4 rounded-xl bg-[#fbf4e6] border-none outline-none focus:ring-2 ring-[#f9d7d9] text-base placeholder-[#2c402c]/50 font-medium resize-y" placeholder="Leave a message..."></textarea>
+            <textarea id="guest-wishes" name="wishes" rows="4" class="w-full p-4 rounded-xl bg-[#fbf4e6] border-none outline-none focus:ring-2 ring-primary text-base placeholder-[#2c402c]/50 font-medium resize-y" placeholder="Leave a message..."></textarea>
           </div>
 
-          <button type="submit" id="rsvp-submit-btn" class="mt-4 bg-[#f9d7d9] text-[#2c402c] font-bold uppercase tracking-[4px] py-5 px-8 rounded-full hover:bg-[#f3a6a1] transition-colors w-full text-sm">
+          <button type="submit" id="rsvp-submit-btn" class="mt-4 bg-primary text-[#314a31] font-bold uppercase tracking-[4px] py-5 px-8 rounded-full hover:bg-yellow-200 transition-colors w-full text-sm">
             Submit RSVP
           </button>
         </form>
 
         <!-- Success State -->
         <div id="rsvp-success" class="hidden w-full flex-col items-center gap-8 text-center mt-8">
-          <h3 class="font-serif italic text-4xl md:text-6xl text-[#f9d7d9] font-bold">Thank You!</h3>
-          <p class="text-lg md:text-xl font-medium tracking-widest leading-loose">
+          <h3 class="font-serif italic text-4xl md:text-6xl text-primary font-bold">Thank You!</h3>
+          <p class="text-lg md:text-xl font-medium tracking-widest leading-loose text-[#fbf4e6]">
             Your RSVP has been saved.<br>We can't wait to celebrate with you!
           </p>
 
-          <div class="w-full max-w-md h-[1px] bg-[#fbf4e6]/30 my-4"></div>
+          <div class="w-full max-w-md h-[1px] bg-white/20 my-4"></div>
 
-          <p class="text-sm font-bold uppercase tracking-widest mb-2 text-[#fbf4e6]">Save the Date</p>
+          <p class="text-sm font-bold uppercase tracking-widest mb-2 text-primary">Save the Date</p>
           <div id="calendar-links" class="flex flex-col gap-4 w-full max-w-sm mx-auto">
             <!-- Buttons injected here by JS -->
           </div>
@@ -364,7 +463,7 @@ const allPhotos = await Promise.all(
               const a = document.createElement('a');
               a.href = href;
               a.target = "_blank";
-              a.className = "bg-[#fbf4e6] text-[#2c402c] font-bold uppercase tracking-[2px] p-4 rounded-xl hover:bg-[#fff0b3] transition-colors w-full shadow-lg";
+              a.className = "bg-primary text-[#314a31] font-bold uppercase tracking-[2px] p-4 rounded-xl hover:bg-[#fff0b3] transition-colors w-full shadow-lg";
               a.textContent = text;
               return a;
             };
