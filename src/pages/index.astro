@@ -196,7 +196,7 @@ const allPhotos = await Promise.all(
 
     <style is:global>
       .custom-monochrome {
-        filter: grayscale(100%) sepia(20%) contrast(1.15) brightness(0.95);
+        filter: sepia(30%) contrast(1.05) saturate(1.2);
       }
       .custom-blob-1 {
         border-radius: 65% 35% 25% 75% / 55% 60% 40% 45%;
@@ -265,7 +265,6 @@ const allPhotos = await Promise.all(
             
             <div class="space-y-4 font-medium text-sm md:text-base opacity-90">
               <p class="font-bold text-lg text-[#314a31]">Semi-Formal</p>
-              <p><span class="font-bold text-[#314a31]">Recommended:</span> Linen suits, relaxed button-ups, batik shirts, flowy dresses, Kebaya (warmly welcomed)</p>
               <p><span class="font-bold text-[#314a31]">Please Avoid:</span> All Black / White</p>
             </div>
           </div>
@@ -321,17 +320,36 @@ const allPhotos = await Promise.all(
           </div>
 
           <!-- Bank Details -->
-          <div class="flex flex-col items-center lg:items-start gap-4 pt-4">
-            <div class="flex flex-col gap-2 items-center lg:items-start">
-              <span class="text-sm md:text-base font-bold uppercase tracking-[4px]">BCA</span>
-              <span class="text-2xl md:text-3xl font-black tracking-widest text-primary">1234567890</span>
-              <span class="text-xs md:text-sm font-bold uppercase tracking-[2px] opacity-80">A.N. Hendry</span>
-            </div>
+          <div class="flex flex-col sm:flex-row items-center lg:items-start gap-8 pt-4">
             
-            <button type="button" onclick="navigator.clipboard.writeText('1234567890'); const original = this.innerHTML; this.innerHTML='COPIED!'; setTimeout(() => this.innerHTML=original, 2000)" class="mt-4 text-xs font-bold uppercase tracking-[2px] text-[#fbf4e6] bg-[#253825] py-4 px-8 rounded-full hover:bg-black/30 transition-colors border-[1.5px] border-white/20 inline-flex items-center justify-center gap-3">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-              <span>COPY NUMBER</span>
-            </button>
+            <!-- Account 1 -->
+            <div class="flex flex-col items-center lg:items-start gap-3">
+              <div class="flex flex-col gap-1 items-center lg:items-start">
+                <span class="text-sm font-bold uppercase tracking-[4px]">BCA</span>
+                <span class="text-xl md:text-2xl font-black tracking-widest text-primary">1234567890</span>
+                <span class="text-[10px] md:text-xs font-bold uppercase tracking-[2px] opacity-80">A.N. Hendry</span>
+              </div>
+              
+              <button type="button" onclick="navigator.clipboard.writeText('1234567890'); const original = this.innerHTML; this.innerHTML='COPIED!'; setTimeout(() => this.innerHTML=original, 2000)" class="mt-2 text-[10px] font-bold uppercase tracking-[2px] text-[#fbf4e6] bg-[#253825] py-3 px-6 rounded-full hover:bg-black/30 transition-colors border-[1.5px] border-white/20 inline-flex items-center justify-center gap-2">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                <span>COPY NUMBER</span>
+              </button>
+            </div>
+
+            <!-- Account 2 -->
+            <div class="flex flex-col items-center lg:items-start gap-3">
+              <div class="flex flex-col gap-1 items-center lg:items-start">
+                <span class="text-sm font-bold uppercase tracking-[4px]">BCA</span>
+                <span class="text-xl md:text-2xl font-black tracking-widest text-primary">0987654321</span>
+                <span class="text-[10px] md:text-xs font-bold uppercase tracking-[2px] opacity-80">A.N. Valensia Huang</span>
+              </div>
+              
+              <button type="button" onclick="navigator.clipboard.writeText('0987654321'); const original = this.innerHTML; this.innerHTML='COPIED!'; setTimeout(() => this.innerHTML=original, 2000)" class="mt-2 text-[10px] font-bold uppercase tracking-[2px] text-[#fbf4e6] bg-[#253825] py-3 px-6 rounded-full hover:bg-black/30 transition-colors border-[1.5px] border-white/20 inline-flex items-center justify-center gap-2">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                <span>COPY NUMBER</span>
+              </button>
+            </div>
+
           </div>
 
         </div>
