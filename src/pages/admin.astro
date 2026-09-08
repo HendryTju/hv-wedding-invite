@@ -1,0 +1,123 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Admin - RSVP List">
+  <div class="min-h-screen bg-[#fbf4e6] text-[#2c402c] p-6 lg:p-12 font-sans selection:bg-[#314a31] selection:text-[#fbf4e6]">
+    <div class="max-w-7xl mx-auto">
+      
+      <div class="flex justify-between items-end mb-8">
+        <div>
+          <h1 class="font-serif italic text-4xl md:text-5xl text-[#314a31] font-bold drop-shadow-sm">Guest RSVPs</h1>
+          <p class="text-sm font-bold uppercase tracking-widest opacity-60 mt-2">Live Database View</p>
+        </div>
+        <a href="/" class="text-xs font-bold uppercase tracking-widest text-[#314a31] hover:underline bg-[#314a31]/10 px-4 py-2 rounded-full transition-colors">← Back</a>
+      </div>
+      
+      <div class="bg-white rounded-3xl shadow-2xl overflow-hidden border border-[#314a31]/10">
+        <div class="overflow-x-auto">
+          <table class="w-full text-left border-collapse">
+            <thead>
+              <tr class="bg-[#314a31] text-[#fbf4e6] text-xs uppercase tracking-[2px]">
+                <th class="p-5 font-black">Name</th>
+                <th class="p-5 font-black">Contact</th>
+                <th class="p-5 font-black text-center">Pax</th>
+                <th class="p-5 font-black">Events</th>
+                <th class="p-5 font-black">Wishes</th>
+                <th class="p-5 font-black">Date Submitted</th>
+              </tr>
+            </thead>
+            <tbody id="rsvp-table-body" class="divide-y divide-[#314a31]/10 text-sm font-medium">
+              <tr>
+                <td colspan="6" class="p-12 text-center text-black/50 font-bold animate-pulse">Loading RSVPs from Database...</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      
+      <div class="mt-8 flex justify-between items-center text-sm font-black uppercase tracking-widest text-[#314a31]">
+        <div class="flex gap-8">
+          <span id="total-submissions">Submissions: <span class="opacity-50">...</span></span>
+          <span id="total-pax">Total Pax: <span class="opacity-50">...</span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="module">
+    import { getAllRsvps } from '/rsvp.js';
+
+    async function loadRsvps() {
+      const tbody = document.getElementById('rsvp-table-body');
+      const totalSubmissionsSpan = document.getElementById('total-submissions');
+      const totalPaxSpan = document.getElementById('total-pax');
+      
+      try {
+        const rsvps = await getAllRsvps();
+        
+        if (rsvps.length === 0) {
+          tbody.innerHTML = '<tr><td colspan="6" class="p-12 text-center text-black/50 font-bold">No RSVPs yet. They will appear here once submitted.</td></tr>';
+          totalSubmissionsSpan.innerHTML = `Submissions: 0`;
+          totalPaxSpan.innerHTML = `Total Pax: 0`;
+          return;
+        }
+
+        let totalPax = 0;
+        
+        tbody.innerHTML = rsvps.map(rsvp => {
+          totalPax += parseInt(rsvp.pax || 0);
+          const date = new Date(rsvp.timestamp).toLocaleDateString('en-GB', { 
+            day: 'numeric', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit' 
+          });
+          
+          return `
+            <tr class="hover:bg-[#314a31]/5 transition-colors group">
+              <td class="p-5 font-bold whitespace-nowrap text-base">${escapeHTML(rsvp.name)}</td>
+              <td class="p-5">
+                <div class="flex flex-col gap-1">
+                  <a href="mailto:${escapeHTML(rsvp.email)}" class="hover:text-[#314a31] hover:underline">${escapeHTML(rsvp.email)}</a>
+                  <a href="tel:${escapeHTML(rsvp.phone)}" class="text-xs opacity-60 hover:text-[#314a31] hover:underline">${escapeHTML(rsvp.phone)}</a>
+                </div>
+              </td>
+              <td class="p-5 font-black text-[#314a31] text-center text-lg">${escapeHTML(String(rsvp.pax))}</td>
+              <td class="p-5">
+                <span class="inline-flex items-center px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-widest bg-[#314a31]/10 text-[#314a31]">
+                  ${escapeHTML(rsvp.events)}
+                </span>
+              </td>
+              <td class="p-5 italic text-xs max-w-[250px] opacity-80 break-words">
+                "${escapeHTML(rsvp.wishes || '')}"
+              </td>
+              <td class="p-5 text-xs opacity-60 whitespace-nowrap font-bold">${date}</td>
+            </tr>
+          `;
+        }).join('');
+        
+        totalSubmissionsSpan.innerHTML = `Submissions: <span class="text-xl">${rsvps.length}</span>`;
+        totalPaxSpan.innerHTML = `Total Pax: <span class="text-xl">${totalPax}</span>`;
+        
+      } catch (error) {
+        console.error(error);
+        tbody.innerHTML = '<tr><td colspan="6" class="p-12 text-center text-red-700 font-bold bg-red-50">Error connecting to database. Make sure Firebase is properly configured.</td></tr>';
+      }
+    }
+
+    // Helper to prevent XSS
+    function escapeHTML(str) {
+      if (!str) return '';
+      return String(str).replace(/[&<>'"]/g, 
+        tag => ({
+            '&': '&amp;',
+            '<': '&lt;',
+            '>': '&gt;',
+            "'": '&#39;',
+            '"': '&quot;'
+          }[tag] || tag)
+      );
+    }
+
+    // Run on load
+    loadRsvps();
+  </script>
+</Layout>
