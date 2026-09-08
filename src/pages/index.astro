@@ -86,50 +86,45 @@ const allPhotos = await Promise.all(
         <div class="flex-1 flex items-center justify-center gap-4 md:gap-6 w-full max-w-2xl mx-auto">
           <!-- Photo 1 -->
           <div class="w-1/2 aspect-[2/3] overflow-hidden rounded-[100px] rounded-bl-xl shadow-2xl translate-y-8">
-            {allPhotos[12] && <Image src={allPhotos[12]} alt="Groom" class="w-full h-full object-cover object-top custom-monochrome hover:scale-105 transition-transform duration-700" widths={[600]} sizes="(max-width: 1024px) 50vw, 33vw" />}
+            {allPhotos[12] && <Image src={allPhotos[12]} alt="Groom" class="w-full h-full object-cover object-[center_20%] custom-monochrome hover:scale-105 transition-transform duration-700" widths={[600]} sizes="(max-width: 1024px) 50vw, 33vw" />}
           </div>
           <!-- Photo 2 -->
           <div class="w-1/2 aspect-[2/3] overflow-hidden rounded-[100px] rounded-tr-xl shadow-2xl -translate-y-8">
-            {allPhotos[13] && <Image src={allPhotos[13]} alt="Bride" class="w-full h-full object-cover object-top custom-monochrome hover:scale-105 transition-transform duration-700" widths={[600]} sizes="(max-width: 1024px) 50vw, 33vw" />}
+            {allPhotos[13] && <Image src={allPhotos[13]} alt="Bride" class="w-full h-full object-cover object-[center_20%] custom-monochrome hover:scale-105 transition-transform duration-700" widths={[600]} sizes="(max-width: 1024px) 50vw, 33vw" />}
           </div>
         </div>
 
         <!-- Right Side: Text -->
         <div class="flex-1 flex flex-col items-center lg:items-start text-center lg:text-left space-y-12">
           
-          <div class="space-y-4">
-            <h2 class="font-serif italic text-4xl md:text-5xl text-primary font-bold">Our Story</h2>
-            <div class="w-12 h-1 bg-primary mx-auto lg:mx-0 rounded-full"></div>
+          <h2 class="font-serif italic text-4xl md:text-5xl lg:text-6xl text-primary font-bold leading-tight drop-shadow-lg">
+            Our Story
+          </h2>
+
+          <div class="space-y-6 text-sm md:text-base font-medium opacity-90 text-[#fbf4e6]">
+            <p>We started as strangers,</p>
+            <p>But guided by God's perfect timing, we found each other.</p>
+            <p>Soon, we join our lives as one.</p>
+            <p class="font-bold text-lg md:text-xl tracking-widest text-primary italic">To infinity and beyond.</p>
           </div>
 
-          <p class="text-sm md:text-base lg:text-lg font-medium leading-[2.5] tracking-widest text-[#fbf4e6]/90">
-            We started as strangers,<br>
-            But guided by God's perfect timing, we found each other.<br>
-            Soon, we join our lives as one.<br>
-            To infinity and beyond.
-          </p>
-
-          <div class="flex flex-col items-center lg:items-start gap-4 pt-4">
-            <h3 class="font-serif italic text-4xl md:text-5xl text-primary font-bold">You're Invited!</h3>
-            <p class="text-sm md:text-xl font-black uppercase tracking-[5px] text-[#fbf4e6] leading-relaxed">
-              To Celebrate<br>Our Big Day
-            </p>
+          <div class="pt-4 border-t border-white/20 w-3/4 lg:w-full">
+            <h3 class="text-xs md:text-sm font-black uppercase tracking-[3px] text-primary">You're Invited!</h3>
+            <p class="text-[10px] md:text-xs font-bold uppercase tracking-[2px] mt-2 opacity-70">TO CELEBRATE OUR BIG DAY</p>
           </div>
-
         </div>
+
       </div>
     </section>
 
     <!-- GALLERY SECTION -->
-    <section id="gallery" class="relative w-full bg-[#314a31] text-[#fbf4e6] py-24 px-4 md:px-8 overflow-hidden">
-      <div class="z-10 flex flex-col items-center text-center max-w-5xl mx-auto w-full">
-        
-        <div class="space-y-4 mb-16">
-          <h2 class="font-serif italic text-4xl md:text-5xl text-primary font-bold">Our Moments</h2>
-          <div class="w-12 h-1 bg-primary mx-auto rounded-full"></div>
-        </div>
+    <section id="gallery" class="relative min-h-screen w-full bg-[#314a31] flex flex-col items-center justify-center p-4 lg:p-20 overflow-hidden">
+      <div class="z-10 w-full max-w-5xl mx-auto flex flex-col items-center gap-12">
+        <h2 class="font-serif italic text-4xl md:text-5xl lg:text-6xl text-primary font-bold drop-shadow-lg text-center">
+          Our love story
+        </h2>
 
-        <!-- Scrapbook Collage Layout -->
+        <!-- Custom Scrapbook Layout -->
         <div class="w-full bg-[#fbf4e6] p-2 md:p-4 shadow-2xl flex flex-col gap-2 md:gap-4 rounded-xl">
           
           <!-- Top Row -->
@@ -147,7 +142,7 @@ const allPhotos = await Promise.all(
 
           <!-- Middle Row -->
           <div class="w-full aspect-[4/3] md:aspect-[21/9] relative overflow-hidden flex items-center justify-center group bg-[#314a31]/20 rounded-xl">
-            {allPhotos[3] && <Image src={allPhotos[3]} alt="Background" class="absolute inset-0 w-full h-full object-cover object-top custom-monochrome opacity-80 group-hover:scale-105 transition-transform duration-1000" widths={[1200]} sizes="100vw" />}
+            {allPhotos[3] && <Image src={allPhotos[3]} alt="Background" class="absolute inset-0 w-full h-full object-cover object-[center_20%] custom-monochrome opacity-80 group-hover:scale-105 transition-transform duration-1000" widths={[1200]} sizes="100vw" />}
             
             <!-- Brush Overlays using CSS Blob -->
             <div class="absolute top-[-10%] left-[2%] w-[45%] md:w-[30%] aspect-[4/3] overflow-hidden z-10 custom-blob-1 shadow-2xl">
