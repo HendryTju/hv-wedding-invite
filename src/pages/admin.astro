@@ -3,7 +3,18 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="Admin - RSVP List">
-  <div class="min-h-screen bg-[#fbf4e6] text-[#2c402c] p-6 lg:p-12 font-sans selection:bg-[#314a31] selection:text-[#fbf4e6]">
+  <!-- PIN Protection Overlay -->
+  <div id="pin-overlay" class="fixed inset-0 bg-[#314a31] z-[100] flex flex-col items-center justify-center text-[#fbf4e6] p-4 transition-opacity duration-500">
+    <h2 class="font-serif italic text-4xl mb-6 font-bold">Admin Access</h2>
+    <div class="flex flex-col gap-4 w-full max-w-xs">
+      <input type="password" id="pin-input" maxlength="6" inputmode="numeric" class="w-full text-center text-3xl tracking-[10px] p-4 rounded-2xl bg-[#253825] border border-white/10 outline-none focus:ring-2 ring-primary text-[#fbf4e6] placeholder-[#fbf4e6]/30 font-mono" placeholder="••••••">
+      <button id="pin-submit" class="w-full bg-primary text-[#314a31] font-bold uppercase tracking-widest p-4 rounded-2xl hover:bg-[#fff0b3] transition-colors mt-2">Unlock</button>
+      <p id="pin-error" class="text-red-400 text-sm text-center font-bold tracking-widest uppercase opacity-0 transition-opacity">Incorrect PIN</p>
+    </div>
+    <a href="/" class="mt-8 text-xs font-bold uppercase tracking-widest hover:underline opacity-70">← Back to Website</a>
+  </div>
+
+  <div id="admin-content" class="min-h-screen bg-[#fbf4e6] text-[#2c402c] p-6 lg:p-12 font-sans selection:bg-[#314a31] selection:text-[#fbf4e6] hidden">
     <div class="max-w-7xl mx-auto">
       
       <div class="flex justify-between items-end mb-8">
@@ -11,7 +22,7 @@ import Layout from '../layouts/Layout.astro';
           <h1 class="font-serif italic text-4xl md:text-5xl text-[#314a31] font-bold drop-shadow-sm">Guest RSVPs</h1>
           <p class="text-sm font-bold uppercase tracking-widest opacity-60 mt-2">Live Database View</p>
         </div>
-        <a href="/" class="text-xs font-bold uppercase tracking-widest text-[#314a31] hover:underline bg-[#314a31]/10 px-4 py-2 rounded-full transition-colors">← Back</a>
+        <a href="/" class="text-xs font-bold uppercase tracking-widest text-[#314a31] hover:underline bg-[#314a31]/10 px-4 py-2 rounded-full transition-colors">← Logout</a>
       </div>
       
       <div class="bg-white rounded-3xl shadow-2xl overflow-hidden border border-[#314a31]/10">
@@ -47,6 +58,41 @@ import Layout from '../layouts/Layout.astro';
 
   <script type="module">
     import { getAllRsvps } from '/rsvp.js';
+
+    // PIN LOGIC (Uses wedding date as default PIN)
+    const CORRECT_PIN = '291126';
+    
+    const pinOverlay = document.getElementById('pin-overlay');
+    const adminContent = document.getElementById('admin-content');
+    const pinInput = document.getElementById('pin-input');
+    const pinSubmit = document.getElementById('pin-submit');
+    const pinError = document.getElementById('pin-error');
+
+    function checkPin() {
+      if (pinInput.value === CORRECT_PIN) {
+        pinOverlay.classList.add('opacity-0');
+        setTimeout(() => {
+          pinOverlay.classList.add('hidden');
+          adminContent.classList.remove('hidden');
+          loadRsvps();
+        }, 500);
+      } else {
+        pinError.classList.remove('opacity-0');
+        pinInput.value = '';
+        pinInput.focus();
+        setTimeout(() => pinError.classList.add('opacity-0'), 2000);
+      }
+    }
+
+    pinSubmit.addEventListener('click', checkPin);
+    pinInput.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') checkPin();
+    });
+    
+    // Auto focus pin input on load
+    window.addEventListener('DOMContentLoaded', () => {
+      pinInput.focus();
+    });
 
     async function loadRsvps() {
       const tbody = document.getElementById('rsvp-table-body');
@@ -116,8 +162,5 @@ import Layout from '../layouts/Layout.astro';
           }[tag] || tag)
       );
     }
-
-    // Run on load
-    loadRsvps();
   </script>
 </Layout>
