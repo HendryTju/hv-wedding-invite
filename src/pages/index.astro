@@ -86,11 +86,11 @@ const allPhotos = await Promise.all(
         <div class="flex-1 flex items-center justify-center gap-4 md:gap-6 w-full max-w-2xl mx-auto">
           <!-- Photo 1 -->
           <div class="w-1/2 aspect-[2/3] overflow-hidden rounded-[100px] rounded-bl-xl shadow-2xl translate-y-8">
-            {allPhotos[12] && <Image src={allPhotos[12]} alt="Groom" class="w-full h-full object-cover object-[center_20%] custom-monochrome hover:scale-105 transition-transform duration-700" widths={[600]} sizes="(max-width: 1024px) 50vw, 33vw" />}
+            {allPhotos[12] && <Image src={allPhotos[12]} alt="Groom" class="w-full h-full object-cover object-top custom-monochrome hover:scale-105 transition-transform duration-700" widths={[600]} sizes="(max-width: 1024px) 50vw, 33vw" />}
           </div>
           <!-- Photo 2 -->
           <div class="w-1/2 aspect-[2/3] overflow-hidden rounded-[100px] rounded-tr-xl shadow-2xl -translate-y-8">
-            {allPhotos[13] && <Image src={allPhotos[13]} alt="Bride" class="w-full h-full object-cover object-[center_20%] custom-monochrome hover:scale-105 transition-transform duration-700" widths={[600]} sizes="(max-width: 1024px) 50vw, 33vw" />}
+            {allPhotos[13] && <Image src={allPhotos[13]} alt="Bride" class="w-full h-full object-cover object-top custom-monochrome hover:scale-105 transition-transform duration-700" widths={[600]} sizes="(max-width: 1024px) 50vw, 33vw" />}
           </div>
         </div>
 
@@ -147,15 +147,15 @@ const allPhotos = await Promise.all(
 
           <!-- Middle Row -->
           <div class="w-full aspect-[4/3] md:aspect-[21/9] relative overflow-hidden flex items-center justify-center group bg-[#314a31]/20 rounded-xl">
-            {allPhotos[3] && <Image src={allPhotos[3]} alt="Background" class="absolute inset-0 w-full h-full object-cover object-[center_20%] custom-monochrome opacity-80 group-hover:scale-105 transition-transform duration-1000" widths={[1200]} sizes="100vw" />}
+            {allPhotos[3] && <Image src={allPhotos[3]} alt="Background" class="absolute inset-0 w-full h-full object-cover object-top custom-monochrome opacity-80 group-hover:scale-105 transition-transform duration-1000" widths={[1200]} sizes="100vw" />}
             
             <!-- Brush Overlays using CSS Blob -->
             <div class="absolute top-[-10%] left-[2%] w-[45%] md:w-[30%] aspect-[4/3] overflow-hidden z-10 custom-blob-1 shadow-2xl">
-              {(allPhotos[4] || allPhotos[0]) && <Image src={allPhotos[4] || allPhotos[0]} alt="Overlay 1" class="w-full h-full object-cover object-[center_20%] custom-monochrome hover:scale-110 transition-transform duration-700" widths={[400]} sizes="33vw" />}
+              {(allPhotos[4] || allPhotos[0]) && <Image src={allPhotos[4] || allPhotos[0]} alt="Overlay 1" class="w-full h-full object-cover object-top custom-monochrome hover:scale-110 transition-transform duration-700" widths={[400]} sizes="33vw" />}
             </div>
             
             <div class="absolute bottom-[-10%] right-[2%] w-[45%] md:w-[30%] aspect-square overflow-hidden z-10 custom-blob-2 shadow-2xl">
-              {(allPhotos[5] || allPhotos[1]) && <Image src={allPhotos[5] || allPhotos[1]} alt="Overlay 2" class="w-full h-full object-cover object-[center_20%] custom-monochrome hover:scale-110 transition-transform duration-700" widths={[400]} sizes="33vw" />}
+              {(allPhotos[5] || allPhotos[1]) && <Image src={allPhotos[5] || allPhotos[1]} alt="Overlay 2" class="w-full h-full object-cover object-top custom-monochrome hover:scale-110 transition-transform duration-700" widths={[400]} sizes="33vw" />}
             </div>
 
             <!-- Hand-drawn Hearts SVG -->
