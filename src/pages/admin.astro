@@ -212,7 +212,7 @@ import Layout from '../layouts/Layout.astro';
               </select>
             </td>
             <td class="p-5 text-center">
-              <button class="toggle-btn text-2xl hover:scale-110 transition-transform ${rsvp.confirmed ? 'text-green-500' : 'text-gray-300'}" data-id="${rsvp.id}" data-status="${rsvp.confirmed}">✓</button>
+              <button class="toggle-btn text-2xl hover:scale-110 transition-transform ${rsvp.confirmed ? 'text-green-500' : 'text-gray-300'}" data-id="${rsvp.id}" data-status="${rsvp.confirmed}" data-pax="${rsvp.pax || 0}">✓</button>
             </td>
             <td class="p-5 text-center">
               <button class="delete-btn text-red-500 text-xl hover:scale-110 transition-transform" data-id="${rsvp.id}">🗑️</button>
@@ -223,31 +223,71 @@ import Layout from '../layouts/Layout.astro';
         
         document.getElementById('total-pax').textContent = totalConfirmedPax;
         
-        // Attach Family dropdown listeners
+        // Attach Family dropdown listeners (Optimistic)
         document.querySelectorAll('.field-family').forEach(select => {
-          select.addEventListener('change', async (e) => {
+          select.addEventListener('change', (e) => {
             const id = e.target.getAttribute('data-id');
-            await updateRsvpAdminFields(id, { familyOf: e.target.value });
+            updateRsvpAdminFields(id, { familyOf: e.target.value }).catch(console.error);
           });
         });
         
-        // Attach Delete listeners
+        // Attach Delete listeners (Optimistic)
         document.querySelectorAll('.delete-btn').forEach(btn => {
-          btn.addEventListener('click', async (e) => {
+          btn.addEventListener('click', (e) => {
             if(!confirm('Remove this guest?')) return;
             const id = e.currentTarget.getAttribute('data-id');
-            await updateRsvpAdminFields(id, { deleted: true });
-            await loadRsvps();
+            
+            // Immediate UI feedback
+            const tr = e.currentTarget.closest('tr');
+            if (tr) tr.style.display = 'none';
+            
+            updateRsvpAdminFields(id, { deleted: true })
+              .then(() => loadRsvps()) // Reload in background to resync totals
+              .catch(err => {
+                console.error(err);
+                if (tr) tr.style.display = ''; // Revert on fail
+              });
           });
         });
 
-        // Attach Toggle listeners
+        // Attach Toggle listeners (Optimistic)
         document.querySelectorAll('.toggle-btn').forEach(btn => {
-          btn.addEventListener('click', async (e) => {
-            const id = e.currentTarget.getAttribute('data-id');
-            const status = e.currentTarget.getAttribute('data-status') === 'true';
-            await toggleRsvpConfirm(id, status);
-            await loadRsvps();
+          btn.addEventListener('click', (e) => {
+            const el = e.currentTarget;
+            const id = el.getAttribute('data-id');
+            const status = el.getAttribute('data-status') === 'true';
+            const pax = parseInt(el.getAttribute('data-pax') || '0');
+            const newStatus = !status;
+            
+            // Immediate UI update
+            el.setAttribute('data-status', String(newStatus));
+            if (newStatus) {
+              el.classList.remove('text-gray-300');
+              el.classList.add('text-green-500');
+              totalConfirmedPax += pax;
+            } else {
+              el.classList.remove('text-green-500');
+              el.classList.add('text-gray-300');
+              totalConfirmedPax -= pax;
+            }
+            document.getElementById('total-pax').textContent = totalConfirmedPax;
+
+            // Background network request
+            toggleRsvpConfirm(id, status).catch(err => {
+              console.error(err);
+              // Revert on fail
+              el.setAttribute('data-status', String(status));
+              if (status) {
+                el.classList.remove('text-gray-300');
+                el.classList.add('text-green-500');
+                totalConfirmedPax += pax;
+              } else {
+                el.classList.remove('text-green-500');
+                el.classList.add('text-gray-300');
+                totalConfirmedPax -= pax;
+              }
+              document.getElementById('total-pax').textContent = totalConfirmedPax;
+            });
           });
         });
         
