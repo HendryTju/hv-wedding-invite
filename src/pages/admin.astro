@@ -25,39 +25,70 @@ import Layout from '../layouts/Layout.astro';
         <a href="/" class="text-xs font-bold uppercase tracking-widest text-[#314a31] hover:underline bg-[#314a31]/10 px-4 py-2 rounded-full transition-colors">← Logout</a>
       </div>
       
+      <div class="flex flex-wrap items-center gap-4 mb-8">
+        <button id="btn-toggle-add" class="text-xs font-bold uppercase tracking-widest border-2 border-[#314a31] bg-[#314a31] text-white px-6 py-3 rounded-full hover:bg-transparent hover:text-[#314a31] transition-colors">
+          + Add Guest
+        </button>
+        <div class="text-sm font-bold tracking-widest bg-[#314a31] text-white px-6 py-3 rounded-full">
+          Confirmed Pax: <span id="total-pax">0</span>
+        </div>
+      </div>
+
+      <form id="add-guest-form" class="hidden flex-wrap items-end gap-4 bg-white/50 p-6 rounded-xl mb-8 border border-[#314a31]/10 shadow-sm">
+        <div class="flex flex-col gap-1 flex-1 min-w-[200px]">
+          <label class="text-xs font-bold uppercase text-[#314a31]">Name</label>
+          <input type="text" name="name" required class="border-b-2 border-[#314a31]/30 p-2 bg-transparent outline-none focus:border-[#314a31]" placeholder="Guest Name">
+        </div>
+        <div class="flex flex-col gap-1 w-24">
+          <label class="text-xs font-bold uppercase text-[#314a31]">Pax</label>
+          <input type="number" name="pax" required min="1" class="border-b-2 border-[#314a31]/30 p-2 bg-transparent text-center outline-none focus:border-[#314a31]" value="1">
+        </div>
+        <div class="flex flex-col gap-1 flex-1 min-w-[150px]">
+          <label class="text-xs font-bold uppercase text-[#314a31]">Diet/Notes</label>
+          <input type="text" name="diet" class="border-b-2 border-[#314a31]/30 p-2 bg-transparent outline-none focus:border-[#314a31]" placeholder="None">
+        </div>
+        <div class="flex flex-col gap-1 w-32">
+          <label class="text-xs font-bold uppercase text-[#314a31]">Family Of</label>
+          <select name="familyOf" class="border-b-2 border-[#314a31]/30 p-2 bg-transparent outline-none focus:border-[#314a31]">
+            <option value="">- Select -</option>
+            <option value="Hendry">Hendry</option>
+            <option value="Valensia">Valensia</option>
+            <option value="Both">Both</option>
+          </select>
+        </div>
+        <button type="submit" id="btn-submit-guest" class="bg-[#314a31] text-white font-bold uppercase px-6 py-2 rounded-full h-[42px] hover:bg-[#253825] transition-colors">
+          Save
+        </button>
+      </form>
+
       <div class="bg-white rounded-3xl shadow-2xl overflow-hidden border border-[#314a31]/10">
         <div class="overflow-x-auto">
           <table class="w-full text-left border-collapse">
             <thead>
               <tr class="bg-[#314a31] text-[#fbf4e6] text-xs uppercase tracking-[2px]">
+                <th class="p-5 font-black">Date</th>
                 <th class="p-5 font-black">Name</th>
-                <th class="p-5 font-black">Contact</th>
                 <th class="p-5 font-black text-center">Pax</th>
-                <th class="p-5 font-black">Events</th>
-                <th class="p-5 font-black">Wishes</th>
-                <th class="p-5 font-black">Date Submitted</th>
+                <th class="p-5 font-black">Notes/Diet</th>
+                <th class="p-5 font-black">Family Of</th>
+                <th class="p-5 font-black text-center">Confirm</th>
+                <th class="p-5 font-black text-center">Delete</th>
               </tr>
             </thead>
             <tbody id="rsvp-table-body" class="divide-y divide-[#314a31]/10 text-sm font-medium">
               <tr>
-                <td colspan="6" class="p-12 text-center text-black/50 font-bold animate-pulse">Loading RSVPs from Database...</td>
+                <td colspan="7" class="p-12 text-center text-black/50 font-bold animate-pulse">Loading RSVPs from Database...</td>
               </tr>
             </tbody>
           </table>
         </div>
       </div>
       
-      <div class="mt-8 flex justify-between items-center text-sm font-black uppercase tracking-widest text-[#314a31]">
-        <div class="flex gap-8">
-          <span id="total-submissions">Submissions: <span class="opacity-50">...</span></span>
-          <span id="total-pax">Total Pax: <span class="opacity-50">...</span></span>
-        </div>
-      </div>
     </div>
   </div>
 
   <script type="module">
-    import { getAllRsvps } from '/rsvp.js';
+    import { getAllRsvps, toggleRsvpConfirm, updateRsvpAdminFields, adminAddRsvp } from '/rsvp.js';
 
     // PIN LOGIC (Uses wedding date as default PIN)
     const CORRECT_PIN = '061226';
@@ -89,65 +120,37 @@ import Layout from '../layouts/Layout.astro';
       if (e.key === 'Enter') checkPin();
     });
     
-    // Auto focus pin input on load
     window.addEventListener('DOMContentLoaded', () => {
       pinInput.focus();
     });
 
-    async function loadRsvps() {
-      const tbody = document.getElementById('rsvp-table-body');
-      const totalSubmissionsSpan = document.getElementById('total-submissions');
-      const totalPaxSpan = document.getElementById('total-pax');
-      
-      try {
-        const rsvps = await getAllRsvps();
-        
-        if (rsvps.length === 0) {
-          tbody.innerHTML = '<tr><td colspan="6" class="p-12 text-center text-black/50 font-bold">No RSVPs yet. They will appear here once submitted.</td></tr>';
-          totalSubmissionsSpan.innerHTML = `Submissions: 0`;
-          totalPaxSpan.innerHTML = `Total Pax: 0`;
-          return;
-        }
+    // Setup Add Guest Form Toggle
+    const addGuestForm = document.getElementById('add-guest-form');
+    document.getElementById('btn-toggle-add').addEventListener('click', () => {
+      addGuestForm.classList.toggle('hidden');
+      addGuestForm.classList.toggle('flex');
+    });
 
-        let totalPax = 0;
-        
-        tbody.innerHTML = rsvps.map(rsvp => {
-          totalPax += parseInt(rsvp.pax || 0);
-          const date = new Date(rsvp.timestamp).toLocaleDateString('en-GB', { 
-            day: 'numeric', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit' 
-          });
-          
-          return `
-            <tr class="hover:bg-[#314a31]/5 transition-colors group">
-              <td class="p-5 font-bold whitespace-nowrap text-base">${escapeHTML(rsvp.name)}</td>
-              <td class="p-5">
-                <div class="flex flex-col gap-1">
-                  <a href="mailto:${escapeHTML(rsvp.email)}" class="hover:text-[#314a31] hover:underline">${escapeHTML(rsvp.email)}</a>
-                  <a href="tel:${escapeHTML(rsvp.phone)}" class="text-xs opacity-60 hover:text-[#314a31] hover:underline">${escapeHTML(rsvp.phone)}</a>
-                </div>
-              </td>
-              <td class="p-5 font-black text-[#314a31] text-center text-lg">${escapeHTML(String(rsvp.pax))}</td>
-              <td class="p-5">
-                <span class="inline-flex items-center px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-widest bg-[#314a31]/10 text-[#314a31]">
-                  ${escapeHTML(rsvp.events)}
-                </span>
-              </td>
-              <td class="p-5 italic text-xs max-w-[250px] opacity-80 break-words">
-                "${escapeHTML(rsvp.wishes || '')}"
-              </td>
-              <td class="p-5 text-xs opacity-60 whitespace-nowrap font-bold">${date}</td>
-            </tr>
-          `;
-        }).join('');
-        
-        totalSubmissionsSpan.innerHTML = `Submissions: <span class="text-xl">${rsvps.length}</span>`;
-        totalPaxSpan.innerHTML = `Total Pax: <span class="text-xl">${totalPax}</span>`;
-        
-      } catch (error) {
-        console.error(error);
-        tbody.innerHTML = '<tr><td colspan="6" class="p-12 text-center text-red-700 font-bold bg-red-50">Error connecting to database. Make sure Firebase is properly configured.</td></tr>';
-      }
-    }
+    // Setup Submit New Guest
+    addGuestForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const btn = document.getElementById('btn-submit-guest');
+      btn.textContent = 'Saving...';
+      
+      const formData = new FormData(addGuestForm);
+      await adminAddRsvp({
+        name: formData.get('name'),
+        pax: parseInt(formData.get('pax')),
+        diet: formData.get('diet') || 'None',
+        familyOf: formData.get('familyOf')
+      });
+      
+      addGuestForm.reset();
+      addGuestForm.classList.add('hidden');
+      addGuestForm.classList.remove('flex');
+      btn.textContent = 'Save';
+      await loadRsvps();
+    });
 
     // Helper to prevent XSS
     function escapeHTML(str) {
@@ -161,6 +164,97 @@ import Layout from '../layouts/Layout.astro';
             '"': '&quot;'
           }[tag] || tag)
       );
+    }
+
+    // Load the Table
+    async function loadRsvps() {
+      const tbody = document.getElementById('rsvp-table-body');
+      
+      try {
+        let rsvps = await getAllRsvps();
+        rsvps = rsvps.filter(r => r.deleted !== true); // Hide deleted
+        
+        if (rsvps.length === 0) {
+          tbody.innerHTML = '<tr><td colspan="7" class="p-12 text-center text-black/50 font-bold">No RSVPs yet.</td></tr>';
+          document.getElementById('total-pax').textContent = '0';
+          return;
+        }
+
+        let totalConfirmedPax = 0;
+        tbody.innerHTML = '';
+        
+        rsvps.forEach(rsvp => {
+          if (rsvp.confirmed) {
+            totalConfirmedPax += parseInt(rsvp.pax || 0);
+          }
+          
+          const sourceBadge = rsvp.source === 'admin' 
+            ? '<span class="text-[10px] bg-blue-100 text-blue-800 px-2 py-0.5 rounded ml-2 uppercase font-bold">Admin</span>'
+            : '<span class="text-[10px] bg-gray-200 text-gray-700 px-2 py-0.5 rounded ml-2 uppercase font-bold">Form</span>';
+            
+          const dateStr = rsvp.timestamp ? new Date(rsvp.timestamp).toLocaleDateString('en-GB', { 
+            day: 'numeric', month: 'short', year: 'numeric' 
+          }) : '';
+
+          const tr = document.createElement('tr');
+          tr.className = 'hover:bg-[#314a31]/5 transition-colors group';
+          tr.innerHTML = `
+            <td class="p-5 text-xs opacity-60 whitespace-nowrap font-bold">${dateStr}</td>
+            <td class="p-5 font-bold whitespace-nowrap text-base">${escapeHTML(rsvp.name)}${sourceBadge}</td>
+            <td class="p-5 font-black text-[#314a31] text-center text-lg">${escapeHTML(String(rsvp.pax))}</td>
+            <td class="p-5 italic text-xs max-w-[250px] opacity-80 break-words">${escapeHTML(rsvp.diet || rsvp.wishes || 'None')}</td>
+            <td class="p-5">
+              <select class="field-family bg-transparent border-b border-[#314a31]/30 outline-none" data-id="${rsvp.id}">
+                <option value="" ${!rsvp.familyOf ? 'selected' : ''}>- Select -</option>
+                <option value="Hendry" ${rsvp.familyOf === 'Hendry' ? 'selected' : ''}>Hendry</option>
+                <option value="Valensia" ${rsvp.familyOf === 'Valensia' ? 'selected' : ''}>Valensia</option>
+                <option value="Both" ${rsvp.familyOf === 'Both' ? 'selected' : ''}>Both</option>
+              </select>
+            </td>
+            <td class="p-5 text-center">
+              <button class="toggle-btn text-2xl hover:scale-110 transition-transform ${rsvp.confirmed ? 'text-green-500' : 'text-gray-300'}" data-id="${rsvp.id}" data-status="${rsvp.confirmed}">✓</button>
+            </td>
+            <td class="p-5 text-center">
+              <button class="delete-btn text-red-500 text-xl hover:scale-110 transition-transform" data-id="${rsvp.id}">🗑️</button>
+            </td>
+          `;
+          tbody.appendChild(tr);
+        });
+        
+        document.getElementById('total-pax').textContent = totalConfirmedPax;
+        
+        // Attach Family dropdown listeners
+        document.querySelectorAll('.field-family').forEach(select => {
+          select.addEventListener('change', async (e) => {
+            const id = e.target.getAttribute('data-id');
+            await updateRsvpAdminFields(id, { familyOf: e.target.value });
+          });
+        });
+        
+        // Attach Delete listeners
+        document.querySelectorAll('.delete-btn').forEach(btn => {
+          btn.addEventListener('click', async (e) => {
+            if(!confirm('Remove this guest?')) return;
+            const id = e.currentTarget.getAttribute('data-id');
+            await updateRsvpAdminFields(id, { deleted: true });
+            await loadRsvps();
+          });
+        });
+
+        // Attach Toggle listeners
+        document.querySelectorAll('.toggle-btn').forEach(btn => {
+          btn.addEventListener('click', async (e) => {
+            const id = e.currentTarget.getAttribute('data-id');
+            const status = e.currentTarget.getAttribute('data-status') === 'true';
+            await toggleRsvpConfirm(id, status);
+            await loadRsvps();
+          });
+        });
+        
+      } catch (error) {
+        console.error(error);
+        tbody.innerHTML = '<tr><td colspan="7" class="p-12 text-center text-red-700 font-bold bg-red-50">Error connecting to database.</td></tr>';
+      }
     }
   </script>
 </Layout>

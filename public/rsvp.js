@@ -13,6 +13,7 @@ const saveLocalRsvps = (rsvps) => localStorage.setItem(LOCAL_RSVPS_KEY, JSON.str
 export async function submitRsvp(data) {
   const rsvpDoc = {
     ...data,
+    source: "form",
     timestamp: new Date().toISOString(),
     confirmed: false
   };
@@ -177,25 +178,42 @@ export async function updateGuestSide(id, side, collectionType) {
   }
 }
 
-export async function adminAddRsvp(data, collectionType) {
-  const collName = collectionType === 'wedding' ? "rsvps" : "sangjit_rsvps";
-  
+export async function updateRsvpAdminFields(id, fields) {
+  if (isEmulated) {
+    const rsvps = getLocalRsvps();
+    const index = rsvps.findIndex(r => r.id === id);
+    if (index !== -1) {
+      Object.assign(rsvps[index], fields);
+      saveLocalRsvps(rsvps);
+    }
+  } else {
+    try {
+      const rsvpRef = doc(db, "rsvps", id);
+      await updateDoc(rsvpRef, fields);
+    } catch (error) {
+      console.error("Error updating admin fields: ", error);
+      throw error;
+    }
+  }
+}
+
+export async function adminAddRsvp(data) {
   const rsvpDoc = {
     ...data,
+    source: "admin",
     timestamp: new Date().toISOString(),
-    confirmed: true // Admin additions are auto-confirmed
+    confirmed: true // Auto confirm when admin adds
   };
 
   if (isEmulated) {
-    const rsvps = collectionType === 'wedding' ? getLocalRsvps() : getSangjitLocalRsvps();
+    const rsvps = getLocalRsvps();
     rsvpDoc.id = "emulated_admin_" + Math.random().toString(36).substring(2, 9);
     rsvps.push(rsvpDoc);
-    if (collectionType === 'wedding') saveLocalRsvps(rsvps);
-    else saveSangjitLocalRsvps(rsvps);
+    saveLocalRsvps(rsvps);
     return rsvpDoc.id;
   } else {
     try {
-      const docRef = await addDoc(collection(db, collName), rsvpDoc);
+      const docRef = await addDoc(collection(db, "rsvps"), rsvpDoc);
       return docRef.id;
     } catch (error) {
       console.error("Error admin adding document: ", error);
