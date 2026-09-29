@@ -29,6 +29,9 @@ import Layout from '../layouts/Layout.astro';
         <button id="btn-toggle-add" class="text-xs font-bold uppercase tracking-widest border-2 border-[#314a31] bg-[#314a31] text-white px-6 py-3 rounded-full hover:bg-transparent hover:text-[#314a31] transition-colors">
           + Add Guest
         </button>
+        <button id="btn-toggle-template" class="text-xs font-bold uppercase tracking-widest border-2 border-[#314a31] bg-transparent text-[#314a31] px-6 py-3 rounded-full hover:bg-[#314a31] hover:text-white transition-colors">
+          ⚙️ Message Template
+        </button>
         <div class="text-sm font-bold tracking-widest bg-[#314a31] text-white px-6 py-3 rounded-full">
           Confirmed Pax: <span id="total-pax">0</span>
         </div>
@@ -61,6 +64,19 @@ import Layout from '../layouts/Layout.astro';
         </button>
       </form>
 
+      <div id="template-form" class="hidden flex-col gap-4 bg-white/50 p-6 rounded-xl mb-8 border border-[#314a31]/10 shadow-sm">
+        <div class="flex flex-col md:flex-row md:justify-between md:items-center gap-2">
+          <label class="text-xs font-bold uppercase text-[#314a31]">WhatsApp & Copy Template</label>
+          <span class="text-xs font-bold opacity-60 bg-[#314a31]/10 px-3 py-1 rounded-full">Use {'{{name}}'} and {'{{url}}'} as placeholders</span>
+        </div>
+        <textarea id="message-template" rows="12" class="w-full border-2 border-[#314a31]/20 p-4 rounded-xl bg-transparent outline-none focus:border-[#314a31] font-mono text-xs md:text-sm"></textarea>
+        <div class="flex justify-end">
+          <button type="button" id="btn-save-template" class="bg-[#314a31] text-white font-bold uppercase tracking-widest px-8 py-3 rounded-full hover:bg-[#253825] transition-colors text-xs">
+            Save Template
+          </button>
+        </div>
+      </div>
+
       <div class="bg-white rounded-3xl shadow-2xl overflow-hidden border border-[#314a31]/10">
         <div class="overflow-x-auto">
           <table class="w-full text-left border-collapse">
@@ -71,6 +87,7 @@ import Layout from '../layouts/Layout.astro';
                 <th class="p-5 font-black text-center">Pax</th>
                 <th class="p-5 font-black">Notes/Diet</th>
                 <th class="p-5 font-black">Family Of</th>
+                <th class="p-5 font-black text-center">Link</th>
                 <th class="p-5 font-black text-center">Confirm</th>
                 <th class="p-5 font-black text-center">Delete</th>
               </tr>
@@ -129,6 +146,38 @@ import Layout from '../layouts/Layout.astro';
     document.getElementById('btn-toggle-add').addEventListener('click', () => {
       addGuestForm.classList.toggle('hidden');
       addGuestForm.classList.toggle('flex');
+    });
+
+    // Setup Template Form Toggle & Save
+    const templateForm = document.getElementById('template-form');
+    const messageTemplateInput = document.getElementById('message-template');
+    
+    const defaultTemplate = `Kepada Yth.
+{{name}}
+
+Tanpa mengurangi rasa hormat, melalui pesan ini kami mengundang Bapak/Ibu/Saudara/i untuk menghadiri acara pernikahan kami.
+
+Detail informasi selengkapnya mengenai agenda dan lokasi acara dapat Anda akses melalui tautan undangan digital berikut:
+
+{{url}}
+
+Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan untuk hadir serta memberikan doa restu secara langsung.
+
+Mohon maaf karena undangan ini hanya dapat kami sampaikan melalui pesan ini. Terima kasih banyak atas perhatian dan waktu yang diberikan.`;
+
+    // Load from local storage or use default
+    messageTemplateInput.value = localStorage.getItem('whatsapp_template') || defaultTemplate;
+
+    document.getElementById('btn-toggle-template').addEventListener('click', () => {
+      templateForm.classList.toggle('hidden');
+      templateForm.classList.toggle('flex');
+    });
+
+    document.getElementById('btn-save-template').addEventListener('click', () => {
+      localStorage.setItem('whatsapp_template', messageTemplateInput.value);
+      const btn = document.getElementById('btn-save-template');
+      btn.textContent = 'Saved!';
+      setTimeout(() => btn.textContent = 'Save Template', 2000);
     });
 
     // Setup Submit New Guest
@@ -211,6 +260,14 @@ import Layout from '../layouts/Layout.astro';
                 <option value="Both" ${rsvp.familyOf === 'Both' ? 'selected' : ''}>Both</option>
               </select>
             </td>
+            <td class="p-5 text-center flex justify-center gap-2">
+              <button class="copy-link-btn text-[#314a31] hover:scale-110 transition-transform" data-name="${escapeHTML(rsvp.name)}" title="Copy Invite Link">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+              </button>
+              <button class="wa-link-btn text-green-500 hover:scale-110 transition-transform" data-name="${escapeHTML(rsvp.name)}" title="Send via WhatsApp">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+              </button>
+            </td>
             <td class="p-5 text-center">
               <button class="toggle-btn text-2xl hover:scale-110 transition-transform ${rsvp.confirmed ? 'text-green-500' : 'text-gray-300'}" data-id="${rsvp.id}" data-status="${rsvp.confirmed}" data-pax="${rsvp.pax || 0}">✓</button>
             </td>
@@ -222,6 +279,40 @@ import Layout from '../layouts/Layout.astro';
         });
         
         document.getElementById('total-pax').textContent = totalConfirmedPax;
+        
+        // Attach Link listeners
+        document.querySelectorAll('.copy-link-btn').forEach(btn => {
+          btn.addEventListener('click', (e) => {
+            const name = e.currentTarget.getAttribute('data-name');
+            const url = `${window.location.origin}/?to=${encodeURIComponent(name)}`;
+            
+            // Build text from template
+            const text = messageTemplateInput.value
+              .replace(/{{name}}/g, name)
+              .replace(/{{url}}/g, url);
+              
+            navigator.clipboard.writeText(text);
+            
+            // Visual feedback
+            const icon = e.currentTarget.innerHTML;
+            e.currentTarget.innerHTML = '<span class="text-xs font-bold text-green-500">Copied!</span>';
+            setTimeout(() => e.currentTarget.innerHTML = icon, 2000);
+          });
+        });
+
+        document.querySelectorAll('.wa-link-btn').forEach(btn => {
+          btn.addEventListener('click', (e) => {
+            const name = e.currentTarget.getAttribute('data-name');
+            const url = `${window.location.origin}/?to=${encodeURIComponent(name)}`;
+            
+            // Build text from template
+            const text = messageTemplateInput.value
+              .replace(/{{name}}/g, name)
+              .replace(/{{url}}/g, url);
+              
+            window.open(`https://wa.me/?text=${encodeURIComponent(text)}`, '_blank');
+          });
+        });
         
         // Attach Family dropdown listeners (Optimistic)
         document.querySelectorAll('.field-family').forEach(select => {

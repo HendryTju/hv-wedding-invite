@@ -56,6 +56,12 @@ const allPhotos = await Promise.all(
       // Open invite button logic
       const coverPage = document.getElementById('cover-page');
       const openBtn = document.getElementById('open-invite-btn');
+      const bgMusic = document.getElementById('bg-music');
+      const musicToggleBtn = document.getElementById('music-toggle-btn');
+      const iconUnmuted = document.getElementById('icon-unmuted');
+      const iconMuted = document.getElementById('icon-muted');
+
+      let isPlaying = false;
 
       if (coverPage && openBtn) {
         // Prevent scrolling while cover is active
@@ -66,10 +72,57 @@ const allPhotos = await Promise.all(
           setTimeout(() => {
             document.body.style.overflow = '';
           }, 1000); // match transition duration
+          
+          // Play background music
+          if (bgMusic) {
+            bgMusic.currentTime = 10; // Start at 10 seconds
+            bgMusic.play().then(() => {
+              isPlaying = true;
+            }).catch(e => console.log('Audio play failed:', e));
+          }
+          
+          // Show music toggle button
+          if (musicToggleBtn) {
+            musicToggleBtn.classList.remove('hidden');
+          }
+        });
+      }
+
+      // Music toggle logic
+      if (musicToggleBtn && bgMusic) {
+        musicToggleBtn.addEventListener('click', () => {
+          if (isPlaying) {
+            bgMusic.pause();
+            iconUnmuted.classList.add('hidden');
+            iconMuted.classList.remove('hidden');
+          } else {
+            bgMusic.play();
+            iconMuted.classList.add('hidden');
+            iconUnmuted.classList.remove('hidden');
+          }
+          isPlaying = !isPlaying;
         });
       }
     });
   </script>
+
+  <!-- Background Music and Control -->
+  <audio id="bg-music" loop preload="auto">
+    <!-- Placeholder for user's music file -->
+    <source src="/wedding-song.mp3" type="audio/mpeg">
+  </audio>
+
+  <button id="music-toggle-btn" class="fixed bottom-6 right-6 lg:bottom-12 lg:right-12 z-50 w-10 h-10 lg:w-12 lg:h-12 bg-primary/20 backdrop-blur-md border border-primary text-primary rounded-full flex items-center justify-center hover:bg-primary/40 transition-all duration-300 shadow-xl hidden mix-blend-difference">
+    <svg id="icon-unmuted" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lg:w-6 lg:h-6">
+      <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+      <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+      <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+    </svg>
+    <svg id="icon-muted" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lg:w-6 lg:h-6 hidden">
+      <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+      <line x1="23" y1="1" x2="1" y2="23"></line>
+    </svg>
+  </button>
 
   <!-- Floating Navigation -->
   <div class="fixed top-6 right-6 lg:top-12 lg:right-12 z-50 mix-blend-difference flex gap-2">
