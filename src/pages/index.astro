@@ -330,10 +330,23 @@ const allPhotos = await Promise.all(
                 <p class="font-black text-2xl text-[#314a31]">Gereja Santo Thomas Rasul</p>
                 <p class="text-sm font-bold opacity-60">Jalan Bojong Raya, Jakarta Barat</p>
                 
-                <a href="https://www.google.com/maps/search/?api=1&query=Gereja+Santo+Thomas+Rasul+Jakarta" target="_blank" class="inline-flex items-center gap-2 mt-4 text-xs font-bold uppercase tracking-[2px] text-[#fbf4e6] bg-[#314a31] py-3 px-6 rounded-full hover:bg-[#253825] transition-colors">
-                  <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z"/></svg>
-                  View on Maps
-                </a>
+                <div class="flex flex-col sm:flex-row gap-4 mt-6">
+                  <a href="https://www.google.com/maps/search/?api=1&query=Gereja+Santo+Thomas+Rasul+Jakarta" target="_blank" class="inline-flex justify-center items-center gap-2 text-xs font-bold uppercase tracking-[2px] text-[#fbf4e6] bg-[#314a31] py-3 px-6 rounded-full hover:bg-[#253825] transition-colors">
+                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 010-5 2.5 2.5 0 010 5z"/></svg>
+                    View on Maps
+                  </a>
+
+                  <div class="inline-flex justify-center items-center gap-2 text-xs font-bold uppercase tracking-[2px] text-[#314a31] bg-[#314a31]/10 py-3 px-6 rounded-full border border-[#314a31]/20">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                      <line x1="2" x2="22" y1="2" y2="22"/>
+                      <path d="M12 12H2v4h14"/>
+                      <path d="M22 12v4"/>
+                      <path d="M18 12v4"/>
+                      <path d="M7 12V8a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.5"/>
+                    </svg>
+                    No Smoking Venue
+                  </div>
+                </div>
               </div>
             </div>
           </details>
@@ -387,14 +400,16 @@ const allPhotos = await Promise.all(
             </div>
           </div>
 
-          <!-- Card: Tea Ceremony -->
+          <!-- Card: Teapai Ceremony -->
           <div class="w-full max-w-3xl border-[1.5px] border-white/20 rounded-[40px] overflow-hidden bg-[#fbf4e6] p-8 md:p-10 text-left text-[#2c402c]">
             <div class="flex items-center gap-4 mb-4">
               <span class="text-4xl font-serif leading-none text-[#314a31]">囍</span>
-              <h3 class="text-xl md:text-2xl font-bold uppercase tracking-[3px] text-[#314a31]">Tea Ceremony</h3>
+              <h3 class="text-xl md:text-2xl font-bold uppercase tracking-[3px] text-[#314a31]">Teapai Ceremony</h3>
             </div>
             <p class="font-medium text-sm md:text-base md:pl-12 opacity-90">
-              Family members are cordially invited to the tea ceremony at 16:30 PM
+              Family members are cordially invited to the teapai ceremony at 17:30 WIB
+              <br/>
+              <span class="font-bold mt-1 block">Room: Productive Room Lt 1</span>
             </p>
           </div>
 

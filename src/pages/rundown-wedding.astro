@@ -1,0 +1,451 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Wedding Rundown">
+  <div class="min-h-screen bg-gray-50 py-10 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-5xl mx-auto">
+      
+      <!-- Sticky Save Status Bar -->
+      <div id="status-bar" class="fixed top-4 right-4 z-50 bg-white border border-gray-200 rounded-full px-4 py-2 shadow-sm text-sm font-medium text-gray-500 transition-opacity duration-300 opacity-0 flex items-center gap-2">
+        <span class="relative flex h-3 w-3" id="status-dot">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75 hidden"></span>
+          <span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+        </span>
+        <span id="status-text">Saved</span>
+      </div>
+
+      <div class="bg-white shadow rounded-lg p-6 sm:p-10">
+        <!-- The Editable Container -->
+        <div id="rundown-editor" contenteditable="true" class="prose max-w-none focus:outline-none focus:ring-2 focus:ring-[#314a31]/20 rounded-md p-4 transition-all">
+          <div class="text-center mb-10">
+            <h1 class="text-3xl font-bold font-['Cormorant_Garamond'] text-[#314a31] uppercase tracking-wider mb-2">Rundown Acara Pernikahan</h1>
+            <h2 class="text-xl font-['Cormorant_Garamond'] text-gray-700 mb-1">Hendry & Valensia Huang</h2>
+            <p class="text-sm text-gray-500 mb-1">Hotel Ciputra</p>
+            <p class="text-sm text-gray-500">Sabtu, 6 Desember 2026 | 18.00 – 20.00</p>
+          </div>
+
+          <!-- Section 1 -->
+          <div class="mb-10">
+            <h3 class="text-xl font-bold bg-[#314a31] text-white px-4 py-2 rounded-t-md mb-0">PERSIAPAN DI TEMPAT PRIA : HENDRY</h3>
+            <div class="overflow-x-auto">
+              <table class="w-full text-sm border-collapse border border-gray-200">
+                <thead class="bg-gray-100 text-gray-700">
+                  <tr>
+                    <th class="border border-gray-200 p-2 text-left w-32">Waktu</th>
+                    <th class="border border-gray-200 p-2 text-left">Kegiatan</th>
+                    <th class="border border-gray-200 p-2 text-left w-64">PIC / Keterangan</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="hover:bg-gray-50">
+                    <td class="border border-gray-200 p-3 align-top font-semibold">05.30 - 06.00</td>
+                    <td class="border border-gray-200 p-3 align-top whitespace-pre-wrap">Persiapan di Hotel Harris Puri Mansion
+Groom & Family Breakfast</td>
+                    <td class="border border-gray-200 p-3 align-top whitespace-pre-wrap text-gray-600">Groom: Hendry
+Bestman : - (Menginap)
+Papa : Tn. Tju Shin Tjhong
+Mama : Ny. Dra, Susana
+Sibling : (menginap / tidak??) Hendra, Harris & Carolina Laimena Sanjaya</td>
+                  </tr>
+                  <tr class="hover:bg-gray-50">
+                    <td class="border border-gray-200 p-3 align-top font-semibold"></td>
+                    <td class="border border-gray-200 p-3 align-top whitespace-pre-wrap">Makeup Groom : 08.00
+Makeup Mama : 06.00 – 07.30
+Makeup Ipar : 07.30 – 09.00
+Gaun Mama Pagi : 
+Gaun Mama malam : 
+Dasi Papa & Brother Pagi : 
+Malam :</td>
+                    <td class="border border-gray-200 p-3 align-top whitespace-pre-wrap text-gray-600">MUA Mama : Veli Bridal
+MUA Groom : Veli Bridal
+MUA Ipar : Veli Bridal</td>
+                  </tr>
+                  <tr class="hover:bg-gray-50">
+                    <td class="border border-gray-200 p-3 align-top font-semibold">08.00 - 09.00</td>
+                    <td class="border border-gray-200 p-3 align-top whitespace-pre-wrap">Beauty Groom
+Prosesi dengan Orang Tua :
+- Pemasangan Jas oleh orang tua
+- Pemberian HB oleh Mama
+- Foto dengan orang tua
+- Foto dengan Orang tua & Saudara Kandung</td>
+                    <td class="border border-gray-200 p-3 align-top whitespace-pre-wrap text-gray-600">Barang yang di sediakan di atas Kasur:
+Hb, Undangan, Cincin, Jas, dasi, sepatu, jam tangan, belt
+Handbouquet : Chelle
+Corsage Groom (1) : Chelle
+Corsage Papa (2) : Chelle
+Corsage Sibbling (3): Chelle
+Vendor Photo & Video : Arpang
+Standby : 08.00 di Hotel Harris Puri Mansion</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Section 2 -->
+          <div class="mb-10">
+            <h3 class="text-xl font-bold bg-[#314a31] text-white px-4 py-2 rounded-t-md mb-0">PERSIAPAN DI TEMPAT WANITA : VALENSIA</h3>
+            <div class="overflow-x-auto">
+              <table class="w-full text-sm border-collapse border border-gray-200">
+                <thead class="bg-gray-100 text-gray-700">
+                  <tr>
+                    <th class="border border-gray-200 p-2 text-left w-32">Waktu</th>
+                    <th class="border border-gray-200 p-2 text-left">Kegiatan</th>
+                    <th class="border border-gray-200 p-2 text-left w-64">PIC / Keterangan</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="hover:bg-gray-50">
+                    <td class="border border-gray-200 p-3 align-top font-semibold">05.30 - 06.00</td>
+                    <td class="border border-gray-200 p-3 align-top whitespace-pre-wrap">Morning Call & Bersiap-siap
+Breakfast</td>
+                    <td class="border border-gray-200 p-3 align-top whitespace-pre-wrap text-gray-600">Bride: Valensia Huang
+Bridesmaid : - (Menginap)
+Papa : Tn. Ng Ket Hau
+Mama : Ny. Bong Su San
+Sibling : Willy Huang & Lisa Adiputra</td>
+                  </tr>
+                  <tr class="hover:bg-gray-50">
+                    <td class="border border-gray-200 p-3 align-top font-semibold"></td>
+                    <td class="border border-gray-200 p-3 align-top whitespace-pre-wrap">Make up Bride : 06.00 – 09.00
+Make up Mama : 06.00 – 07.30
+Make up Ipar : 07.30 – 09.00
+Gaun Mama Pagi :
+Gaun Mama malam :
+Dasi Papa & Brother Pagi :
+Malam :</td>
+                    <td class="border border-gray-200 p-3 align-top whitespace-pre-wrap text-gray-600">MUA Bride : Veli Bridal
+MUA Mama : Veli Bridal
+MUA Ipar : Veli Bridal
+Bridal : Veli Bridal</td>
+                  </tr>
+                  <tr class="hover:bg-gray-50">
+                    <td class="border border-gray-200 p-3 align-top font-semibold">09.00 - 09.30</td>
+                    <td class="border border-gray-200 p-3 align-top whitespace-pre-wrap">Foto dengan Mannequein
+Ganti Gown</td>
+                    <td class="border border-gray-200 p-3 align-top whitespace-pre-wrap text-gray-600">Mannequein dari bridal
+Robe dari Bridal
+Fitter standby Jam 08.00</td>
+                  </tr>
+                  <tr class="hover:bg-gray-50">
+                    <td class="border border-gray-200 p-3 align-top font-semibold">09.30 - 10.00</td>
+                    <td class="border border-gray-200 p-3 align-top whitespace-pre-wrap">Pelepasan :
+- Bride berada ditengah orang tua
+- Pemberian Corsage dari Mama kepada Bride
+- Cium Peluk orang tua
+- Foto Bersama dengan orang tua & Sibblings
+- Penutupan veil oleh orang tua</td>
+                    <td class="border border-gray-200 p-3 align-top whitespace-pre-wrap text-gray-600">NOTE: TIDAK ADA PANTANGAN BUKA TUTUP VEIL</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="mt-4 p-4 bg-yellow-50 border border-yellow-200 text-sm text-yellow-800 rounded-md">
+              <span class="font-bold">NOTE:</span> WO Standby Jam 08.00 di Harris Puri Mansion Ruang Crew
+            </div>
+          </div>
+
+          <!-- Section 3 -->
+          <div class="mb-10">
+            <h3 class="text-xl font-bold bg-[#314a31] text-white px-4 py-2 rounded-t-md mb-0">PROSESI PENJEMPUTAN & PEMBERKATAN</h3>
+            <div class="overflow-x-auto">
+              <table class="w-full text-sm border-collapse border border-gray-200">
+                <thead class="bg-gray-100 text-gray-700">
+                  <tr>
+                    <th class="border border-gray-200 p-2 text-left w-32">Waktu</th>
+                    <th class="border border-gray-200 p-2 text-left">Kegiatan</th>
+                    <th class="border border-gray-200 p-2 text-left w-64">PIC / Keterangan</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="hover:bg-gray-50">
+                    <td class="border border-gray-200 p-3 align-top font-semibold">10.00 - 10.30</td>
+                    <td class="border border-gray-200 p-3 align-top whitespace-pre-wrap">Pertemuan Pengantin :
+- Groom akan disambut oleh Orang tua bride di depan pintu kamar
+- Groom memberikan penghormatan kepada orang tua bride
+- Kemudian Groom akan diapit oleh Papa & Mama untuk dipertemukan dengan Bride
+- Saat bertemu, Groom & Bride punggung2an lalu berhadapan
+- Bride akan memasangkan corsage kepada Groom
+- Groom memberikan handboquet ke Bride
+- Groom akan membuka Veil bride & cium kening
+- Pengantin foto berdua lalu dengan Orang Tua & Saudara
+- Makan Onde</td>
+                    <td class="border border-gray-200 p-3 align-top whitespace-pre-wrap text-gray-600">Note: Onde & Misua dari ???</td>
+                  </tr>
+                  <tr class="hover:bg-gray-50">
+                    <td class="border border-gray-200 p-3 align-top font-semibold">10.30 - 11.00</td>
+                    <td class="border border-gray-200 p-3 align-top whitespace-pre-wrap">Mempelai kembali kamar pengantin :
+- Orang tua Groom standby di depan kamar
+- Mempelai memberikan penghormatan kepada Orang Tua Groom dengan pai 3x
+- Orang Tua Groom membawa masuk ke dalam kamar
+- Mempelai meletakan handboquet di atas ranjang lalu menepuk ranjang sebanyak 3x
+- Foto dengan Orang Tua & Saudara Groom
+- Makan Misua, Langkahan 2 koko groom</td>
+                    <td class="border border-gray-200 p-3 align-top whitespace-pre-wrap text-gray-600">Note: Gunting & Hadiah dari pengantin
+Pita dari WO</td>
+                  </tr>
+                  <tr class="hover:bg-gray-50">
+                    <td class="border border-gray-200 p-3 align-top font-semibold">11.00 - 12.00</td>
+                    <td class="border border-gray-200 p-3 align-top whitespace-pre-wrap">Beauty Shoot</td>
+                    <td class="border border-gray-200 p-3 align-top whitespace-pre-wrap text-gray-600"></td>
+                  </tr>
+                  <tr class="hover:bg-gray-50">
+                    <td class="border border-gray-200 p-3 align-top font-semibold">12.00 - 12.30</td>
+                    <td class="border border-gray-200 p-3 align-top whitespace-pre-wrap">Perjalanan menuju Gereja St Thomas Rasul</td>
+                    <td class="border border-gray-200 p-3 align-top whitespace-pre-wrap text-gray-600">Pengantin menggunakan mobil pengantin dari Fendi car standby jam 11.00, warna bunga …..</td>
+                  </tr>
+                  <tr class="hover:bg-gray-50">
+                    <td class="border border-gray-200 p-3 align-top font-semibold">13.00 - 15.00</td>
+                    <td class="border border-gray-200 p-3 align-top whitespace-pre-wrap">Pemberkatan : Gereja St. Thomas Rasul
+Venue : Jl. Pakis Raya No. 20, Rawa Buaya, Cengkareng
+Lektor : 
+Saksi Gereja : 
+Choir : 
+Persembahan : Bunga Bunda Maria dari dekor, Benda Rohani by Pengantin, Buku Misa, Stipendium Romo
+LIST FOTO PEMBERKATAN :</td>
+                    <td class="border border-gray-200 p-3 align-top whitespace-pre-wrap text-gray-600">Pic Gereja :
+PIC makanan :
+Konsumsi Pemberkatan dari ……, ….. box Panitia Gereja
+Family : Tamu : WO : 6 Foto Video : 3 Driver : 1</td>
+                  </tr>
+                  <tr class="hover:bg-gray-50">
+                    <td class="border border-gray-200 p-3 align-top font-semibold">15.00 - 15.30</td>
+                    <td class="border border-gray-200 p-3 align-top whitespace-pre-wrap">Perjalanan Kembali ke Hotel Harris Puri Mansion</td>
+                    <td class="border border-gray-200 p-3 align-top whitespace-pre-wrap text-gray-600"></td>
+                  </tr>
+                  <tr class="hover:bg-gray-50">
+                    <td class="border border-gray-200 p-3 align-top font-semibold">15.30 - 17.30</td>
+                    <td class="border border-gray-200 p-3 align-top whitespace-pre-wrap">Retouch : Bride, 2 Mama, 2 Ipar</td>
+                    <td class="border border-gray-200 p-3 align-top whitespace-pre-wrap text-gray-600">MUA : Veli Bridal</td>
+                  </tr>
+                  <tr class="hover:bg-gray-50">
+                    <td class="border border-gray-200 p-3 align-top font-semibold">17.30 - 18.30</td>
+                    <td class="border border-gray-200 p-3 align-top whitespace-pre-wrap">Teapai
+List Teapai:
+Keluarga Hendry: Papa & Mama
+Keluarga Valensia: Papa & Mama</td>
+                    <td class="border border-gray-200 p-3 align-top whitespace-pre-wrap text-gray-600">Tea dari Hotel: 
+Disposable cup dari:
+Cangkir & Teko:
+PIC Hadiah Teapai:
+Ruangan: Productive Room Lt 1
+Hadiah teapai: Handuk 40 Pcs (1 orang, 1 sovenir)
+Snack teapai:</td>
+                  </tr>
+                  <tr class="hover:bg-gray-50">
+                    <td class="border border-gray-200 p-3 align-top font-semibold">18.30 - 19.00</td>
+                    <td class="border border-gray-200 p-3 align-top whitespace-pre-wrap">Pengantin menunggu di ruang VIP
+Tim WO akan briefing</td>
+                    <td class="border border-gray-200 p-3 align-top whitespace-pre-wrap text-gray-600">Menunggu di ruang ….., Early dinner …. Pax, Ready Jam 18.00
+Meal Crew …. Pax dari Pengantin, Ready Pukul 16.00
+WO : 6
+Fovid : 3
+Entertaiment :
+Cake :
+Décor :</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Section 4 -->
+          <div class="mb-10">
+            <h3 class="text-xl font-bold bg-[#314a31] text-white px-4 py-2 rounded-t-md mb-0">RESEPSI</h3>
+            <div class="overflow-x-auto">
+              <table class="w-full text-sm border-collapse border border-gray-200">
+                <thead class="bg-gray-100 text-gray-700">
+                  <tr>
+                    <th class="border border-gray-200 p-2 text-left w-32">Waktu</th>
+                    <th class="border border-gray-200 p-2 text-left">Kegiatan</th>
+                    <th class="border border-gray-200 p-2 text-left w-64">PIC / Keterangan</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="hover:bg-gray-50">
+                    <td class="border border-gray-200 p-3 align-top font-semibold">19.00 - 19.05</td>
+                    <td class="border border-gray-200 p-3 align-top whitespace-pre-wrap">Opening MC
+- Pengantin masih standby di ruang tunggu
+- Opening MC & Welcoming Guest</td>
+                    <td class="border border-gray-200 p-3 align-top whitespace-pre-wrap text-gray-600">Pemberkatan : Gereja Hati Kudus Kramat Pkl : 09.00</td>
+                  </tr>
+                  <tr class="hover:bg-gray-50">
+                    <td class="border border-gray-200 p-3 align-top font-semibold">19.05 - 19.15</td>
+                    <td class="border border-gray-200 p-3 align-top whitespace-pre-wrap">Prosesi Masuk Orang Tua & Siblings
+Susunan Barisan:
+ORANG TUA HENDRY : Tn. Tju Sjin Tjhong & Ny. Dra Susana
+SAUDARA KANDUNG HENDRY : Hendra, Harris & Carolina Laimena Sanjaya
+ORANG TUA VALENSIA : Tn. Ng Ket Hau & Ny. Bong Su San
+SAUDARA KANDUNG VALENSIA : Willy Huang & Lisa Adiputra
+PENAYANGAN VIDEO PREWED ??</td>
+                    <td class="border border-gray-200 p-3 align-top whitespace-pre-wrap text-gray-600">Lagu Masuk orang tua Instrumen
+Ortu Menuju ke Wedding Cake
+Saudara Kandung berdiri di tangga naik</td>
+                  </tr>
+                  <tr class="hover:bg-gray-50">
+                    <td class="border border-gray-200 p-3 align-top font-semibold">19.15 - 19.20</td>
+                    <td class="border border-gray-200 p-3 align-top whitespace-pre-wrap">Prosesi Masuk Kedua Mempelai
+- Hendry & Valensia Berjalan Bersama dari Pintu Utama menuju ke Wedding cake</td>
+                    <td class="border border-gray-200 p-3 align-top whitespace-pre-wrap text-gray-600">Lagu Masuk Pengantin “……………..”</td>
+                  </tr>
+                  <tr class="hover:bg-gray-50">
+                    <td class="border border-gray-200 p-3 align-top font-semibold">19.20 - 19.25</td>
+                    <td class="border border-gray-200 p-3 align-top whitespace-pre-wrap">Pemotongan Kue & Suap suapan:
+1. Suapan ke Ortu Hadrian
+2. Suapan ke Ortu Gisela
+Pengantin saling suap
+Wedding Kiss</td>
+                    <td class="border border-gray-200 p-3 align-top whitespace-pre-wrap text-gray-600">Diiringi Instrumental Live
+Wedding cake by Libra Cake
+Kue untuk suap-suapan dari Libra Cake
+MC memandu prosesi cutting cake</td>
+                  </tr>
+                  <tr class="hover:bg-gray-50">
+                    <td class="border border-gray-200 p-3 align-top font-semibold">19.25 - 19.30</td>
+                    <td class="border border-gray-200 p-3 align-top whitespace-pre-wrap">Pouring Champagne 3 tingkat</td>
+                    <td class="border border-gray-200 p-3 align-top whitespace-pre-wrap text-gray-600">Sparkling Juice dari Sky 2 Botol</td>
+                  </tr>
+                  <tr class="hover:bg-gray-50">
+                    <td class="border border-gray-200 p-3 align-top font-semibold">19.30 - 20.20</td>
+                    <td class="border border-gray-200 p-3 align-top whitespace-pre-wrap">Speech by Groom
+Wedding Toss
+Dinner
+Mingle
+Games</td>
+                    <td class="border border-gray-200 p-3 align-top whitespace-pre-wrap text-gray-600">7 Gelas Toast di Pelaminan
+Hadiah Games 1</td>
+                  </tr>
+                  <tr class="hover:bg-gray-50">
+                    <td class="border border-gray-200 p-3 align-top font-semibold">20.20 - 21.00</td>
+                    <td class="border border-gray-200 p-3 align-top whitespace-pre-wrap">List Foto :
+Keluarga Besar Papa Hendry
+Keluarga Besar Mama Hendry
+Keluarga Besar Papa Valensia
+Keluarga Besar Mama Valensia</td>
+                    <td class="border border-gray-200 p-3 align-top whitespace-pre-wrap text-gray-600"></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Notes section -->
+          <div class="mb-10 p-6 bg-gray-100 rounded-md">
+            <h3 class="text-lg font-bold mb-3 border-b pb-2">NOTES & LIST BARANG</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm text-gray-700">
+              <div class="whitespace-pre-wrap">Resepsi start jam 18.00, Total Undangan …. Pax
+PIC Hotel Harris Puri Mansion : 
+Tema Warna : 
+MC :  
+PIC WO Sky Wedding Organizer : Evi (0819 1585 5151)
+Music dari : Sky Wedding Entertaiment (Singer:           Warna Jas: Hitam )
+PIC Foto & Video : Arpang (Ingatkan Foto Video ambil Karangan Bunga Papan di Lobby)
+PIC Décor: Chelle
+Wedding Cake : Libra Cake 
+Photobooth : 
+Petugas buku tamu dari ….. ready jam 18.00
+Usher1 :
+Usher2 :
+Panitia konsumsi dari keluarga : 
+Penerima perlengkapan & angpao setelah resepsi : 
+Buku tamu dari Sky 2 buah, kotak angpao dari dekor 2 buah.
+Foto gallery2 … Pcs, … standing kanvas , Rak Sovenir dari decor
+Souvenir : …… , pakai kupon penukaran sovenir ??</div>
+              <div class="whitespace-pre-wrap font-mono bg-white p-4 border border-gray-200 rounded">LIST BARANG PENGANTIN PAGI:
+- UNDANGAN 3
+- KEEPSAKE
+- CINCIN & KOTAK CINCIN
+- SEPATU, JAS, KEMEJA, DASI, KAOS KAKI, JAM TANGAN, BELT
+- AIR MINERAL
+- BENDA ROHANI
+- BUKU MISA
+
+RESEPSI SIANG:
+- SOUVENIR RESEPSI 
+- FOTO KANVAS 
+- GEMBOK 2
+- KOPER 1
+- HADIAH GAMES 1 Pcs</div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="module">
+    import { getWeddingRundown, saveWeddingRundown } from '/rundown-api.js';
+    
+    document.addEventListener('DOMContentLoaded', async () => {
+      const editor = document.getElementById('rundown-editor');
+      const statusBar = document.getElementById('status-bar');
+      const statusText = document.getElementById('status-text');
+      const statusDot = document.getElementById('status-dot');
+      const initialHtml = editor.innerHTML; // Default content if DB is empty
+
+      // Fetch latest
+      try {
+        const savedHtml = await getWeddingRundown();
+        if (savedHtml) {
+          editor.innerHTML = savedHtml;
+        }
+      } catch (err) {
+        console.error('Error loading rundown, using default:', err);
+      }
+      
+      // Auto-save logic
+      let timeoutId = null;
+
+      function updateStatus(state) {
+        statusBar.classList.remove('opacity-0');
+        if (state === 'saving') {
+          statusText.textContent = 'Saving...';
+          statusText.classList.remove('text-green-600', 'text-red-500');
+          statusText.classList.add('text-yellow-600');
+          statusDot.querySelector('.bg-green-500').classList.replace('bg-green-500', 'bg-yellow-500');
+          statusDot.querySelector('.animate-ping').classList.remove('hidden');
+          statusDot.querySelector('.animate-ping').classList.replace('bg-green-400', 'bg-yellow-400');
+        } else if (state === 'saved') {
+          statusText.textContent = 'Saved';
+          statusText.classList.remove('text-yellow-600', 'text-red-500');
+          statusText.classList.add('text-green-600');
+          statusDot.querySelector('.bg-yellow-500').classList.replace('bg-yellow-500', 'bg-green-500');
+          statusDot.querySelector('.animate-ping').classList.add('hidden');
+          statusDot.querySelector('.animate-ping').classList.replace('bg-yellow-400', 'bg-green-400');
+          setTimeout(() => statusBar.classList.add('opacity-0'), 2000);
+        } else if (state === 'error') {
+          statusText.textContent = 'Error saving';
+          statusText.classList.remove('text-yellow-600', 'text-green-600');
+          statusText.classList.add('text-red-500');
+          statusDot.querySelector('.bg-yellow-500')?.classList.replace('bg-yellow-500', 'bg-red-500');
+          statusDot.querySelector('.bg-green-500')?.classList.replace('bg-green-500', 'bg-red-500');
+          statusDot.querySelector('.animate-ping').classList.add('hidden');
+        }
+      }
+
+      editor.addEventListener('input', () => {
+        updateStatus('saving');
+        
+        clearTimeout(timeoutId);
+        timeoutId = setTimeout(async () => {
+          try {
+            await saveWeddingRundown(editor.innerHTML);
+            updateStatus('saved');
+          } catch (err) {
+            console.error('Save failed', err);
+            updateStatus('error');
+          }
+        }, 1500); // 1.5 seconds debounce
+      });
+
+      // Prevent default form submissions if inside forms
+      editor.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' && e.ctrlKey) {
+           // allow maybe some formatting shortcuts
+        }
+      });
+    });
+  </script>
+</Layout>
