@@ -89,6 +89,14 @@ const allPhotos = await Promise.all(
       }
 
       // Music toggle logic
+      if (bgMusic) {
+        bgMusic.loop = true;
+        bgMusic.addEventListener('ended', () => {
+          bgMusic.currentTime = 0;
+          bgMusic.play().catch(e => console.log('Audio loop restart failed:', e));
+        });
+      }
+
       if (musicToggleBtn && bgMusic) {
         musicToggleBtn.addEventListener('click', () => {
           if (isPlaying) {
@@ -174,7 +182,7 @@ const allPhotos = await Promise.all(
           <div class="text-3xl font-serif italic opacity-50">&amp;</div>
           <div class="flex flex-col items-center text-center">
             <h2 class="font-serif text-2xl md:text-4xl italic font-bold">Valensia</h2>
-            <p class="text-[10px] md:text-xs font-semibold uppercase tracking-[3px] mt-4 opacity-70">Daughter of Mr. Bong Ket Hau &amp; Mrs. Liauw Su San</p>
+            <p class="text-[10px] md:text-xs font-semibold uppercase tracking-[3px] mt-4 opacity-70">Daughter of Mr. Bong Ket Hau &amp; <br />Mrs. Liauw Su San</p>
           </div>
         </div>
       </div>
@@ -301,7 +309,7 @@ const allPhotos = await Promise.all(
 
     <style is:global>
       .custom-monochrome {
-        filter: sepia(30%) contrast(1.05) saturate(1.2);
+        filter: brightness(1.14) contrast(1.02);
       }
       .custom-blob-1 {
         border-radius: 65% 35% 25% 75% / 55% 60% 40% 45%;
@@ -470,48 +478,54 @@ const allPhotos = await Promise.all(
           </div>
 
           <!-- Bank Details -->
-          <div class="flex flex-col sm:flex-row flex-wrap items-center lg:items-start gap-8 pt-4">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 pt-4 w-full max-w-xl">
             
-            <!-- Hendry's Account -->
-            <div class="flex flex-col items-center lg:items-start gap-3 w-full sm:w-auto">
-              <div class="flex flex-col gap-1 items-center lg:items-start">
-                <span class="text-sm font-bold uppercase tracking-[4px]">BCA</span>
-                <span class="text-xl md:text-2xl font-black tracking-widest text-primary">521 504 7595</span>
-                <span class="text-[10px] md:text-xs font-bold uppercase tracking-[2px] opacity-80">A.N. Hendry</span>
+            <!-- Left Side: Hendry -->
+            <div class="flex flex-col items-center lg:items-start gap-8">
+              <!-- Hendry's Account -->
+              <div class="flex flex-col items-center lg:items-start gap-3 w-full sm:w-auto">
+                <div class="flex flex-col gap-1 items-center lg:items-start">
+                  <span class="text-sm font-bold uppercase tracking-[4px]">BCA</span>
+                  <span class="text-xl md:text-2xl font-black tracking-widest text-primary">521 504 7595</span>
+                  <span class="text-[10px] md:text-xs font-bold uppercase tracking-[2px] opacity-80">A.N. Hendry</span>
+                </div>
+                
+                <button type="button" onclick="navigator.clipboard.writeText('5215047595'); const original = this.innerHTML; this.innerHTML='COPIED!'; setTimeout(() => this.innerHTML=original, 2000)" class="mt-2 text-[10px] font-bold uppercase tracking-[2px] text-[#fbf4e6] bg-[#253825] py-3 px-6 rounded-full hover:bg-black/30 transition-colors border-[1.5px] border-white/20 inline-flex items-center justify-center gap-2">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                  <span>COPY NUMBER</span>
+                </button>
               </div>
-              
-              <button type="button" onclick="navigator.clipboard.writeText('5215047595'); const original = this.innerHTML; this.innerHTML='COPIED!'; setTimeout(() => this.innerHTML=original, 2000)" class="mt-2 text-[10px] font-bold uppercase tracking-[2px] text-[#fbf4e6] bg-[#253825] py-3 px-6 rounded-full hover:bg-black/30 transition-colors border-[1.5px] border-white/20 inline-flex items-center justify-center gap-2">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-                <span>COPY NUMBER</span>
-              </button>
             </div>
 
-            <!-- Valensia's Account 1 -->
-            <div class="flex flex-col items-center lg:items-start gap-3 w-full sm:w-auto">
-              <div class="flex flex-col gap-1 items-center lg:items-start">
-                <span class="text-sm font-bold uppercase tracking-[4px]">Bank Saqu</span>
-                <span class="text-xl md:text-2xl font-black tracking-widest text-primary">100 113 10759</span>
-                <span class="text-[10px] md:text-xs font-bold uppercase tracking-[2px] opacity-80">A.N. Valensia Huang</span>
+            <!-- Right Side: Valensia -->
+            <div class="flex flex-col items-center lg:items-start gap-8">
+              <!-- Valensia's Account 1 -->
+              <div class="flex flex-col items-center lg:items-start gap-3 w-full sm:w-auto">
+                <div class="flex flex-col gap-1 items-center lg:items-start">
+                  <span class="text-sm font-bold uppercase tracking-[4px]">Bank Saqu</span>
+                  <span class="text-xl md:text-2xl font-black tracking-widest text-primary">100 113 10759</span>
+                  <span class="text-[10px] md:text-xs font-bold uppercase tracking-[2px] opacity-80">A.N. Valensia Huang</span>
+                </div>
+                
+                <button type="button" onclick="navigator.clipboard.writeText('10011310759'); const original = this.innerHTML; this.innerHTML='COPIED!'; setTimeout(() => this.innerHTML=original, 2000)" class="mt-2 text-[10px] font-bold uppercase tracking-[2px] text-[#fbf4e6] bg-[#253825] py-3 px-6 rounded-full hover:bg-black/30 transition-colors border-[1.5px] border-white/20 inline-flex items-center justify-center gap-2">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                  <span>COPY NUMBER</span>
+                </button>
               </div>
-              
-              <button type="button" onclick="navigator.clipboard.writeText('10011310759'); const original = this.innerHTML; this.innerHTML='COPIED!'; setTimeout(() => this.innerHTML=original, 2000)" class="mt-2 text-[10px] font-bold uppercase tracking-[2px] text-[#fbf4e6] bg-[#253825] py-3 px-6 rounded-full hover:bg-black/30 transition-colors border-[1.5px] border-white/20 inline-flex items-center justify-center gap-2">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-                <span>COPY NUMBER</span>
-              </button>
-            </div>
 
-            <!-- Valensia's Account 2 -->
-            <div class="flex flex-col items-center lg:items-start gap-3 w-full sm:w-auto">
-              <div class="flex flex-col gap-1 items-center lg:items-start">
-                <span class="text-sm font-bold uppercase tracking-[4px]">BCA</span>
-                <span class="text-xl md:text-2xl font-black tracking-widest text-primary">532 506 3031</span>
-                <span class="text-[10px] md:text-xs font-bold uppercase tracking-[2px] opacity-80">A.N. Valensia Huang</span>
+              <!-- Valensia's Account 2 -->
+              <div class="flex flex-col items-center lg:items-start gap-3 w-full sm:w-auto">
+                <div class="flex flex-col gap-1 items-center lg:items-start">
+                  <span class="text-sm font-bold uppercase tracking-[4px]">BCA</span>
+                  <span class="text-xl md:text-2xl font-black tracking-widest text-primary">532 506 3031</span>
+                  <span class="text-[10px] md:text-xs font-bold uppercase tracking-[2px] opacity-80">A.N. Valensia Huang</span>
+                </div>
+                
+                <button type="button" onclick="navigator.clipboard.writeText('5325063031'); const original = this.innerHTML; this.innerHTML='COPIED!'; setTimeout(() => this.innerHTML=original, 2000)" class="mt-2 text-[10px] font-bold uppercase tracking-[2px] text-[#fbf4e6] bg-[#253825] py-3 px-6 rounded-full hover:bg-black/30 transition-colors border-[1.5px] border-white/20 inline-flex items-center justify-center gap-2">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+                  <span>COPY NUMBER</span>
+                </button>
               </div>
-              
-              <button type="button" onclick="navigator.clipboard.writeText('5325063031'); const original = this.innerHTML; this.innerHTML='COPIED!'; setTimeout(() => this.innerHTML=original, 2000)" class="mt-2 text-[10px] font-bold uppercase tracking-[2px] text-[#fbf4e6] bg-[#253825] py-3 px-6 rounded-full hover:bg-black/30 transition-colors border-[1.5px] border-white/20 inline-flex items-center justify-center gap-2">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-                <span>COPY NUMBER</span>
-              </button>
             </div>
 
           </div>
