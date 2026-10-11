@@ -75,7 +75,7 @@ const allPhotos = await Promise.all(
           
           // Play background music
           if (bgMusic) {
-            bgMusic.currentTime = 10; // Start at 10 seconds
+            bgMusic.currentTime = 2; // Start at 2 seconds
             bgMusic.play().then(() => {
               isPlaying = true;
             }).catch(e => console.log('Audio play failed:', e));
