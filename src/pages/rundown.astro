@@ -1,0 +1,1564 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Rundown Pernikahan - Hendry & Valensia" description="Rundown Lengkap Acara Pernikahan Hendry & Valensia Huang - Minggu, 6 Desember 2026">
+  <div class="min-h-screen bg-[#fcfaf7] text-[#2c402c] font-sans selection:bg-[#314a31] selection:text-[#fbf4e6]">
+    
+    <!-- Top Sticky Navigation Bar -->
+    <header class="sticky top-0 z-40 bg-[#314a31]/95 backdrop-blur-md text-[#fbf4e6] border-b border-[#fbf4e6]/10 shadow-md">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5 flex flex-wrap items-center justify-between gap-3">
+        <div class="flex items-center gap-3">
+          <a href="/" class="p-2 rounded-full hover:bg-white/10 transition-colors" title="Kembali ke Undangan">
+            <svg class="w-5 h-5 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path>
+            </svg>
+          </a>
+          <div>
+            <h1 class="font-serif italic text-lg sm:text-xl font-bold tracking-wide text-primary">H &amp; V Wedding Rundown</h1>
+            <p class="text-[11px] sm:text-xs text-[#fbf4e6]/80 font-medium tracking-wider">Minggu, 6 Desember 2026 • Hotel Harris Puri Mansion</p>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-2 sm:gap-3">
+          <!-- Quick Print Button -->
+          <button onclick="window.print()" class="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider bg-white/10 hover:bg-white/20 text-[#fbf4e6] px-3.5 py-2 rounded-full transition-all border border-white/10">
+            <svg class="w-4 h-4 text-primary" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"></path>
+            </svg>
+            <span class="hidden sm:inline">Cetak</span>
+          </button>
+
+          <!-- Quick Copy Summary Button -->
+          <button id="copy-summary-btn" class="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider bg-primary text-[#314a31] hover:bg-yellow-200 px-4 py-2 rounded-full transition-all shadow-sm">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"></path>
+            </svg>
+            <span id="copy-text">Salin Jadwal</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero / Header Section -->
+    <section class="bg-gradient-to-b from-[#314a31] to-[#253825] text-[#fbf4e6] py-12 px-4 sm:px-6 lg:px-8 shadow-inner">
+      <div class="max-w-6xl mx-auto text-center space-y-4">
+        <span class="inline-block text-xs font-bold uppercase tracking-[4px] bg-primary/20 text-primary px-4 py-1.5 rounded-full border border-primary/30">
+          Official Master Schedule &amp; To-Do
+        </span>
+        <h1 class="font-serif italic text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-[#fbf4e6]">
+          Rundown Acara Pernikahan
+        </h1>
+        <p class="font-serif text-2xl sm:text-3xl text-primary font-medium">
+          Hendry &amp; Valensia Huang
+        </p>
+
+        <!-- Key Meta Info Cards -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 max-w-4xl mx-auto pt-4 text-left">
+          <div class="bg-white/10 backdrop-blur-sm p-4 rounded-2xl border border-white/10">
+            <p class="text-[10px] uppercase font-bold tracking-wider text-primary">Hari &amp; Tanggal</p>
+            <p class="text-sm sm:text-base font-bold mt-1">Minggu, 6 Des 2026</p>
+            <p class="text-[11px] opacity-75">Dimulai 05.30 WIB</p>
+          </div>
+          <div class="bg-white/10 backdrop-blur-sm p-4 rounded-2xl border border-white/10">
+            <p class="text-[10px] uppercase font-bold tracking-wider text-primary">Pemberkatan Gereja</p>
+            <p class="text-sm sm:text-base font-bold mt-1">13.00 – 15.00 WIB</p>
+            <p class="text-[11px] opacity-75">St. Thomas Rasul, Bojong</p>
+          </div>
+          <div class="bg-white/10 backdrop-blur-sm p-4 rounded-2xl border border-white/10">
+            <p class="text-[10px] uppercase font-bold tracking-wider text-primary">Teapai Keluarga</p>
+            <p class="text-sm sm:text-base font-bold mt-1">17.30 – 18.30 WIB</p>
+            <p class="text-[11px] opacity-75">Productive Room Lt. 1</p>
+          </div>
+          <div class="bg-white/10 backdrop-blur-sm p-4 rounded-2xl border border-white/10">
+            <p class="text-[10px] uppercase font-bold tracking-wider text-primary">Resepsi Makan Malam</p>
+            <p class="text-sm sm:text-base font-bold mt-1">19.00 – 21.00 WIB</p>
+            <p class="text-[11px] opacity-75">Hotel Harris (400 Pax)</p>
+          </div>
+        </div>
+
+        <!-- Pending Items Alert Banner -->
+        <div class="mt-6 p-4 bg-amber-500/20 border border-amber-400/40 rounded-2xl text-left max-w-4xl mx-auto flex items-start gap-3 text-amber-200 text-xs sm:text-sm">
+          <svg class="w-5 h-5 flex-shrink-0 text-amber-300 mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+          </svg>
+          <div>
+            <span class="font-bold text-amber-100 uppercase tracking-wider">Perhatian / Poin Yang Perlu Dikonfirmasi (Pending):</span>
+            <ul class="mt-1 list-disc list-inside space-y-0.5 text-[12px] opacity-90">
+              <li><strong>Harris Hotel:</strong> Konfirmasi ruangan VIP tunggu pengantin &amp; penyediaan teh/cangkir/teko Teapai.</li>
+              <li><strong>WO Sky:</strong> Standby pagi (disarankan standby sejak 05.30 untuk makeup), konfirmasi singer entertainment, usher 1-2, dan durasi pengiriman video slideshow.</li>
+              <li><strong>Libra Cake:</strong> Konfirmasi jatah kue mingle dan kue suap-suapan.</li>
+              <li><strong>Shandy's Catering:</strong> Box konsumsi pemberkatan diupdate menjadi 70 box (sebelumnya 50 box).</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Navigation Tabs & Search Controls -->
+    <div class="sticky top-[58px] z-30 bg-[#fcfaf7]/95 backdrop-blur-md border-b border-[#314a31]/10 py-3 px-4 shadow-sm">
+      <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-3">
+        <!-- Filter Tabs -->
+        <div class="flex items-center gap-1.5 overflow-x-auto w-full md:w-auto pb-1 md:pb-0 text-xs font-semibold no-scrollbar">
+          <button data-filter="all" class="tab-btn px-4 py-2 rounded-full transition-all bg-[#314a31] text-[#fbf4e6] shadow-sm whitespace-nowrap">
+            Semua Acara
+          </button>
+          <button data-filter="morning" class="tab-btn px-4 py-2 rounded-full transition-all bg-white text-[#2c402c] hover:bg-black/5 border border-black/5 whitespace-nowrap">
+            🌅 Pagi &amp; Makeup
+          </button>
+          <button data-filter="pickup" class="tab-btn px-4 py-2 rounded-full transition-all bg-white text-[#2c402c] hover:bg-black/5 border border-black/5 whitespace-nowrap">
+            🚪 Penjemputan
+          </button>
+          <button data-filter="church" class="tab-btn px-4 py-2 rounded-full transition-all bg-white text-[#2c402c] hover:bg-black/5 border border-black/5 whitespace-nowrap">
+            ⛪ Pemberkatan
+          </button>
+          <button data-filter="teapai" class="tab-btn px-4 py-2 rounded-full transition-all bg-white text-[#2c402c] hover:bg-black/5 border border-black/5 whitespace-nowrap">
+            🍵 Teapai
+          </button>
+          <button data-filter="reception" class="tab-btn px-4 py-2 rounded-full transition-all bg-white text-[#2c402c] hover:bg-black/5 border border-black/5 whitespace-nowrap">
+            🎉 Resepsi
+          </button>
+          <button data-filter="todo" class="tab-btn px-4 py-2 rounded-full transition-all bg-white text-[#2c402c] hover:bg-black/5 border border-black/5 whitespace-nowrap">
+            ✅ To-Do &amp; Checklist
+          </button>
+          <button data-filter="contacts" class="tab-btn px-4 py-2 rounded-full transition-all bg-white text-[#2c402c] hover:bg-black/5 border border-black/5 whitespace-nowrap">
+            👥 Vendor &amp; PIC
+          </button>
+        </div>
+
+        <!-- Realtime Search Input -->
+        <div class="relative w-full md:w-64 flex-shrink-0">
+          <input type="text" id="schedule-search" placeholder="Cari kegiatan, PIC, lokasi..." class="w-full pl-9 pr-4 py-2 text-xs bg-white rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#314a31] focus:border-transparent transition-all shadow-inner" />
+          <svg class="w-4 h-4 text-gray-400 absolute left-3 top-2.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- MAIN CONTENT CONTAINER -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-12">
+
+      <!-- ========================================== -->
+      <!-- SECTION 1: PERSIAPAN DI TEMPAT PRIA & WANITA -->
+      <!-- ========================================== -->
+      <section id="section-morning" class="schedule-section space-y-6" data-category="morning">
+        <div class="flex items-center justify-between border-b-2 border-[#314a31]/20 pb-3">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-widest text-[#314a31]">Fase 1 • 05.30 – 10.00 WIB</span>
+            <h2 class="font-serif text-2xl sm:text-3xl font-bold text-[#314a31]">Persiapan &amp; Makeup (Tempat Pria &amp; Wanita)</h2>
+          </div>
+          <span class="text-xs font-semibold bg-[#314a31]/10 text-[#314a31] px-3 py-1 rounded-full">Hotel Harris Puri Mansion</span>
+        </div>
+
+        <!-- Two Column Comparison / Mobile Stack for Groom & Bride Morning Prep -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          
+          <!-- GROOM PREPARATION CARD -->
+          <div class="bg-white rounded-3xl p-6 sm:p-7 shadow-sm border border-gray-200/80 space-y-5">
+            <div class="flex items-center justify-between pb-3 border-b border-gray-100">
+              <div class="flex items-center gap-2.5">
+                <span class="w-8 h-8 rounded-full bg-blue-50 text-blue-700 flex items-center justify-center font-bold text-sm">🤵</span>
+                <div>
+                  <h3 class="font-bold text-lg text-gray-900">Persiapan Tempat Pria (Hendry)</h3>
+                  <p class="text-xs text-gray-500">Kamar Pengantin Pria • Harris Puri Mansion</p>
+                </div>
+              </div>
+              <span class="text-[11px] font-bold bg-blue-100 text-blue-800 px-2.5 py-1 rounded-full uppercase tracking-wider">Keluarga Groom</span>
+            </div>
+
+            <!-- Members list -->
+            <div class="bg-gray-50 rounded-2xl p-4 text-xs text-gray-700 space-y-2 border border-gray-100">
+              <p class="font-bold uppercase tracking-wider text-gray-500 text-[10px]">Keluarga Yang Menginap:</p>
+              <ul class="grid grid-cols-1 sm:grid-cols-2 gap-1.5">
+                <li><span class="font-semibold">Groom:</span> Hendry</li>
+                <li><span class="font-semibold">Papa:</span> Tn. Tju Shin Tjhong</li>
+                <li><span class="font-semibold">Mama:</span> Ny. Susana</li>
+                <li><span class="font-semibold">Saudara:</span> Hendra</li>
+                <li class="sm:col-span-2"><span class="font-semibold">Saudara:</span> Harris &amp; Carolina Laimena Sanjaya &amp; Caiden</li>
+              </ul>
+            </div>
+
+            <!-- Timeline Items -->
+            <div class="space-y-4">
+              <!-- Item 1 -->
+              <div class="p-4 rounded-2xl bg-gray-50/80 border border-gray-100 space-y-2">
+                <div class="flex items-center justify-between">
+                  <span class="font-mono font-bold text-xs bg-gray-200 text-gray-800 px-2.5 py-0.5 rounded">05.30 – 06.00</span>
+                  <span class="text-[11px] text-gray-500 font-semibold">Morning Breakfast</span>
+                </div>
+                <h4 class="font-bold text-sm text-gray-900">Bangun, Persiapan &amp; Sarapan Keluarga Groom</h4>
+                <p class="text-xs text-gray-600">Sarapan pagi di hotel bersama keluarga inti. Menyiapkan outfit &amp; perlengkapan yang akan difoto.</p>
+              </div>
+
+              <!-- Item 2 -->
+              <div class="p-4 rounded-2xl bg-gray-50/80 border border-gray-100 space-y-2">
+                <div class="flex items-center justify-between">
+                  <span class="font-mono font-bold text-xs bg-blue-100 text-blue-800 px-2.5 py-0.5 rounded">06.00 – 09.00</span>
+                  <span class="text-[11px] font-semibold text-blue-700">MUA: Veli Bridal</span>
+                </div>
+                <h4 class="font-bold text-sm text-gray-900">Sesi Makeup Groom &amp; Keluarga</h4>
+                <div class="text-xs text-gray-700 space-y-1">
+                  <div class="flex justify-between border-b border-gray-200/50 py-1">
+                    <span>Makeup Mama (Ny. Susana)</span>
+                    <span class="font-semibold font-mono">06.00 – 07.30</span>
+                  </div>
+                  <div class="flex justify-between border-b border-gray-200/50 py-1">
+                    <span>Makeup Ipar (Carolina)</span>
+                    <span class="font-semibold font-mono">07.30 – 09.00</span>
+                  </div>
+                  <div class="flex justify-between py-1">
+                    <span>Makeup Groom (Hendry)</span>
+                    <span class="font-semibold font-mono">08.00</span>
+                  </div>
+                </div>
+                <div class="text-[11px] bg-amber-50 text-amber-900 p-2 rounded-xl mt-2 border border-amber-200/50">
+                  <strong>Pakaian:</strong> Gaun Mama by Veli Bridal. Dasi Papa &amp; Brother dibawa sendiri.
+                </div>
+              </div>
+
+              <!-- Item 3 -->
+              <div class="p-4 rounded-2xl bg-gray-50/80 border border-gray-100 space-y-2">
+                <div class="flex items-center justify-between">
+                  <span class="font-mono font-bold text-xs bg-green-100 text-green-800 px-2.5 py-0.5 rounded">08.00 – 09.00</span>
+                  <span class="text-[11px] font-semibold text-green-700">Vendor Foto: Arpang (Standby 08.00)</span>
+                </div>
+                <h4 class="font-bold text-sm text-gray-900">Beauty Groom &amp; Prosesi Bersama Orang Tua</h4>
+                <ul class="text-xs text-gray-600 list-disc list-inside space-y-1">
+                  <li>Pemasangan jas oleh kedua orang tua</li>
+                  <li>Pemberian Hand Bouquet (HB) oleh Mama ke Hendry</li>
+                  <li>Foto Groom berdua dengan orang tua</li>
+                  <li>Foto Groom bersama Orang Tua &amp; Saudara Kandung</li>
+                </ul>
+
+                <div class="mt-2 text-xs bg-white p-3 rounded-xl border border-gray-200 space-y-1.5">
+                  <p class="font-bold text-gray-800 text-[11px] uppercase tracking-wider">Barang Display Di Atas Kasur (Untuk Foto Detail):</p>
+                  <p class="text-[12px] text-gray-600">Hand bouquet, Undangan, Cincin, Jas, dasi, sepatu, jam tangan, ikat pinggang.</p>
+                  <div class="pt-1 text-[11px] text-gray-500 flex flex-wrap gap-2">
+                    <span class="bg-gray-100 px-2 py-0.5 rounded">Corsage Groom (1): Chelle</span>
+                    <span class="bg-gray-100 px-2 py-0.5 rounded">Corsage Papa (2): Chelle</span>
+                    <span class="bg-gray-100 px-2 py-0.5 rounded">Corsage Sibling (3): Chelle</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- BRIDE PREPARATION CARD -->
+          <div class="bg-white rounded-3xl p-6 sm:p-7 shadow-sm border border-gray-200/80 space-y-5">
+            <div class="flex items-center justify-between pb-3 border-b border-gray-100">
+              <div class="flex items-center gap-2.5">
+                <span class="w-8 h-8 rounded-full bg-pink-50 text-pink-700 flex items-center justify-center font-bold text-sm">👰</span>
+                <div>
+                  <h3 class="font-bold text-lg text-gray-900">Persiapan Tempat Wanita (Valensia)</h3>
+                  <p class="text-xs text-gray-500">Kamar Pengantin Wanita • Harris Puri Mansion</p>
+                </div>
+              </div>
+              <span class="text-[11px] font-bold bg-pink-100 text-pink-800 px-2.5 py-1 rounded-full uppercase tracking-wider">Keluarga Bride</span>
+            </div>
+
+            <!-- Members list -->
+            <div class="bg-gray-50 rounded-2xl p-4 text-xs text-gray-700 space-y-2 border border-gray-100">
+              <p class="font-bold uppercase tracking-wider text-gray-500 text-[10px]">Keluarga Yang Menginap:</p>
+              <ul class="grid grid-cols-1 sm:grid-cols-2 gap-1.5">
+                <li><span class="font-semibold">Bride:</span> Valensia Huang</li>
+                <li><span class="font-semibold">Papa:</span> Tn. Bong Ket Hau</li>
+                <li><span class="font-semibold">Mama:</span> Ny. Liauw Su San</li>
+                <li><span class="font-semibold">Saudara:</span> Willy Huang &amp; Lisa Adiputra &amp; Owen</li>
+              </ul>
+            </div>
+
+            <!-- Timeline Items -->
+            <div class="space-y-4">
+              <!-- Item 1 -->
+              <div class="p-4 rounded-2xl bg-gray-50/80 border border-gray-100 space-y-2">
+                <div class="flex items-center justify-between">
+                  <span class="font-mono font-bold text-xs bg-gray-200 text-gray-800 px-2.5 py-0.5 rounded">05.30 – 06.00</span>
+                  <span class="text-[11px] text-gray-500 font-semibold">Morning Breakfast</span>
+                </div>
+                <h4 class="font-bold text-sm text-gray-900">Morning Call &amp; Sarapan Pagi Bride</h4>
+                <p class="text-xs text-gray-600">Sarapan pagi bersama orang tua dan keluarga, membersihkan wajah &amp; bersiap untuk makeup.</p>
+              </div>
+
+              <!-- Item 2 -->
+              <div class="p-4 rounded-2xl bg-gray-50/80 border border-gray-100 space-y-2">
+                <div class="flex items-center justify-between">
+                  <span class="font-mono font-bold text-xs bg-pink-100 text-pink-800 px-2.5 py-0.5 rounded">06.00 – 09.00</span>
+                  <span class="text-[11px] font-semibold text-pink-700">MUA: Veli Bridal</span>
+                </div>
+                <h4 class="font-bold text-sm text-gray-900">Make Up Bride, Mama &amp; Ipar</h4>
+                <div class="text-xs text-gray-700 space-y-1">
+                  <div class="flex justify-between border-b border-gray-200/50 py-1">
+                    <span>Makeup Mama (Ny. Liauw Su San)</span>
+                    <span class="font-semibold font-mono">06.00 – 07.30</span>
+                  </div>
+                  <div class="flex justify-between border-b border-gray-200/50 py-1">
+                    <span>Makeup Ipar (Lisa Adiputra)</span>
+                    <span class="font-semibold font-mono">07.30 – 09.00</span>
+                  </div>
+                  <div class="flex justify-between py-1">
+                    <span>Make Up Bride (Valensia)</span>
+                    <span class="font-semibold font-mono">06.00 – 09.00</span>
+                  </div>
+                </div>
+                <div class="text-[11px] bg-amber-50 text-amber-900 p-2 rounded-xl mt-2 border border-amber-200/50">
+                  <strong>Pakaian:</strong> Gaun Mama by Veli Bridal. Dasi Papa &amp; Brother bawa sendiri.
+                </div>
+              </div>
+
+              <!-- Item 3 -->
+              <div class="p-4 rounded-2xl bg-gray-50/80 border border-gray-100 space-y-2">
+                <div class="flex items-center justify-between">
+                  <span class="font-mono font-bold text-xs bg-purple-100 text-purple-800 px-2.5 py-0.5 rounded">09.00 – 09.30</span>
+                  <span class="text-[11px] font-semibold text-purple-700">Fitter Veli Bridal (Standby 08.00)</span>
+                </div>
+                <h4 class="font-bold text-sm text-gray-900">Foto Mannequin &amp; Ganti Wedding Gown</h4>
+                <p class="text-xs text-gray-600">Sesi foto bersama Mannequin dan Robe dari Bridal. Dibantu fitter memakai gaun pengantin.</p>
+              </div>
+
+              <!-- Item 4 -->
+              <div class="p-4 rounded-2xl bg-gray-50/80 border border-gray-100 space-y-2">
+                <div class="flex items-center justify-between">
+                  <span class="font-mono font-bold text-xs bg-pink-100 text-pink-800 px-2.5 py-0.5 rounded">09.30 – 10.00</span>
+                  <span class="text-[11px] font-semibold text-pink-700">Prosesi Haru</span>
+                </div>
+                <h4 class="font-bold text-sm text-gray-900">Prosesi Pelepasan Pengantin Wanita</h4>
+                <ul class="text-xs text-gray-600 list-disc list-inside space-y-1">
+                  <li>Bride berdiri di tengah-tengah kedua orang tua</li>
+                  <li>Pemberian Corsage dari Mama kepada Bride</li>
+                  <li>Momen cium &amp; peluk hangat bersama orang tua</li>
+                  <li>Foto bersama kedua orang tua &amp; saudara kandung</li>
+                  <li><strong>Penutupan veil</strong> oleh orang tua (<em>Catatan: Tidak ada pantangan buka tutup veil</em>)</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- WO Standby Notice -->
+            <div class="p-3 bg-yellow-50 border border-yellow-200 rounded-xl text-xs text-yellow-900">
+              <strong>Catatan WO:</strong> Tim WO Sky standby pukul 08.00 di Ruang Crew Hotel Harris Puri Mansion (<em>Disarankan 1-2 crew WO hadir dari jam 05.30 untuk monitor makeup pagi</em>).
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ========================================== -->
+      <!-- SECTION 2: PROSESI PENJEMPUTAN & BEAUTY SHOOT -->
+      <!-- ========================================== -->
+      <section id="section-pickup" class="schedule-section space-y-6" data-category="pickup">
+        <div class="flex items-center justify-between border-b-2 border-[#314a31]/20 pb-3">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-widest text-[#314a31]">Fase 2 • 10.00 – 12.30 WIB</span>
+            <h2 class="font-serif text-2xl sm:text-3xl font-bold text-[#314a31]">Penjemputan, Tradisi Kamar &amp; Beauty Shoot</h2>
+          </div>
+          <span class="text-xs font-semibold bg-[#314a31]/10 text-[#314a31] px-3 py-1 rounded-full">Hotel Harris Puri Mansion</span>
+        </div>
+
+        <div class="bg-white rounded-3xl shadow-sm border border-gray-200/80 overflow-hidden">
+          <div class="overflow-x-auto">
+            <table class="w-full text-left border-collapse text-xs sm:text-sm">
+              <thead>
+                <tr class="bg-[#314a31] text-[#fbf4e6] text-xs uppercase tracking-wider font-semibold">
+                  <th class="p-4 sm:p-5 w-36 whitespace-nowrap">Waktu</th>
+                  <th class="p-4 sm:p-5">Kegiatan &amp; Alur Prosesi</th>
+                  <th class="p-4 sm:p-5 w-44 whitespace-nowrap">Lokasi</th>
+                  <th class="p-4 sm:p-5 w-48">PIC / Perlengkapan</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-gray-100">
+                
+                <!-- 10.00 - 10.30 -->
+                <tr class="hover:bg-gray-50/80 transition-colors">
+                  <td class="p-4 sm:p-5 align-top font-mono font-bold text-gray-900">
+                    <span class="bg-blue-100 text-blue-800 px-2.5 py-1 rounded-full text-xs">10.00 – 10.30</span>
+                    <span class="block text-[11px] text-gray-500 mt-1 font-sans">30 Menit</span>
+                  </td>
+                  <td class="p-4 sm:p-5 align-top space-y-2">
+                    <h4 class="font-bold text-sm sm:text-base text-gray-900">Pertemuan Kedua Mempelai (First Look &amp; Pasang Bunga)</h4>
+                    <ol class="list-decimal list-inside space-y-1 text-gray-600 text-xs sm:text-sm">
+                      <li>Groom disambut oleh Orang Tua Bride di depan pintu kamar bride.</li>
+                      <li>Groom memberikan salam hormat kepada orang tua bride.</li>
+                      <li>Groom diapit oleh Papa &amp; Mama Bride masuk ke kamar untuk dipertemukan dengan Bride.</li>
+                      <li><strong>First Look:</strong> Groom &amp; Bride posisi punggung-punggungan, kemudian berbalik berhadapan.</li>
+                      <li>Bride memasangkan <em>corsage</em> pada jas Groom.</li>
+                      <li>Groom menyerahkan <em>hand bouquet</em> kepada Bride.</li>
+                      <li>Groom membuka Veil Bride, cium kening Bride, foto mesra berdua.</li>
+                      <li>Foto bersama Orang Tua &amp; Saudara Kandung Bride.</li>
+                    </ol>
+                    <div class="text-[11px] bg-gray-100 text-gray-700 px-3 py-1.5 rounded-lg inline-block font-medium">
+                      ⚠️ <strong>Catatan:</strong> Tidak ada prosesi makan Onde &amp; Misua di kamar bride.
+                    </div>
+                  </td>
+                  <td class="p-4 sm:p-5 align-top font-semibold text-gray-700">
+                    Kamar Bride<br>
+                    <span class="text-xs font-normal text-gray-500">Hotel Harris</span>
+                  </td>
+                  <td class="p-4 sm:p-5 align-top text-xs text-gray-600 space-y-1">
+                    <span class="font-semibold block text-gray-900">PIC: WO Sky &amp; Arpang</span>
+                    <p>• Hand Bouquet (Chelle)</p>
+                    <p>• Corsage Groom (Chelle)</p>
+                    <p>• Kamera &amp; Video Standby</p>
+                  </td>
+                </tr>
+
+                <!-- 10.30 - 11.00 -->
+                <tr class="hover:bg-gray-50/80 transition-colors bg-gray-50/40">
+                  <td class="p-4 sm:p-5 align-top font-mono font-bold text-gray-900">
+                    <span class="bg-blue-100 text-blue-800 px-2.5 py-1 rounded-full text-xs">10.30 – 11.00</span>
+                    <span class="block text-[11px] text-gray-500 mt-1 font-sans">30 Menit</span>
+                  </td>
+                  <td class="p-4 sm:p-5 align-top space-y-2">
+                    <h4 class="font-bold text-sm sm:text-base text-gray-900">Mempelai Menuju Kamar Groom &amp; Tradisi Langkahan</h4>
+                    <ol class="list-decimal list-inside space-y-1 text-gray-600 text-xs sm:text-sm">
+                      <li>Orang Tua Groom standby menyambut di depan pintu kamar pengantin.</li>
+                      <li>Kedua mempelai memberi salam hormat kepada Orang Tua Groom dengan <strong>pai 3x</strong>.</li>
+                      <li>Orang Tua Groom mengantar mempelai masuk ke dalam kamar.</li>
+                      <li>Mempelai meletakkan hand bouquet di atas ranjang, lalu <strong>menepuk ranjang sebanyak 3x</strong>.</li>
+                      <li>Foto bersama Orang Tua &amp; Saudara Groom.</li>
+                      <li><strong>Prosesi Langkahan 1 Koko Groom:</strong> Pemberian hadiah &amp; potong pita langkahan.</li>
+                    </ol>
+                  </td>
+                  <td class="p-4 sm:p-5 align-top font-semibold text-gray-700">
+                    Kamar Groom<br>
+                    <span class="text-xs font-normal text-gray-500">Hotel Harris</span>
+                  </td>
+                  <td class="p-4 sm:p-5 align-top text-xs text-gray-600 space-y-1">
+                    <span class="font-semibold block text-gray-900">PIC: WO Sky</span>
+                    <p class="text-amber-800 font-semibold">• Gunting &amp; Hadiah: Pengantin</p>
+                    <p class="text-amber-800 font-semibold">• Pita Langkahan: WO</p>
+                  </td>
+                </tr>
+
+                <!-- 11.00 - 12.00 -->
+                <tr class="hover:bg-gray-50/80 transition-colors">
+                  <td class="p-4 sm:p-5 align-top font-mono font-bold text-gray-900">
+                    <span class="bg-purple-100 text-purple-800 px-2.5 py-1 rounded-full text-xs">11.00 – 12.00</span>
+                    <span class="block text-[11px] text-gray-500 mt-1 font-sans">60 Menit</span>
+                  </td>
+                  <td class="p-4 sm:p-5 align-top space-y-1">
+                    <h4 class="font-bold text-sm sm:text-base text-gray-900">Beauty Shoot Pengantin &amp; Keluarga</h4>
+                    <p class="text-gray-600 text-xs sm:text-sm">Sesi foto portrait pengantin dan keluarga inti sebelum berangkat ke gereja.</p>
+                  </td>
+                  <td class="p-4 sm:p-5 align-top font-semibold text-gray-700">
+                    Lorong &amp; Spot Estetik<br>
+                    <span class="text-xs font-normal text-gray-500">Hotel Harris</span>
+                  </td>
+                  <td class="p-4 sm:p-5 align-top text-xs text-gray-600">
+                    <span class="font-semibold block text-gray-900">Vendor: Arpang</span>
+                    <p>Mobil Pengantin Fendi Car standby jam 11.00</p>
+                  </td>
+                </tr>
+
+                <!-- 12.00 - 12.30 -->
+                <tr class="hover:bg-gray-50/80 transition-colors">
+                  <td class="p-4 sm:p-5 align-top font-mono font-bold text-gray-900">
+                    <span class="bg-amber-100 text-amber-800 px-2.5 py-1 rounded-full text-xs">12.00 – 12.30</span>
+                    <span class="block text-[11px] text-gray-500 mt-1 font-sans">30 Menit</span>
+                  </td>
+                  <td class="p-4 sm:p-5 align-top space-y-1">
+                    <h4 class="font-bold text-sm sm:text-base text-gray-900">Perjalanan Menuju Gereja St. Thomas Rasul</h4>
+                    <p class="text-gray-600 text-xs sm:text-sm">Rombongan pengantin &amp; keluarga berangkat bersama menuju lokasi pemberkatan.</p>
+                  </td>
+                  <td class="p-4 sm:p-5 align-top font-semibold text-gray-700">
+                    Perjalanan (Mobil)<br>
+                    <span class="text-xs font-normal text-gray-500">Harris → Gereja</span>
+                  </td>
+                  <td class="p-4 sm:p-5 align-top text-xs text-gray-600 space-y-1">
+                    <span class="font-semibold block text-gray-900">Driver Fendi Car</span>
+                    <p>Dekorasi mobil: Bunga merah &amp; pink</p>
+                  </td>
+                </tr>
+
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================================== -->
+      <!-- SECTION 3: PEMBERKATAN GEREJA ST. THOMAS RASUL -->
+      <!-- ========================================== -->
+      <section id="section-church" class="schedule-section space-y-6" data-category="church">
+        <div class="flex items-center justify-between border-b-2 border-[#314a31]/20 pb-3">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-widest text-[#314a31]">Fase 3 • 12.00 – 15.30 WIB</span>
+            <h2 class="font-serif text-2xl sm:text-3xl font-bold text-[#314a31]">Pemberkatan Nikah Kudus (Holy Matrimony)</h2>
+          </div>
+          <span class="text-xs font-semibold bg-[#314a31]/10 text-[#314a31] px-3 py-1 rounded-full">Gereja St. Thomas Rasul</span>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          
+          <!-- Church Schedule Table (Span 2) -->
+          <div class="lg:col-span-2 bg-white rounded-3xl p-6 sm:p-7 shadow-sm border border-gray-200/80 space-y-5">
+            <div class="border-b border-gray-100 pb-3 flex items-center justify-between">
+              <div>
+                <h3 class="font-bold text-lg text-gray-900">Alur Acara di Gereja St. Thomas Rasul</h3>
+                <p class="text-xs text-gray-500">Jl. Pakis Raya No. 20, Rawa Buaya, Cengkareng, Jakarta Barat</p>
+              </div>
+              <a href="https://maps.google.com/?q=Gereja+Santo+Thomas+Rasul+Jakarta" target="_blank" class="text-xs font-semibold text-[#314a31] hover:underline flex items-center gap-1 bg-[#314a31]/5 px-3 py-1.5 rounded-full">
+                <span>Buka Peta</span> ↗
+              </a>
+            </div>
+
+            <!-- Pre-ceremony Setup -->
+            <div class="p-4 rounded-2xl bg-amber-50/70 border border-amber-200/60 space-y-2">
+              <div class="flex items-center justify-between">
+                <span class="font-mono font-bold text-xs bg-amber-200 text-amber-900 px-2.5 py-0.5 rounded">12.00 – 13.00</span>
+                <span class="text-xs font-bold text-amber-900">Persiapan Logistik Gereja</span>
+              </div>
+              <h4 class="font-bold text-sm text-gray-900">Shandy’s Catering Datang &amp; Setup Gereja</h4>
+              <p class="text-xs text-gray-700">Tugas 1 WO yang ditugaskan standby di gereja:</p>
+              <div class="grid grid-cols-2 gap-2 text-xs text-gray-800">
+                <div class="bg-white/80 p-2 rounded-lg">✓ Siapkan Meja Konsumsi</div>
+                <div class="bg-white/80 p-2 rounded-lg">✓ Siapkan Air Minum Kemasan</div>
+                <div class="bg-white/80 p-2 rounded-lg">✓ Siapkan Buku Misa di Pintu</div>
+                <div class="bg-white/80 p-2 rounded-lg">✓ Siapkan Kantong/Plastik Sampah</div>
+              </div>
+            </div>
+
+            <!-- Matrimony Ceremony -->
+            <div class="p-5 rounded-2xl bg-emerald-50/60 border border-emerald-200/60 space-y-3">
+              <div class="flex items-center justify-between">
+                <span class="font-mono font-bold text-xs bg-emerald-200 text-emerald-900 px-2.5 py-0.5 rounded">13.00 – 15.00</span>
+                <span class="text-xs font-bold text-emerald-900">Upacara Utama</span>
+              </div>
+              <h4 class="font-bold text-base text-gray-900">Misa Pemberkatan Nikah Kudus</h4>
+              
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-gray-700 pt-1">
+                <div>
+                  <span class="font-bold text-gray-900 block">Saksi Nikah Gereja:</span>
+                  <p>Bapak Bernadus Bastian &amp; Ibu Ester Julianti</p>
+                </div>
+                <div>
+                  <span class="font-bold text-gray-900 block">Koor / Musik:</span>
+                  <p>Bonitas Dei</p>
+                </div>
+                <div>
+                  <span class="font-bold text-gray-900 block">Persembahan:</span>
+                  <p>Disediakan dari Gereja</p>
+                </div>
+                <div>
+                  <span class="font-bold text-gray-900 block">Bunga Bunda Maria:</span>
+                  <p>Dari Tim Dekorasi</p>
+                </div>
+              </div>
+
+              <!-- Photo List -->
+              <div class="bg-white p-4 rounded-xl border border-emerald-100 space-y-2 mt-3">
+                <p class="font-bold text-xs text-emerald-950 uppercase tracking-wider">Urutan Sesi Foto Pemberkatan (Wajib Tertib):</p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-1.5 text-xs text-gray-700">
+                  <div class="p-1.5 bg-gray-50 rounded">1. Romo + Saksi Nikah</div>
+                  <div class="p-1.5 bg-gray-50 rounded">2. Romo + Keluarga Valensia</div>
+                  <div class="p-1.5 bg-gray-50 rounded">3. Romo + Keluarga Hendry</div>
+                  <div class="p-1.5 bg-gray-50 rounded">4. Teman-teman Valensia</div>
+                  <div class="p-1.5 bg-gray-50 rounded">5. Teman-teman Hendry</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Return Journey -->
+            <div class="p-4 rounded-2xl bg-gray-50 border border-gray-200/80 flex items-center justify-between">
+              <div>
+                <span class="font-mono font-bold text-xs bg-gray-200 text-gray-800 px-2.5 py-0.5 rounded">15.00 – 15.30</span>
+                <h4 class="font-bold text-sm text-gray-900 mt-1">Perjalanan Kembali ke Hotel Harris Puri Mansion</h4>
+              </div>
+              <span class="text-xs text-gray-500">Iring-iringan Mobil</span>
+            </div>
+          </div>
+
+          <!-- Catering Distribution & Roles (Col 1) -->
+          <div class="space-y-6">
+            
+            <!-- Catering Box Card -->
+            <div class="bg-white rounded-3xl p-6 shadow-sm border border-gray-200/80 space-y-4">
+              <div class="flex items-center justify-between border-b border-gray-100 pb-2">
+                <h3 class="font-bold text-base text-gray-900">Distribusi Konsumsi Misa</h3>
+                <span class="text-xs font-bold bg-green-100 text-green-800 px-2 py-0.5 rounded">Total 70 Box</span>
+              </div>
+              <p class="text-xs text-gray-500">Katering: Shandy’s Catering (PIC Makanan: <strong>Hendra</strong>)</p>
+
+              <div class="space-y-2 text-xs">
+                <div class="flex justify-between py-1 border-b border-gray-100">
+                  <span>Panitia Gereja &amp; Romo</span>
+                  <span class="font-bold font-mono">3 Box</span>
+                </div>
+                <div class="flex justify-between py-1 border-b border-gray-100">
+                  <span>Koor (Bonitas Dei)</span>
+                  <span class="font-bold font-mono">5 Box</span>
+                </div>
+                <div class="flex justify-between py-1 border-b border-gray-100">
+                  <span>Saksi Nikah</span>
+                  <span class="font-bold font-mono">4 Box</span>
+                </div>
+                <div class="flex justify-between py-1 border-b border-gray-100">
+                  <span>Keluarga Inti Hendry</span>
+                  <span class="font-bold font-mono">10 Box</span>
+                </div>
+                <div class="flex justify-between py-1 border-b border-gray-100">
+                  <span>Keluarga Inti Valensia</span>
+                  <span class="font-bold font-mono">5 Box</span>
+                </div>
+                <div class="flex justify-between py-1 border-b border-gray-100">
+                  <span>Keluarga Besar / Saudara</span>
+                  <span class="font-bold font-mono">13 Box</span>
+                </div>
+                <div class="flex justify-between py-1 border-b border-gray-100">
+                  <span>Teman Hendry</span>
+                  <span class="font-bold font-mono">4 Box</span>
+                </div>
+                <div class="flex justify-between py-1 border-b border-gray-100">
+                  <span>Teman Valensia</span>
+                  <span class="font-bold font-mono">4 Box</span>
+                </div>
+                <div class="flex justify-between py-1 border-b border-gray-100">
+                  <span>Tim WO Sky</span>
+                  <span class="font-bold font-mono">6 Box</span>
+                </div>
+                <div class="flex justify-between py-1 border-b border-gray-100">
+                  <span>Foto &amp; Video (Arpang)</span>
+                  <span class="font-bold font-mono">2 Box</span>
+                </div>
+                <div class="flex justify-between py-1 border-b border-gray-100">
+                  <span>Driver</span>
+                  <span class="font-bold font-mono">1 Box</span>
+                </div>
+                <div class="flex justify-between py-1.5 font-bold text-gray-900 bg-gray-50 px-2 rounded-lg">
+                  <span>Cadangan / Buffer</span>
+                  <span class="font-mono text-green-700">13 Box</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Church Roles Card -->
+            <div class="bg-white rounded-3xl p-6 shadow-sm border border-gray-200/80 space-y-3">
+              <h3 class="font-bold text-base text-gray-900 border-b border-gray-100 pb-2">Kontak &amp; PIC Gereja</h3>
+              <div class="space-y-2 text-xs">
+                <div>
+                  <span class="text-gray-500 block">PIC Gereja:</span>
+                  <span class="font-bold text-gray-900">Valentinus</span>
+                </div>
+                <div>
+                  <span class="text-gray-500 block">PIC Konsumsi Keluarga:</span>
+                  <span class="font-bold text-gray-900">Hendra</span>
+                </div>
+                <div>
+                  <span class="text-gray-500 block">Bawaan Rohani Pengantin:</span>
+                  <span class="text-gray-700">Buku Misa, Benda Rohani (Salib/Rosario), Amplop Stipendium Romo.</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ========================================== -->
+      <!-- SECTION 4: RETOUCH & UPACARA TEAPAI -->
+      <!-- ========================================== -->
+      <section id="section-teapai" class="schedule-section space-y-6" data-category="teapai">
+        <div class="flex items-center justify-between border-b-2 border-[#314a31]/20 pb-3">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-widest text-[#314a31]">Fase 4 • 15.30 – 19.00 WIB</span>
+            <h2 class="font-serif text-2xl sm:text-3xl font-bold text-[#314a31]">Retouch, Tradisi Teapai &amp; Dinner Crew</h2>
+          </div>
+          <span class="text-xs font-semibold bg-[#314a31]/10 text-[#314a31] px-3 py-1 rounded-full">Productive Room Lt. 1</span>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          
+          <!-- Teapai Timeline & Flow (Span 2) -->
+          <div class="lg:col-span-2 bg-white rounded-3xl p-6 sm:p-7 shadow-sm border border-gray-200/80 space-y-6">
+            
+            <!-- Retouch 15.30 - 17.30 -->
+            <div class="p-5 rounded-2xl bg-gray-50 border border-gray-200/80 space-y-2">
+              <div class="flex items-center justify-between">
+                <span class="font-mono font-bold text-xs bg-purple-100 text-purple-800 px-2.5 py-0.5 rounded">15.30 – 17.30</span>
+                <span class="text-xs font-bold text-purple-800">MUA: Veli Bridal</span>
+              </div>
+              <h4 class="font-bold text-base text-gray-900">Sesi Retouch Makeup &amp; Ganti Gaun Malam</h4>
+              <p class="text-xs text-gray-600">Urutan retouch: Bride (Valensia), 2 Orang Mama (Ny. Susana &amp; Ny. Liauw Su San), 2 Orang Ipar (Carolina &amp; Lisa).</p>
+            </div>
+
+            <!-- Teapai Ceremony 17.30 - 18.30 -->
+            <div class="p-6 rounded-2xl bg-red-50/70 border border-red-200/70 space-y-4">
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                  <span class="text-2xl text-red-600 font-serif">囍</span>
+                  <span class="font-mono font-bold text-xs bg-red-200 text-red-900 px-2.5 py-0.5 rounded">17.30 – 18.30</span>
+                </div>
+                <span class="text-xs font-bold bg-white text-red-800 px-3 py-1 rounded-full border border-red-200">Productive Room Lt. 1</span>
+              </div>
+
+              <div>
+                <h4 class="font-bold text-lg text-gray-900">Upacara Penghormatan Teh (Teapai Ceremony)</h4>
+                <p class="text-xs text-gray-600 mt-1">Acara sungkem dan penghormatan teh kepada orang tua dan keluarga dituakan.</p>
+              </div>
+
+              <!-- List Teapai -->
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs pt-1">
+                <div class="bg-white p-3.5 rounded-xl border border-red-100">
+                  <strong class="text-red-900 block mb-1">Keluarga Hendry:</strong>
+                  <p>• Papa &amp; Mama (Tn. Tju Shin Tjhong &amp; Ny. Susana)</p>
+                </div>
+                <div class="bg-white p-3.5 rounded-xl border border-red-100">
+                  <strong class="text-red-900 block mb-1">Keluarga Valensia:</strong>
+                  <p>• Papa &amp; Mama (Tn. Bong Ket Hau &amp; Ny. Liauw Su San)</p>
+                </div>
+              </div>
+
+              <!-- Detail Logistik Teapai -->
+              <div class="bg-white/90 p-4 rounded-xl border border-red-100 text-xs space-y-2">
+                <p class="font-bold text-gray-900 text-[11px] uppercase tracking-wider">Perlengkapan &amp; Pembagian Tugas Teapai:</p>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-gray-700">
+                  <div>• <strong>PIC Keluarga:</strong> Hendra &amp; Willy</div>
+                  <div>• <strong>PIC Souvenir:</strong> Harris</div>
+                  <div>• <strong>Souvenir Teapai:</strong> 40 Pcs (1 per keluarga)</div>
+                  <div>• <strong>Snack:</strong> Kue Tampah, Kopi Tuku, Air Mineral</div>
+                  <div>• <strong>Cangkir &amp; Teko:</strong> Harris Hotel (Hendry beli sticker)</div>
+                  <div>• <strong>Cup Sekali Pakai:</strong> Bawa sendiri oleh Pengantin</div>
+                  <div>• <strong>Angpao:</strong> Untuk yang belum menikah (by Pengantin)</div>
+                  <div>• <strong>Wadah &amp; Keamanan:</strong> 1 Koper, 3 Goodie Bag, 2 Gembok</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Wait & VIP Room 18.30 - 19.00 -->
+            <div class="p-5 rounded-2xl bg-gray-50 border border-gray-200/80 space-y-2">
+              <div class="flex items-center justify-between">
+                <span class="font-mono font-bold text-xs bg-amber-100 text-amber-800 px-2.5 py-0.5 rounded">18.30 – 19.00</span>
+                <span class="text-xs font-semibold text-gray-500">Ruang Tunggu VIP Hotel</span>
+              </div>
+              <h4 class="font-bold text-base text-gray-900">Pengantin Menunggu di Ruang VIP &amp; Briefing Tim WO</h4>
+              <p class="text-xs text-gray-600">Pengantin istirahat sejenak, touch up akhir. Tim WO Sky melakukan briefing final dengan seluruh tim vendor dan MC.</p>
+            </div>
+
+          </div>
+
+          <!-- Dinner & Meal Crew Sidebar (Col 1) -->
+          <div class="space-y-6">
+            
+            <!-- Meal Crew Card -->
+            <div class="bg-white rounded-3xl p-6 shadow-sm border border-gray-200/80 space-y-4">
+              <div class="border-b border-gray-100 pb-2">
+                <h3 class="font-bold text-base text-gray-900">Konsumsi Crew &amp; Keluarga Sore</h3>
+                <p class="text-xs text-gray-500">Early dinner &amp; konsumsi vendor</p>
+              </div>
+
+              <div class="space-y-3 text-xs">
+                <div class="p-3 bg-blue-50/80 rounded-xl border border-blue-100">
+                  <span class="font-bold text-blue-900 block">Early Dinner Keluarga (15 Pax):</span>
+                  <p class="text-blue-800 mt-0.5">Ready pukul <strong>18.00 WIB</strong> di hotel.</p>
+                </div>
+
+                <div class="p-3 bg-amber-50/80 rounded-xl border border-amber-100 space-y-1">
+                  <span class="font-bold text-amber-900 block">Meal Crew (GrabFood):</span>
+                  <p class="text-amber-800">• Pesan jam <strong>17.00 WIB</strong></p>
+                  <p class="text-amber-800">• Ready makan jam <strong>16.00 / 17.30 WIB</strong></p>
+                  <p class="text-amber-900 font-semibold">• PIC Order: Hendra / Harris</p>
+                </div>
+
+                <div class="space-y-1 pt-1 border-t border-gray-100">
+                  <span class="font-bold text-gray-800 block text-[11px] uppercase tracking-wider">Rincian Pax Crew:</span>
+                  <div class="flex justify-between py-0.5"><span>WO Sky</span><span class="font-mono font-bold">6 Pax</span></div>
+                  <div class="flex justify-between py-0.5"><span>Foto &amp; Video (Arpang)</span><span class="font-mono font-bold">2 Pax</span></div>
+                  <div class="flex justify-between py-0.5"><span>Entertainment</span><span class="font-mono text-gray-500">To Confirm</span></div>
+                  <div class="flex justify-between py-0.5"><span>Libra Cake</span><span class="font-mono text-gray-500">To Confirm</span></div>
+                  <div class="flex justify-between py-0.5"><span>Dekorasi (Chelle)</span><span class="font-mono text-gray-500">To Confirm</span></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Reception Counter Ready -->
+            <div class="bg-white rounded-3xl p-6 shadow-sm border border-gray-200/80 space-y-3">
+              <h3 class="font-bold text-base text-gray-900 border-b border-gray-100 pb-2">Meja Registrasi / Penerima Tamu</h3>
+              <div class="text-xs space-y-2 text-gray-700">
+                <p>• <strong>Petugas Buku Tamu:</strong> WO Sky ready pukul <strong>18.00 WIB</strong></p>
+                <p>• <strong>Usher 1 &amp; 2:</strong> WO Sky to confirm</p>
+                <p>• <strong>Buku Tamu:</strong> 2 buah dari Sky WO</p>
+                <p>• <strong>Kotak Angpao:</strong> 2 buah dari Dekor (Chelle)</p>
+                <p>• <strong>Souvenir:</strong> 300 pcs (Kupon penukaran souvenir)</p>
+                <p>• <strong>Penerima Angpao Akhir Acara:</strong> Hendra + Willy</p>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ========================================== -->
+      <!-- SECTION 5: RESEPSI PERNIKAHAN UTAMA -->
+      <!-- ========================================== -->
+      <section id="section-reception" class="schedule-section space-y-6" data-category="reception">
+        <div class="flex items-center justify-between border-b-2 border-[#314a31]/20 pb-3">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-widest text-[#314a31]">Fase 5 • 19.00 – 21.00 WIB</span>
+            <h2 class="font-serif text-2xl sm:text-3xl font-bold text-[#314a31]">Resepsi Pernikahan (Grand Wedding Reception)</h2>
+          </div>
+          <span class="text-xs font-semibold bg-[#314a31]/10 text-[#314a31] px-3 py-1 rounded-full">Grand Ballroom Harris Hotel • 400 Pax</span>
+        </div>
+
+        <div class="bg-white rounded-3xl shadow-sm border border-gray-200/80 overflow-hidden">
+          <div class="overflow-x-auto">
+            <table class="w-full text-left border-collapse text-xs sm:text-sm">
+              <thead>
+                <tr class="bg-[#314a31] text-[#fbf4e6] text-xs uppercase tracking-wider font-semibold">
+                  <th class="p-4 sm:p-5 w-36 whitespace-nowrap">Waktu</th>
+                  <th class="p-4 sm:p-5">Agenda &amp; Rangkaian Acara</th>
+                  <th class="p-4 sm:p-5 w-44">Musik &amp; Cues</th>
+                  <th class="p-4 sm:p-5 w-52">Catatan Khusus / PIC</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-gray-100">
+                
+                <!-- 19.00 - 19.05 -->
+                <tr class="hover:bg-gray-50/80 transition-colors">
+                  <td class="p-4 sm:p-5 align-top font-mono font-bold text-gray-900">
+                    <span class="bg-gray-100 text-gray-800 px-2.5 py-1 rounded-full text-xs">19.00 – 19.05</span>
+                    <span class="block text-[11px] text-gray-500 mt-1 font-sans">5 Menit</span>
+                  </td>
+                  <td class="p-4 sm:p-5 align-top space-y-1">
+                    <h4 class="font-bold text-sm sm:text-base text-gray-900">Opening MC &amp; Welcoming Guest</h4>
+                    <p class="text-gray-600">MC membuka acara dengan hangat, menyapa seluruh tamu undangan. Mempelai dan keluarga bersiap di balik pintu.</p>
+                  </td>
+                  <td class="p-4 sm:p-5 align-top text-xs text-gray-600">
+                    Background Music pembuka
+                  </td>
+                  <td class="p-4 sm:p-5 align-top text-xs text-gray-600">
+                    <span class="font-semibold block text-gray-900">MC by WO Sky</span>
+                    Pengantin standby di ruang tunggu
+                  </td>
+                </tr>
+
+                <!-- 19.05 - 19.15 -->
+                <tr class="hover:bg-gray-50/80 transition-colors bg-gray-50/30">
+                  <td class="p-4 sm:p-5 align-top font-mono font-bold text-gray-900">
+                    <span class="bg-blue-100 text-blue-800 px-2.5 py-1 rounded-full text-xs">19.05 – 19.15</span>
+                    <span class="block text-[11px] text-gray-500 mt-1 font-sans">10 Menit</span>
+                  </td>
+                  <td class="p-4 sm:p-5 align-top space-y-2">
+                    <h4 class="font-bold text-sm sm:text-base text-gray-900">Prosesi Masuk Orang Tua &amp; Saudara Kandung</h4>
+                    <div class="bg-gray-50 p-3 rounded-xl border border-gray-200 text-xs space-y-1.5">
+                      <p class="font-bold text-gray-800 text-[11px] uppercase tracking-wider">Susunan Barisan Masuk:</p>
+                      <p><strong>1. Orang Tua Hendry:</strong> Tn. Tju Sjin Tjhong &amp; Ny. Susana</p>
+                      <p><strong>2. Saudara Kandung Hendry:</strong> Hendra, Harris &amp; Carolina Laimena Sanjaya &amp; Caiden Harris</p>
+                      <p><strong>3. Orang Tua Valensia:</strong> Tn. Bong Ket Hau &amp; Ny. Liauw Su San</p>
+                      <p><strong>4. Saudara Kandung Valensia:</strong> Willy Huang &amp; Lisa Adiputra &amp; Owen Austin Huang</p>
+                    </div>
+                    <p class="text-xs text-gray-600"><strong>Posisi:</strong> Orang Tua menuju ke Wedding Cake. Saudara kandung berdiri di area tangga pelaminan.</p>
+                  </td>
+                  <td class="p-4 sm:p-5 align-top text-xs text-gray-700">
+                    <span class="font-bold block text-gray-900">Instrumental:</span>
+                    "A Whole New World"
+                  </td>
+                  <td class="p-4 sm:p-5 align-top text-xs text-gray-600 space-y-1">
+                    <span class="font-semibold block text-gray-900">Screen:</span>
+                    Penayangan Video &amp; Slideshow Prewedding<br>
+                    <span class="text-[11px] text-amber-700 font-medium">⚠️ Konfirmasi WO Sky batas waktu kirim &amp; durasi</span>
+                  </td>
+                </tr>
+
+                <!-- 19.15 - 19.20 -->
+                <tr class="hover:bg-gray-50/80 transition-colors">
+                  <td class="p-4 sm:p-5 align-top font-mono font-bold text-gray-900">
+                    <span class="bg-emerald-100 text-emerald-800 px-2.5 py-1 rounded-full text-xs">19.15 – 19.20</span>
+                    <span class="block text-[11px] text-gray-500 mt-1 font-sans">5 Menit</span>
+                  </td>
+                  <td class="p-4 sm:p-5 align-top space-y-1">
+                    <h4 class="font-bold text-sm sm:text-base text-gray-900">Grand Entrance: Prosesi Masuk Kedua Mempelai</h4>
+                    <p class="text-gray-600">Hendry &amp; Valensia berjalan bergandengan tangan dari Pintu Utama menuju Wedding Cake diiringi tepuk tangan tamu.</p>
+                  </td>
+                  <td class="p-4 sm:p-5 align-top text-xs text-gray-700 space-y-1">
+                    <span class="font-bold block text-gray-900">Pilihan Lagu:</span>
+                    <p>• At the Beginning</p>
+                    <p>• Love is an Open Door</p>
+                    <p>• Can You Feel the Love Tonight</p>
+                  </td>
+                  <td class="p-4 sm:p-5 align-top text-xs text-gray-600">
+                    Spotlight &amp; Foto Video mengawal jalan mempelai
+                  </td>
+                </tr>
+
+                <!-- 19.20 - 19.25 -->
+                <tr class="hover:bg-gray-50/80 transition-colors bg-gray-50/30">
+                  <td class="p-4 sm:p-5 align-top font-mono font-bold text-gray-900">
+                    <span class="bg-amber-100 text-amber-800 px-2.5 py-1 rounded-full text-xs">19.20 – 19.25</span>
+                    <span class="block text-[11px] text-gray-500 mt-1 font-sans">5 Menit</span>
+                  </td>
+                  <td class="p-4 sm:p-5 align-top space-y-1">
+                    <h4 class="font-bold text-sm sm:text-base text-gray-900">Pemotongan Wedding Cake &amp; Sesi Suap-suapan</h4>
+                    <ol class="list-decimal list-inside space-y-1 text-gray-600 text-xs">
+                      <li>Suapan kue kepada Orang Tua Hendry</li>
+                      <li>Suapan kue kepada Orang Tua Valensia</li>
+                      <li>Pengantin saling menyuapkan kue</li>
+                      <li><strong>Wedding Kiss</strong></li>
+                    </ol>
+                  </td>
+                  <td class="p-4 sm:p-5 align-top text-xs text-gray-700">
+                    Live Acoustic / Instrumental Romantis
+                  </td>
+                  <td class="p-4 sm:p-5 align-top text-xs text-gray-600 space-y-1">
+                    <p>• Cake by: <strong>Libra Cake</strong></p>
+                    <p>• Kue suapan dari Libra Cake</p>
+                    <p>• Dipandu penuh oleh MC</p>
+                  </td>
+                </tr>
+
+                <!-- 19.25 - 19.30 -->
+                <tr class="hover:bg-gray-50/80 transition-colors">
+                  <td class="p-4 sm:p-5 align-top font-mono font-bold text-gray-900">
+                    <span class="bg-purple-100 text-purple-800 px-2.5 py-1 rounded-full text-xs">19.25 – 19.30</span>
+                    <span class="block text-[11px] text-gray-500 mt-1 font-sans">5 Menit</span>
+                  </td>
+                  <td class="p-4 sm:p-5 align-top space-y-1">
+                    <h4 class="font-bold text-sm sm:text-base text-gray-900">Pouring Champagne Piramida 3 Tingkat</h4>
+                    <p class="text-gray-600">Mempelai menuangkan champagne/sparkling juice bersama ke piramida gelas kristal.</p>
+                  </td>
+                  <td class="p-4 sm:p-5 align-top text-xs text-gray-700">
+                    Upbeat Celebration Music
+                  </td>
+                  <td class="p-4 sm:p-5 align-top text-xs text-gray-600">
+                    2 Botol Sparkling Juice dari Sky WO
+                  </td>
+                </tr>
+
+                <!-- 19.30 - 20.20 -->
+                <tr class="hover:bg-gray-50/80 transition-colors bg-gray-50/30">
+                  <td class="p-4 sm:p-5 align-top font-mono font-bold text-gray-900">
+                    <span class="bg-blue-100 text-blue-800 px-2.5 py-1 rounded-full text-xs">19.30 – 20.20</span>
+                    <span class="block text-[11px] text-gray-500 mt-1 font-sans">50 Menit</span>
+                  </td>
+                  <td class="p-4 sm:p-5 align-top space-y-2">
+                    <h4 class="font-bold text-sm sm:text-base text-gray-900">Speech Groom, Toast, Dinner, Mingle &amp; Interactive Games</h4>
+                    <div class="space-y-1.5 text-xs text-gray-700">
+                      <p>• <strong>Groom Speech:</strong> Kata sambutan dan terima kasih dari Hendry.</p>
+                      <p>• <strong>Wedding Toast:</strong> Bersulang bersama (7 Gelas Toast di pelaminan untuk keluarga inti).</p>
+                      <p>• <strong>Dinner &amp; Mingle:</strong> Tamu menyantap hidangan, pengantin mingle menyapa meja tamu (<em>Pastikan jatah kue mingle disiapkan</em>).</p>
+                      
+                      <!-- Games Box -->
+                      <div class="bg-yellow-50/80 p-3 rounded-xl border border-yellow-200 mt-2 space-y-1">
+                        <span class="font-bold text-yellow-950 block text-[11px] uppercase tracking-wider">🎮 Sesi Games Interaktif &amp; Hadiah:</span>
+                        <p><strong>1. Games Kahoot (3 Pemenang):</strong></p>
+                        <ul class="list-disc list-inside pl-2 text-yellow-900">
+                          <li>2x Gantungan Kunci Pokemon</li>
+                          <li>1x Kartu Flazz Sanberna</li>
+                        </ul>
+                        <p class="pt-1"><strong>2. Lempar Boneka:</strong></p>
+                        <ul class="list-disc list-inside pl-2 text-yellow-900">
+                          <li>1x Kartu Flazz Pokemon + 1x Gantungan Kunci</li>
+                        </ul>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="p-4 sm:p-5 align-top text-xs text-gray-700">
+                    Live Band / Entertainment (Sky)
+                  </td>
+                  <td class="p-4 sm:p-5 align-top text-xs text-gray-600 space-y-1">
+                    <p>• 7 Gelas Toast di Pelaminan</p>
+                    <p>• Hadiah Games ready di samping MC</p>
+                    <p>• PIC Makanan Keluarga: <strong>Harris + Erwin Harris &amp; Sofia</strong></p>
+                  </td>
+                </tr>
+
+                <!-- 20.20 - 21.00 -->
+                <tr class="hover:bg-gray-50/80 transition-colors">
+                  <td class="p-4 sm:p-5 align-top font-mono font-bold text-gray-900">
+                    <span class="bg-emerald-100 text-emerald-800 px-2.5 py-1 rounded-full text-xs">20.20 – 21.00</span>
+                    <span class="block text-[11px] text-gray-500 mt-1 font-sans">40 Menit</span>
+                  </td>
+                  <td class="p-4 sm:p-5 align-top space-y-2">
+                    <h4 class="font-bold text-sm sm:text-base text-gray-900">Sesi Foto Bersama (Lineup Komunitas &amp; Keluarga)</h4>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs">
+                      <div class="bg-gray-50 p-2.5 rounded-lg border border-gray-100 space-y-1">
+                        <strong class="text-gray-900 block text-[11px]">Sesi 1: Keluarga Besar</strong>
+                        <p>1. Keluarga Besar Papa Hendry</p>
+                        <p>2. Keluarga Besar Mama Hendry</p>
+                        <p>3. Keluarga Besar Papa Valensia</p>
+                        <p>4. Keluarga Besar Mama Valensia</p>
+                        <p>5. Keluarga Besar Bong</p>
+                        <p>6. Teman Papa &amp; Mama</p>
+                      </div>
+                      <div class="bg-gray-50 p-2.5 rounded-lg border border-gray-100 space-y-1">
+                        <strong class="text-gray-900 block text-[11px]">Sesi 2: Rekan &amp; Komunitas</strong>
+                        <p>7. Astra Life</p>
+                        <p>8. Anak Lorong Santa Laurensia</p>
+                        <p>9. Teman Matematika UNPAR</p>
+                        <p>10. Kantor Bitnusa + Nore</p>
+                        <p>11. Teman Kuliah Hendry</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="p-4 sm:p-5 align-top text-xs text-gray-700">
+                    Easy Listening Live Music
+                  </td>
+                  <td class="p-4 sm:p-5 align-top text-xs text-gray-600 space-y-1">
+                    <span class="font-semibold block text-gray-900">PIC: WO Sky (Panggil Nomor)</span>
+                    <p>Setelah acara: Penyerahan Angpao &amp; Kotak ke <strong>Hendra + Willy</strong></p>
+                  </td>
+                </tr>
+
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========================================== -->
+      <!-- SECTION 6: TO-DO LISTS (GROOM, BRIDE, WO, PIC) -->
+      <!-- ========================================== -->
+      <section id="section-todo" class="schedule-section space-y-6" data-category="todo">
+        <div class="flex items-center justify-between border-b-2 border-[#314a31]/20 pb-3">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-widest text-[#314a31]">Action Items &amp; Checklist</span>
+            <h2 class="font-serif text-2xl sm:text-3xl font-bold text-[#314a31]">Daftar Tugas (To-Do) Pengantin, WO &amp; Keluarga</h2>
+          </div>
+          <span class="text-xs text-gray-500 font-medium hidden sm:inline">Centang item untuk menandai selesai (tersimpan otomatis)</span>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          
+          <!-- GROOM TO-DO CARD -->
+          <div class="bg-white rounded-3xl p-6 shadow-sm border border-gray-200/80 space-y-4">
+            <div class="flex items-center justify-between border-b border-gray-100 pb-3">
+              <div class="flex items-center gap-2">
+                <span class="w-7 h-7 rounded-full bg-blue-100 text-blue-800 flex items-center justify-center font-bold text-xs">🤵</span>
+                <h3 class="font-bold text-base text-gray-900">To-Do Mempelai Pria (Hendry)</h3>
+              </div>
+              <span class="text-[10px] font-bold bg-blue-50 text-blue-700 px-2 py-0.5 rounded-full">Groom</span>
+            </div>
+
+            <div class="space-y-2.5 text-xs text-gray-700 todo-group">
+              <label class="flex items-start gap-2.5 p-2 rounded-xl hover:bg-gray-50 cursor-pointer transition-colors">
+                <input type="checkbox" data-todo="groom-1" class="todo-checkbox mt-0.5 w-4 h-4 text-[#314a31] rounded border-gray-300 focus:ring-[#314a31]" />
+                <span>Bawa sepatu pantofel, jas lengkap, kemeja, dasi, kaos kaki, jam tangan &amp; belt.</span>
+              </label>
+              <label class="flex items-start gap-2.5 p-2 rounded-xl hover:bg-gray-50 cursor-pointer transition-colors">
+                <input type="checkbox" data-todo="groom-2" class="todo-checkbox mt-0.5 w-4 h-4 text-[#314a31] rounded border-gray-300 focus:ring-[#314a31]" />
+                <span>Bawa kotak cincin &amp; sepasang cincin nikah.</span>
+              </label>
+              <label class="flex items-start gap-2.5 p-2 rounded-xl hover:bg-gray-50 cursor-pointer transition-colors">
+                <input type="checkbox" data-todo="groom-3" class="todo-checkbox mt-0.5 w-4 h-4 text-[#314a31] rounded border-gray-300 focus:ring-[#314a31]" />
+                <span>Bawa 3 pcs fisik undangan pernikahan &amp; keepsake untuk foto kasur pagi.</span>
+              </label>
+              <label class="flex items-start gap-2.5 p-2 rounded-xl hover:bg-gray-50 cursor-pointer transition-colors">
+                <input type="checkbox" data-todo="groom-4" class="todo-checkbox mt-0.5 w-4 h-4 text-[#314a31] rounded border-gray-300 focus:ring-[#314a31]" />
+                <span>Bawa gunting &amp; hadiah langkahan untuk 1 koko Hendry.</span>
+              </label>
+              <label class="flex items-start gap-2.5 p-2 rounded-xl hover:bg-gray-50 cursor-pointer transition-colors">
+                <input type="checkbox" data-todo="groom-5" class="todo-checkbox mt-0.5 w-4 h-4 text-[#314a31] rounded border-gray-300 focus:ring-[#314a31]" />
+                <span>Beli dan siapkan stiker dekoratif cangkir teapai.</span>
+              </label>
+              <label class="flex items-start gap-2.5 p-2 rounded-xl hover:bg-gray-50 cursor-pointer transition-colors">
+                <input type="checkbox" data-todo="groom-6" class="todo-checkbox mt-0.5 w-4 h-4 text-[#314a31] rounded border-gray-300 focus:ring-[#314a31]" />
+                <span>Siapkan benda rohani, buku misa &amp; amplop stipendium Romo ke gereja.</span>
+              </label>
+              <label class="flex items-start gap-2.5 p-2 rounded-xl hover:bg-gray-50 cursor-pointer transition-colors">
+                <input type="checkbox" data-todo="groom-7" class="todo-checkbox mt-0.5 w-4 h-4 text-[#314a31] rounded border-gray-300 focus:ring-[#314a31]" />
+                <span>Siapkan teks / poin sambutan (Groom Speech) saat resepsi.</span>
+              </label>
+              <label class="flex items-start gap-2.5 p-2 rounded-xl hover:bg-gray-50 cursor-pointer transition-colors">
+                <input type="checkbox" data-todo="groom-8" class="todo-checkbox mt-0.5 w-4 h-4 text-[#314a31] rounded border-gray-300 focus:ring-[#314a31]" />
+                <span>Pastikan hadiah games Kahoot (Flazz Sanberna, Gantungan Kunci Pokemon) siap.</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- BRIDE TO-DO CARD -->
+          <div class="bg-white rounded-3xl p-6 shadow-sm border border-gray-200/80 space-y-4">
+            <div class="flex items-center justify-between border-b border-gray-100 pb-3">
+              <div class="flex items-center gap-2">
+                <span class="w-7 h-7 rounded-full bg-pink-100 text-pink-800 flex items-center justify-center font-bold text-xs">👰</span>
+                <h3 class="font-bold text-base text-gray-900">To-Do Mempelai Wanita (Valensia)</h3>
+              </div>
+              <span class="text-[10px] font-bold bg-pink-50 text-pink-700 px-2 py-0.5 rounded-full">Bride</span>
+            </div>
+
+            <div class="space-y-2.5 text-xs text-gray-700 todo-group">
+              <label class="flex items-start gap-2.5 p-2 rounded-xl hover:bg-gray-50 cursor-pointer transition-colors">
+                <input type="checkbox" data-todo="bride-1" class="todo-checkbox mt-0.5 w-4 h-4 text-[#314a31] rounded border-gray-300 focus:ring-[#314a31]" />
+                <span>Konfirmasi Robe &amp; Mannequin dari Veli Bridal sudah siap di kamar.</span>
+              </label>
+              <label class="flex items-start gap-2.5 p-2 rounded-xl hover:bg-gray-50 cursor-pointer transition-colors">
+                <input type="checkbox" data-todo="bride-2" class="todo-checkbox mt-0.5 w-4 h-4 text-[#314a31] rounded border-gray-300 focus:ring-[#314a31]" />
+                <span>Pastikan Fitter Veli Bridal standby jam 08.00 untuk pasang wedding gown.</span>
+              </label>
+              <label class="flex items-start gap-2.5 p-2 rounded-xl hover:bg-gray-50 cursor-pointer transition-colors">
+                <input type="checkbox" data-todo="bride-3" class="todo-checkbox mt-0.5 w-4 h-4 text-[#314a31] rounded border-gray-300 focus:ring-[#314a31]" />
+                <span>Siapkan disposable cup khusus teapai keluarga.</span>
+              </label>
+              <label class="flex items-start gap-2.5 p-2 rounded-xl hover:bg-gray-50 cursor-pointer transition-colors">
+                <input type="checkbox" data-todo="bride-4" class="todo-checkbox mt-0.5 w-4 h-4 text-[#314a31] rounded border-gray-300 focus:ring-[#314a31]" />
+                <span>Siapkan boneka lempar &amp; hadiahnya (Flazz Pokemon + Keychain).</span>
+              </label>
+              <label class="flex items-start gap-2.5 p-2 rounded-xl hover:bg-gray-50 cursor-pointer transition-colors">
+                <input type="checkbox" data-todo="bride-5" class="todo-checkbox mt-0.5 w-4 h-4 text-[#314a31] rounded border-gray-300 focus:ring-[#314a31]" />
+                <span>Siapkan angpao untuk yang belum married pada saat teapai.</span>
+              </label>
+              <label class="flex items-start gap-2.5 p-2 rounded-xl hover:bg-gray-50 cursor-pointer transition-colors">
+                <input type="checkbox" data-todo="bride-6" class="todo-checkbox mt-0.5 w-4 h-4 text-[#314a31] rounded border-gray-300 focus:ring-[#314a31]" />
+                <span>Pastikan gaun ganti malam &amp; aksesoris siap untuk retouch jam 15.30.</span>
+              </label>
+              <label class="flex items-start gap-2.5 p-2 rounded-xl hover:bg-gray-50 cursor-pointer transition-colors">
+                <input type="checkbox" data-todo="bride-7" class="todo-checkbox mt-0.5 w-4 h-4 text-[#314a31] rounded border-gray-300 focus:ring-[#314a31]" />
+                <span>Siapkan 1 koper, 3 goodie bag &amp; 2 gembok untuk barang teapai &amp; amplop.</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- WO TO-DO CARD -->
+          <div class="bg-white rounded-3xl p-6 shadow-sm border border-gray-200/80 space-y-4">
+            <div class="flex items-center justify-between border-b border-gray-100 pb-3">
+              <div class="flex items-center gap-2">
+                <span class="w-7 h-7 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center font-bold text-xs">📋</span>
+                <h3 class="font-bold text-base text-gray-900">To-Do Wedding Organizer (Sky WO)</h3>
+              </div>
+              <span class="text-[10px] font-bold bg-emerald-50 text-emerald-700 px-2 py-0.5 rounded-full">Sky WO</span>
+            </div>
+
+            <div class="space-y-2.5 text-xs text-gray-700 todo-group">
+              <label class="flex items-start gap-2.5 p-2 rounded-xl hover:bg-gray-50 cursor-pointer transition-colors">
+                <input type="checkbox" data-todo="wo-1" class="todo-checkbox mt-0.5 w-4 h-4 text-[#314a31] rounded border-gray-300 focus:ring-[#314a31]" />
+                <span>Standby tim WO di Harris Hotel (05.30 untuk makeup &amp; 08.00 di Ruang Crew).</span>
+              </label>
+              <label class="flex items-start gap-2.5 p-2 rounded-xl hover:bg-gray-50 cursor-pointer transition-colors">
+                <input type="checkbox" data-todo="wo-2" class="todo-checkbox mt-0.5 w-4 h-4 text-[#314a31] rounded border-gray-300 focus:ring-[#314a31]" />
+                <span>Siapkan pita langkahan untuk upacara di kamar Groom.</span>
+              </label>
+              <label class="flex items-start gap-2.5 p-2 rounded-xl hover:bg-gray-50 cursor-pointer transition-colors">
+                <input type="checkbox" data-todo="wo-3" class="todo-checkbox mt-0.5 w-4 h-4 text-[#314a31] rounded border-gray-300 focus:ring-[#314a31]" />
+                <span>Kirim 1 crew WO standby jam 12.00 di Gereja (siapkan meja, air, buku misa, plastik sampah).</span>
+              </label>
+              <label class="flex items-start gap-2.5 p-2 rounded-xl hover:bg-gray-50 cursor-pointer transition-colors">
+                <input type="checkbox" data-todo="wo-4" class="todo-checkbox mt-0.5 w-4 h-4 text-[#314a31] rounded border-gray-300 focus:ring-[#314a31]" />
+                <span>Ingatkan foto &amp; video (Arpang) untuk dokumentasikan karangan bunga papan di Lobby hotel.</span>
+              </label>
+              <label class="flex items-start gap-2.5 p-2 rounded-xl hover:bg-gray-50 cursor-pointer transition-colors">
+                <input type="checkbox" data-todo="wo-5" class="todo-checkbox mt-0.5 w-4 h-4 text-[#314a31] rounded border-gray-300 focus:ring-[#314a31]" />
+                <span>Siapkan 2 botol sparkling juice untuk pouring champagne piramida 3 tingkat.</span>
+              </label>
+              <label class="flex items-start gap-2.5 p-2 rounded-xl hover:bg-gray-50 cursor-pointer transition-colors">
+                <input type="checkbox" data-todo="wo-6" class="todo-checkbox mt-0.5 w-4 h-4 text-[#314a31] rounded border-gray-300 focus:ring-[#314a31]" />
+                <span>Siapkan 2 buku tamu &amp; koordinasi dengan dekorasi untuk 2 kotak angpao.</span>
+              </label>
+              <label class="flex items-start gap-2.5 p-2 rounded-xl hover:bg-gray-50 cursor-pointer transition-colors">
+                <input type="checkbox" data-todo="wo-7" class="todo-checkbox mt-0.5 w-4 h-4 text-[#314a31] rounded border-gray-300 focus:ring-[#314a31]" />
+                <span>Pastikan Usher 1 &amp; Usher 2 standby jam 18.00 di meja penerimaan tamu.</span>
+              </label>
+              <label class="flex items-start gap-2.5 p-2 rounded-xl hover:bg-gray-50 cursor-pointer transition-colors">
+                <input type="checkbox" data-todo="wo-8" class="todo-checkbox mt-0.5 w-4 h-4 text-[#314a31] rounded border-gray-300 focus:ring-[#314a31]" />
+                <span>Pastikan 7 gelas toast sudah tertata rapi di pelaminan sebelum speech.</span>
+              </label>
+              <label class="flex items-start gap-2.5 p-2 rounded-xl hover:bg-gray-50 cursor-pointer transition-colors">
+                <input type="checkbox" data-todo="wo-9" class="todo-checkbox mt-0.5 w-4 h-4 text-[#314a31] rounded border-gray-300 focus:ring-[#314a31]" />
+                <span>Panggil tamu sesuai antrean foto resepsi (11 kelompok) agar tertib dan efisien.</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- FAMILY PIC TO-DO CARD (Span full on desktop or 3-col) -->
+          <div class="md:col-span-2 lg:col-span-3 bg-white rounded-3xl p-6 sm:p-7 shadow-sm border border-gray-200/80 space-y-4">
+            <div class="flex items-center justify-between border-b border-gray-100 pb-3">
+              <div class="flex items-center gap-2">
+                <span class="w-7 h-7 rounded-full bg-amber-100 text-amber-800 flex items-center justify-center font-bold text-xs">👥</span>
+                <h3 class="font-bold text-base text-gray-900">To-Do Panitia Keluarga (PIC Family)</h3>
+              </div>
+              <span class="text-[10px] font-bold bg-amber-50 text-amber-700 px-2.5 py-0.5 rounded-full uppercase tracking-wider">PIC Keluarga</span>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 text-xs text-gray-700">
+              <div class="p-3.5 bg-gray-50 rounded-2xl border border-gray-200 space-y-1">
+                <span class="font-bold text-gray-900 block">Hendra:</span>
+                <p>• PIC Konsumsi Misa Gereja (Shandy's Catering 70 box)</p>
+                <p>• PIC Keluarga Teapai (bersama Willy)</p>
+                <p>• PIC Pesan GrabFood Crew jam 17.00</p>
+                <p>• PIC Penerima Angpao &amp; Perlengkapan akhir acara</p>
+              </div>
+
+              <div class="p-3.5 bg-gray-50 rounded-2xl border border-gray-200 space-y-1">
+                <span class="font-bold text-gray-900 block">Harris:</span>
+                <p>• PIC Souvenir Teapai (distribusi 40 pcs)</p>
+                <p>• PIC Pesan GrabFood Crew sore (bersama Hendra)</p>
+                <p>• PIC Konsumsi Resepsi (bersama Erwin &amp; Sofia)</p>
+              </div>
+
+              <div class="p-3.5 bg-gray-50 rounded-2xl border border-gray-200 space-y-1">
+                <span class="font-bold text-gray-900 block">Willy Huang:</span>
+                <p>• PIC Keluarga Teapai dari pihak Valensia</p>
+                <p>• Bersama Hendra mengamankan kotak angpao, gembok &amp; koper pasca resepsi</p>
+              </div>
+
+              <div class="p-3.5 bg-gray-50 rounded-2xl border border-gray-200 space-y-1">
+                <span class="font-bold text-gray-900 block">Valentinus:</span>
+                <p>• PIC Koordinator Gereja St. Thomas Rasul</p>
+                <p>• Koordinasi saksi, persembahan, koor &amp; tata ibadah</p>
+              </div>
+
+              <div class="p-3.5 bg-gray-50 rounded-2xl border border-gray-200 space-y-1 sm:col-span-2">
+                <span class="font-bold text-gray-900 block">Erwin Harris &amp; Sofia:</span>
+                <p>• Panitia Pengawas Konsumsi Keluarga di Resepsi Harris Hotel (memastikan flow piring, makanan tamu &amp; keluarga terjaga)</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ========================================== -->
+      <!-- SECTION 7: CHECKLIST BARANG BAWAAN -->
+      <!-- ========================================== -->
+      <section id="section-inventory" class="schedule-section space-y-6" data-category="todo">
+        <div class="flex items-center justify-between border-b-2 border-[#314a31]/20 pb-3">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-widest text-[#314a31]">Packing &amp; Luggage Checklist</span>
+            <h2 class="font-serif text-2xl sm:text-3xl font-bold text-[#314a31]">Daftar Barang Bawaan Pengantin</h2>
+          </div>
+          <span class="text-xs font-semibold bg-[#314a31]/10 text-[#314a31] px-3 py-1 rounded-full">Pagi &amp; Resepsi</span>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          
+          <!-- Pagi Items -->
+          <div class="bg-white rounded-3xl p-6 sm:p-7 shadow-sm border border-gray-200/80 space-y-4">
+            <div class="flex items-center justify-between border-b border-gray-100 pb-2">
+              <h3 class="font-bold text-base text-gray-900">📦 List Barang Pagi (Persiapan &amp; Gereja)</h3>
+              <span class="text-xs bg-amber-100 text-amber-800 font-bold px-2.5 py-0.5 rounded-full">7 Kategori</span>
+            </div>
+
+            <ul class="space-y-2 text-xs sm:text-sm text-gray-700">
+              <li class="flex items-center gap-2 p-2 bg-gray-50 rounded-xl">
+                <span class="text-green-600 font-bold">✓</span>
+                <span><strong>Undangan Fisik (3 pcs):</strong> Untuk kebutuhan flatlay foto dokumentasi.</span>
+              </li>
+              <li class="flex items-center gap-2 p-2 bg-gray-50 rounded-xl">
+                <span class="text-green-600 font-bold">✓</span>
+                <span><strong>Keepsake:</strong> Souvenir kenang-kenangan &amp; aksesoris detail.</span>
+              </li>
+              <li class="flex items-center gap-2 p-2 bg-gray-50 rounded-xl">
+                <span class="text-green-600 font-bold">✓</span>
+                <span><strong>Cincin &amp; Kotak Cincin:</strong> Cincin pernikahan Hendry &amp; Valensia.</span>
+              </li>
+              <li class="flex items-center gap-2 p-2 bg-gray-50 rounded-xl">
+                <span class="text-green-600 font-bold">✓</span>
+                <span><strong>Pakaian Groom Lengkap:</strong> Sepatu, jas, kemeja, dasi, kaos kaki, jam tangan, belt.</span>
+              </li>
+              <li class="flex items-center gap-2 p-2 bg-gray-50 rounded-xl">
+                <span class="text-green-600 font-bold">✓</span>
+                <span><strong>Benda Rohani:</strong> Salib / rosario untuk pemberkatan nikah di gereja.</span>
+              </li>
+              <li class="flex items-center gap-2 p-2 bg-gray-50 rounded-xl">
+                <span class="text-green-600 font-bold">✓</span>
+                <span><strong>Buku Misa Pemberkatan:</strong> Siap dibagikan ke umat &amp; altar di gereja.</span>
+              </li>
+              <li class="flex items-center gap-2 p-2 bg-gray-50 rounded-xl">
+                <span class="text-green-600 font-bold">✓</span>
+                <span><strong>Air Mineral Kemasan:</strong> Untuk konsumsi pribadi selama perjalanan &amp; persiapan.</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Siang & Resepsi Items -->
+          <div class="bg-white rounded-3xl p-6 sm:p-7 shadow-sm border border-gray-200/80 space-y-4">
+            <div class="flex items-center justify-between border-b border-gray-100 pb-2">
+              <h3 class="font-bold text-base text-gray-900">🎁 List Barang Resepsi &amp; Teapai</h3>
+              <span class="text-xs bg-emerald-100 text-emerald-800 font-bold px-2.5 py-0.5 rounded-full">5 Kategori</span>
+            </div>
+
+            <ul class="space-y-2 text-xs sm:text-sm text-gray-700">
+              <li class="flex items-center gap-2 p-2 bg-gray-50 rounded-xl">
+                <span class="text-green-600 font-bold">✓</span>
+                <span><strong>Souvenir Resepsi (300 pcs):</strong> Sistem penukaran dengan kupon di meja registrasi.</span>
+              </li>
+              <li class="flex items-center gap-2 p-2 bg-gray-50 rounded-xl">
+                <span class="text-green-600 font-bold">✓</span>
+                <span><strong>Foto Kanvas &amp; Galeri:</strong> 3 pcs foto gallery + standing kanvas (rak dari dekor).</span>
+              </li>
+              <li class="flex items-center gap-2 p-2 bg-gray-50 rounded-xl">
+                <span class="text-green-600 font-bold">✓</span>
+                <span><strong>Koper (1 pcs) &amp; Gembok (2 pcs):</strong> Wadah penyimpanan amplop &amp; hadiah berharga.</span>
+              </li>
+              <li class="flex items-center gap-2 p-2 bg-gray-50 rounded-xl">
+                <span class="text-green-600 font-bold">✓</span>
+                <span><strong>Goodie Bag (3 pcs):</strong> Untuk keperluan operasional teapai &amp; keluarga.</span>
+              </li>
+              <li class="flex items-center gap-2 p-2 bg-gray-50 rounded-xl">
+                <span class="text-green-600 font-bold">✓</span>
+                <span><strong>Hadiah Games Resepsi:</strong> Flazz Sanberna (1x), Gantungan Kunci Pokemon (2x), Flazz Pokemon (1x), Boneka lempar.</span>
+              </li>
+              <li class="flex items-center gap-2 p-2 bg-gray-50 rounded-xl">
+                <span class="text-green-600 font-bold">✓</span>
+                <span><strong>Souvenir Teapai (40 pcs):</strong> Handuk / souvenir khusus keluarga teapai.</span>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ========================================== -->
+      <!-- SECTION 8: VENDOR & PIC DIRECTORY -->
+      <!-- ========================================== -->
+      <section id="section-contacts" class="schedule-section space-y-6" data-category="contacts">
+        <div class="flex items-center justify-between border-b-2 border-[#314a31]/20 pb-3">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-widest text-[#314a31]">Directory &amp; Contacts</span>
+            <h2 class="font-serif text-2xl sm:text-3xl font-bold text-[#314a31]">Direktori Vendor &amp; Penanggung Jawab (PIC)</h2>
+          </div>
+          <span class="text-xs font-semibold bg-[#314a31]/10 text-[#314a31] px-3 py-1 rounded-full">Hubungi Segera Jika Perlu</span>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          
+          <!-- Vendor 1: WO -->
+          <div class="bg-white p-5 rounded-3xl border border-gray-200/80 shadow-sm space-y-2">
+            <span class="text-[10px] font-bold uppercase tracking-wider text-emerald-800 bg-emerald-100 px-2.5 py-0.5 rounded-full">Wedding Organizer</span>
+            <h4 class="font-bold text-base text-gray-900">Sky Wedding Organizer</h4>
+            <p class="text-xs text-gray-600">PIC: <strong>Evi</strong></p>
+            <a href="tel:081915855151" class="inline-flex items-center gap-1.5 text-xs text-green-700 font-bold hover:underline bg-green-50 px-3 py-1.5 rounded-full mt-1">
+              📞 0819 1585 5151
+            </a>
+            <p class="text-[11px] text-gray-500 pt-1">Termasuk MC, Usher, buku tamu &amp; sparkling juice.</p>
+          </div>
+
+          <!-- Vendor 2: Hotel -->
+          <div class="bg-white p-5 rounded-3xl border border-gray-200/80 shadow-sm space-y-2">
+            <span class="text-[10px] font-bold uppercase tracking-wider text-blue-800 bg-blue-100 px-2.5 py-0.5 rounded-full">Venue &amp; Hotel</span>
+            <h4 class="font-bold text-base text-gray-900">Harris Suites Puri Mansion</h4>
+            <p class="text-xs text-gray-600">PIC Hotel: <strong>Novita</strong></p>
+            <p class="text-[11px] text-gray-500">Tema Warna: White, Yellow, Light Blue, Green</p>
+            <p class="text-[11px] text-amber-700 font-medium">To confirm: Ruang VIP, Early dinner 15 pax.</p>
+          </div>
+
+          <!-- Vendor 3: MUA & Bridal -->
+          <div class="bg-white p-5 rounded-3xl border border-gray-200/80 shadow-sm space-y-2">
+            <span class="text-[10px] font-bold uppercase tracking-wider text-pink-800 bg-pink-100 px-2.5 py-0.5 rounded-full">MUA &amp; Bridal</span>
+            <h4 class="font-bold text-base text-gray-900">Veli Bridal</h4>
+            <p class="text-xs text-gray-600">MUA Bride, Groom, 2 Mama, 2 Ipar</p>
+            <p class="text-[11px] text-gray-500">Standby: MUA 06.00 • Fitter 08.00</p>
+            <p class="text-[11px] text-gray-500">Gaun Mama pagi/malam, Mannequin &amp; Robe.</p>
+          </div>
+
+          <!-- Vendor 4: Foto Video -->
+          <div class="bg-white p-5 rounded-3xl border border-gray-200/80 shadow-sm space-y-2">
+            <span class="text-[10px] font-bold uppercase tracking-wider text-purple-800 bg-purple-100 px-2.5 py-0.5 rounded-full">Dokumentasi</span>
+            <h4 class="font-bold text-base text-gray-900">Arpang Photography</h4>
+            <p class="text-xs text-gray-600">Foto &amp; Video Liputan</p>
+            <p class="text-[11px] text-gray-500">Standby: 08.00 WIB di Harris Hotel</p>
+            <p class="text-[11px] text-amber-700 font-medium">⚠️ Ingatkan foto karangan bunga di lobby.</p>
+          </div>
+
+          <!-- Vendor 5: Dekorasi -->
+          <div class="bg-white p-5 rounded-3xl border border-gray-200/80 shadow-sm space-y-2">
+            <span class="text-[10px] font-bold uppercase tracking-wider text-teal-800 bg-teal-100 px-2.5 py-0.5 rounded-full">Dekorasi &amp; Florist</span>
+            <h4 class="font-bold text-base text-gray-900">Chelle Decor</h4>
+            <p class="text-xs text-gray-600">PIC: Chelle</p>
+            <p class="text-[11px] text-gray-500">Handbouquet, Corsage Groom (1), Papa (2), Sibling (3), Bunga Bunda Maria, Kotak Angpao 2.</p>
+          </div>
+
+          <!-- Vendor 6: Wedding Cake -->
+          <div class="bg-white p-5 rounded-3xl border border-gray-200/80 shadow-sm space-y-2">
+            <span class="text-[10px] font-bold uppercase tracking-wider text-amber-800 bg-amber-100 px-2.5 py-0.5 rounded-full">Wedding Cake</span>
+            <h4 class="font-bold text-base text-gray-900">Libra Cake</h4>
+            <p class="text-xs text-gray-600">Kue Utama, Kue Suap-suapan</p>
+            <p class="text-[11px] text-amber-700 font-medium">To confirm: Pax kue suap &amp; jatah kue mingle.</p>
+          </div>
+
+          <!-- Vendor 7: Musik & Entertainment -->
+          <div class="bg-white p-5 rounded-3xl border border-gray-200/80 shadow-sm space-y-2">
+            <span class="text-[10px] font-bold uppercase tracking-wider text-indigo-800 bg-indigo-100 px-2.5 py-0.5 rounded-full">Entertainment</span>
+            <h4 class="font-bold text-base text-gray-900">Sky Wedding Entertainment</h4>
+            <p class="text-xs text-gray-600">Live Acoustic &amp; Singer</p>
+            <p class="text-[11px] text-gray-500">Dresscode Singer: Jas Hitam</p>
+            <p class="text-[11px] text-gray-500">Sound system &amp; lighting ballroom.</p>
+          </div>
+
+          <!-- Vendor 8: Photobooth & Car -->
+          <div class="bg-white p-5 rounded-3xl border border-gray-200/80 shadow-sm space-y-2">
+            <span class="text-[10px] font-bold uppercase tracking-wider text-rose-800 bg-rose-100 px-2.5 py-0.5 rounded-full">Photobooth &amp; Mobil</span>
+            <h4 class="font-bold text-base text-gray-900">Filosofi &amp; Fendi Car</h4>
+            <p class="text-xs text-gray-600">Photobooth: <strong>Filosofi</strong></p>
+            <p class="text-xs text-gray-600">Mobil Pengantin: <strong>Fendi Car</strong></p>
+            <p class="text-[11px] text-gray-500">Mobil standby jam 11.00 (Bunga merah/pink).</p>
+          </div>
+
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#314a31] text-[#fbf4e6]/70 py-8 border-t border-white/10 mt-16 text-center text-xs space-y-2">
+      <p class="font-serif italic text-base text-primary">Hendry &amp; Valensia Huang • Minggu, 6 Desember 2026</p>
+      <p>HARRIS Suites Puri Mansion • Gereja Santo Thomas Rasul</p>
+      <p class="text-[11px] opacity-60">Created with love for family, bestmen, bridesmaids &amp; event crew.</p>
+    </footer>
+
+  </div>
+
+  <!-- INTERACTIVE LOGIC: TABS, REALTIME SEARCH, CHECKBOX STORAGE & COPY SUMMARY -->
+  <script is:inline>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. FILTER TABS
+      const tabBtns = document.querySelectorAll('.tab-btn');
+      const sections = document.querySelectorAll('.schedule-section');
+
+      tabBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const filter = btn.getAttribute('data-filter');
+
+          // Style tabs
+          tabBtns.forEach(b => {
+            b.classList.remove('bg-[#314a31]', 'text-[#fbf4e6]', 'shadow-sm');
+            b.classList.add('bg-white', 'text-[#2c402c]');
+          });
+          btn.classList.remove('bg-white', 'text-[#2c402c]');
+          btn.classList.add('bg-[#314a31]', 'text-[#fbf4e6]', 'shadow-sm');
+
+          // Filter sections
+          sections.forEach(sec => {
+            const cat = sec.getAttribute('data-category');
+            if (filter === 'all' || filter === cat || (filter === 'todo' && (sec.id === 'section-todo' || sec.id === 'section-inventory'))) {
+              sec.classList.remove('hidden');
+            } else {
+              sec.classList.add('hidden');
+            }
+          });
+        });
+      });
+
+      // 2. REALTIME SEARCH
+      const searchInput = document.getElementById('schedule-search');
+      if (searchInput) {
+        searchInput.addEventListener('input', (e) => {
+          const query = e.target.value.toLowerCase().trim();
+          
+          if (!query) {
+            // Restore current tab view
+            const activeTab = document.querySelector('.tab-btn.bg-\\[\\#314a31\\]');
+            if (activeTab) activeTab.click();
+            return;
+          }
+
+          // Search within all sections
+          sections.forEach(sec => {
+            const text = sec.innerText.toLowerCase();
+            if (text.includes(query)) {
+              sec.classList.remove('hidden');
+            } else {
+              sec.classList.add('hidden');
+            }
+          });
+        });
+      }
+
+      // 3. PERSISTENT CHECKBOXES (LOCAL STORAGE)
+      const TODO_STORAGE_KEY = 'hv_rundown_todos_v1';
+      let checkedTodos = {};
+      try {
+        checkedTodos = JSON.parse(localStorage.getItem(TODO_STORAGE_KEY) || '{}');
+      } catch (err) {
+        checkedTodos = {};
+      }
+
+      const checkboxes = document.querySelectorAll('.todo-checkbox');
+      checkboxes.forEach(cb => {
+        const id = cb.getAttribute('data-todo');
+        if (id && checkedTodos[id]) {
+          cb.checked = true;
+          cb.closest('label')?.classList.add('opacity-50', 'line-through');
+        }
+
+        cb.addEventListener('change', () => {
+          if (cb.checked) {
+            checkedTodos[id] = true;
+            cb.closest('label')?.classList.add('opacity-50', 'line-through');
+          } else {
+            delete checkedTodos[id];
+            cb.closest('label')?.classList.remove('opacity-50', 'line-through');
+          }
+          localStorage.setItem(TODO_STORAGE_KEY, JSON.stringify(checkedTodos));
+        });
+      });
+
+      // 4. COPY TEXT SUMMARY FOR WHATSAPP
+      const copyBtn = document.getElementById('copy-summary-btn');
+      const copyTextSpan = document.getElementById('copy-text');
+      if (copyBtn) {
+        copyBtn.addEventListener('click', () => {
+          const rundownSummary = `*RINGKASAN RUNDOWN PERNIKAHAN HENDRY & VALENSIA*
+Minggu, 6 Desember 2026
+
+⏰ 05.30 - 06.00: Bangun & Sarapan Pagi di Harris Hotel
+⏰ 06.00 - 09.00: Make Up Bride, Groom, 2 Mama, 2 Ipar (Veli Bridal)
+⏰ 08.00: Standby Vendor Foto Arpang & Fitter Bridal
+⏰ 08.00 - 09.00: Beauty Groom & Pemasangan Jas Ortu
+⏰ 09.30 - 10.00: Prosesi Pelepasan Pengantin Wanita
+⏰ 10.00 - 10.30: Pertemuan Pengantin (Kamar Bride), First Look & Pasang Corsage
+⏰ 10.30 - 11.00: Menuju Kamar Groom, Pai 3x, Tradisi Langkahan 1 Koko
+⏰ 11.00 - 12.00: Beauty Shoot Lorong Harris Hotel
+⏰ 12.00 - 12.30: Berangkat ke Gereja St. Thomas Rasul (Fendi Car)
+⏰ 13.00 - 15.00: Misa Pemberkatan Nikah Kudus (St. Thomas Rasul)
+⏰ 15.00 - 15.30: Perjalanan kembali ke Harris Puri Mansion
+⏰ 15.30 - 17.30: Retouch & Ganti Gaun Malam
+⏰ 17.30 - 18.30: Upacara Teapai Keluarga (Productive Room Lt. 1)
+⏰ 18.00: Meja Registrasi Tamu Ready (Buku tamu & souvenir)
+⏰ 18.30 - 19.00: Pengantin di VIP Room & Briefing WO
+⏰ 19.00 - 21.00: RESEPSI PERNIKAHAN (Grand Ballroom Harris Hotel)
+  - 19.05: Masuk Ortu & Siblings
+  - 19.15: Grand Entrance Pengantin
+  - 19.20: Cutting Cake & Wedding Kiss
+  - 19.25: Champagne Pouring
+  - 19.30: Groom Speech, Toast, Dinner & Interactive Games (Kahoot)
+  - 20.20: Sesi Foto Komunitas & Keluarga
+
+Kontak Penting:
+- WO Sky (Evi): 0819 1585 5151
+- Hotel Harris (Novita)
+- PIC Gereja: Valentinus
+- PIC Makanan: Hendra`;
+
+          navigator.clipboard.writeText(rundownSummary).then(() => {
+            copyTextSpan.textContent = 'Tersalin!';
+            setTimeout(() => {
+              copyTextSpan.textContent = 'Salin Jadwal';
+            }, 2000);
+          }).catch(err => {
+            console.error('Copy failed:', err);
+          });
+        });
+      }
+    });
+  </script>
+
+  <!-- PRINT FRIENDLY CSS -->
+  <style is:global>
+    @media print {
+      header, footer, .tab-btn, #schedule-search, #copy-summary-btn, .no-print {
+        display: none !important;
+      }
+      body, main {
+        background: white !important;
+        color: black !important;
+        padding: 0 !important;
+        margin: 0 !important;
+      }
+      .schedule-section {
+        display: block !important;
+        page-break-inside: avoid;
+        margin-bottom: 2rem !important;
+      }
+      table {
+        font-size: 10px !important;
+        width: 100% !important;
+      }
+      th, td {
+        padding: 6px 8px !important;
+        border: 1px solid #ddd !important;
+      }
+      .shadow-sm, .shadow-md, .shadow-2xl {
+        box-shadow: none !important;
+      }
+    }
+  </style>
+</Layout>
